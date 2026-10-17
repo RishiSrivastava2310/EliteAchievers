@@ -1,0 +1,134 @@
+{
+  "purpose": "Illustrative sensitivity only, not causal or clinical validation. Not used for model selection or retuning.",
+  "creatinine_grid": [
+    {
+      "last_creatinine": 0.6,
+      "status": "predicted",
+      "risk_percent": 16.22,
+      "alert": false
+    },
+    {
+      "last_creatinine": 0.7,
+      "status": "predicted",
+      "risk_percent": 15.46,
+      "alert": false
+    },
+    {
+      "last_creatinine": 0.8,
+      "status": "predicted",
+      "risk_percent": 17.26,
+      "alert": false
+    },
+    {
+      "last_creatinine": 0.81,
+      "status": "predicted",
+      "risk_percent": 17.26,
+      "alert": false
+    },
+    {
+      "last_creatinine": 0.85,
+      "status": "predicted",
+      "risk_percent": 32.0,
+      "alert": true
+    },
+    {
+      "last_creatinine": 0.9,
+      "status": "predicted",
+      "risk_percent": 46.13,
+      "alert": true
+    },
+    {
+      "last_creatinine": 0.95,
+      "status": "predicted",
+      "risk_percent": 51.16,
+      "alert": true
+    },
+    {
+      "last_creatinine": 1.0,
+      "status": "predicted",
+      "risk_percent": 54.75,
+      "alert": true
+    },
+    {
+      "last_creatinine": 1.09,
+      "status": "predicted",
+      "risk_percent": 72.18,
+      "alert": true
+    },
+    {
+      "last_creatinine": 1.1,
+      "status": "aki_already_observed",
+      "risk_percent": null,
+      "alert": false
+    }
+  ],
+  "missing_input_ablation": [
+    {
+      "omitted_measurement": "creatinine",
+      "status": "insufficient_data",
+      "risk_percent": null,
+      "alert": false
+    },
+    {
+      "omitted_measurement": "bun",
+      "status": "predicted",
+      "risk_percent": 9.88,
+      "alert": false
+    },
+    {
+      "omitted_measurement": "potassium",
+      "status": "predicted",
+      "risk_percent": 14.86,
+      "alert": false
+    },
+    {
+      "omitted_measurement": "bicarbonate",
+      "status": "predicted",
+      "risk_percent": 19.51,
+      "alert": true
+    },
+    {
+      "omitted_measurement": "lactate",
+      "status": "predicted",
+      "risk_percent": 16.75,
+      "alert": false
+    },
+    {
+      "omitted_measurement": "map",
+      "status": "predicted",
+      "risk_percent": 10.09,
+      "alert": false
+    },
+    {
+      "omitted_measurement": "heart_rate",
+      "status": "predicted",
+      "risk_percent": 15.82,
+      "alert": false
+    },
+    {
+      "omitted_measurement": "spo2",
+      "status": "predicted",
+      "risk_percent": 14.13,
+      "alert": false
+    },
+    {
+      "omitted_measurement": "respiratory_rate",
+      "status": "predicted",
+      "risk_percent": 13.54,
+      "alert": false
+    },
+    {
+      "omitted_measurement": "temperature",
+      "status": "predicted",
+      "risk_percent": 8.18,
+      "alert": false
+    },
+    {
+      "omitted_measurement": "urine_output_ml",
+      "status": "predicted",
+      "risk_percent": 17.26,
+      "alert": false
+    }
+  ],
+  "finding": "Borderline alerts can change after small measurement changes or missing inputs. This is an unresolved robustness limitation, not a passed clinical safety test."
+}

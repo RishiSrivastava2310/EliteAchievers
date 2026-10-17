@@ -1,0 +1,18 @@
+{
+  "downloaded_at": "2026-10-17T20:11:38.538679+00:00",
+  "files": [
+    {
+      "source": "mimic",
+      "file": "old.csv.gz",
+      "sha256": "retained"
+    },
+    {
+      "source": "eicu",
+      "file": "small.csv.gz",
+      "url": "https://example.test/small.csv.gz",
+      "sha256": "6a436e1a416e48fc43038645b69dc1b09b0375bd3a7abf1207ccf07e36ebac87",
+      "bytes": 14
+    }
+  ],
+  "license": "Open Data Commons Open Database License 1.0; see raw source LICENSE.txt files"
+}

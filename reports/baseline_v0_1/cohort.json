@@ -1,0 +1,39 @@
+{
+  "eicu": {
+    "stays_considered": 2500,
+    "excluded_no_comparison_windows": 1701,
+    "negative_windows": 1663,
+    "censored_windows": 7584,
+    "included_stays": 747,
+    "stays_stopped_after_aki_or_rrt": 389,
+    "excluded_missing_recent_creatinine_windows": 2102,
+    "positive_windows": 419,
+    "excluded_chronic_dialysis": 1
+  },
+  "mimic": {
+    "stays_considered": 140,
+    "stays_stopped_after_aki_or_rrt": 46,
+    "censored_windows": 543,
+    "excluded_missing_recent_creatinine_windows": 26,
+    "negative_windows": 172,
+    "included_stays": 66,
+    "excluded_no_comparison_windows": 39,
+    "positive_windows": 62,
+    "excluded_chronic_dialysis": 3
+  },
+  "definition": {
+    "population": "Adult ICU stays, first observed creatinine-defined AKI episode; known chronic dialysis and prior RRT excluded",
+    "prediction_times": "ICU hour 12 onward, every 6h, through hour 168",
+    "horizon_hours": 24,
+    "onset": "first availability time of a result meeting creatinine KDIGO-2012 research criteria",
+    "baseline": "minimum earlier observed creatinine within 7 days, including available pre-ICU measurements",
+    "negative_label": "full 24h ICU follow-up and a creatinine result available in hours 18-24 of horizon",
+    "limitations": [
+      "Unknown pre-admission AKI/CKD can be misclassified",
+      "Intermittent testing can miss true physiologic onset",
+      "Urine intervals not inferred from irregular source charting",
+      "No prospective or clinical validation",
+      "Source demo sampling is not representative of all hospitals"
+    ]
+  }
+}
