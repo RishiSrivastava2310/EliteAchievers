@@ -1,0 +1,1573 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "AKI Early Warning API",
+    "description": "Research demo: 24-hour new-AKI prediction, current criteria checks, and source replay.",
+    "version": "0.3.0"
+  },
+  "paths": {
+    "/health": {
+      "get": {
+        "summary": "Health",
+        "operationId": "health_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ready": {
+      "get": {
+        "summary": "Ready",
+        "operationId": "ready_ready_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/model": {
+      "get": {
+        "summary": "Get Model",
+        "operationId": "get_model_v1_model_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ]
+      }
+    },
+    "/v1/alert-profiles": {
+      "get": {
+        "summary": "Get Alert Profiles",
+        "operationId": "get_alert_profiles_v1_alert_profiles_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ]
+      }
+    },
+    "/v1/input-schema": {
+      "get": {
+        "summary": "Input Schema",
+        "operationId": "input_schema_v1_input_schema_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ]
+      }
+    },
+    "/v1/predict": {
+      "post": {
+        "summary": "Predict Json",
+        "operationId": "predict_json_v1_predict_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PredictionRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PredictionResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ]
+      }
+    },
+    "/v1/predict/csv": {
+      "post": {
+        "summary": "Predict Csv",
+        "operationId": "predict_csv_v1_predict_csv_post",
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "at_hour",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "number",
+                  "maximum": 8760,
+                  "minimum": 0
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "At Hour"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PredictionResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/stays": {
+      "get": {
+        "summary": "Stays",
+        "operationId": "stays_v1_stays_get",
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "source",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "^(mimic|eicu)$"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Source"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 200,
+              "minimum": 1,
+              "default": 50,
+              "title": "Limit"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "default": 0,
+              "title": "Offset"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 80
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Search"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/stays/{stay_id}/timeline": {
+      "get": {
+        "summary": "Timeline",
+        "operationId": "timeline_v1_stays__stay_id__timeline_get",
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "stay_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Stay Id"
+            }
+          },
+          {
+            "name": "at_hour",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "maximum": 8760,
+              "minimum": 0,
+              "title": "At Hour"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/stays/{stay_id}/outcome": {
+      "get": {
+        "summary": "Outcome",
+        "operationId": "outcome_v1_stays__stay_id__outcome_get",
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "stay_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Stay Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/stays/{stay_id}/predict": {
+      "post": {
+        "summary": "Predict Stay",
+        "operationId": "predict_stay_v1_stays__stay_id__predict_post",
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "stay_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Stay Id"
+            }
+          },
+          {
+            "name": "at_hour",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "maximum": 8760,
+              "minimum": 0,
+              "title": "At Hour"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StoredPredictionResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/stays/{stay_id}/risk-history": {
+      "get": {
+        "summary": "Risk History",
+        "operationId": "risk_history_v1_stays__stay_id__risk_history_get",
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "stay_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Stay Id"
+            }
+          },
+          {
+            "name": "through_hour",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "maximum": 168,
+              "minimum": 12,
+              "default": 48,
+              "title": "Through Hour"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/metrics": {
+      "get": {
+        "summary": "Metrics",
+        "operationId": "metrics_v1_metrics_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ]
+      }
+    },
+    "/v1/data-quality": {
+      "get": {
+        "summary": "Data Quality",
+        "operationId": "data_quality_v1_data_quality_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ]
+      }
+    },
+    "/v1/examples": {
+      "get": {
+        "summary": "Examples",
+        "operationId": "examples_v1_examples_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ]
+      }
+    },
+    "/v1/predict/history": {
+      "post": {
+        "summary": "Predict History",
+        "operationId": "predict_history_v1_predict_history_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PredictionRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ]
+      }
+    },
+    "/v1/predict/batch": {
+      "post": {
+        "summary": "Predict Batch",
+        "operationId": "predict_batch_v1_predict_batch_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BatchPredictionRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/PredictionResponse"
+                  },
+                  "type": "array",
+                  "title": "Response Predict Batch V1 Predict Batch Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ]
+      }
+    },
+    "/v1/stays/predict/batch": {
+      "post": {
+        "summary": "Predict Stored Batch",
+        "operationId": "predict_stored_batch_v1_stays_predict_batch_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StoredBatchRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "BatchPredictionRequest": {
+        "properties": {
+          "requests": {
+            "items": {
+              "$ref": "#/components/schemas/PredictionRequest"
+            },
+            "type": "array",
+            "maxItems": 25,
+            "minItems": 1,
+            "title": "Requests"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "requests"
+        ],
+        "title": "BatchPredictionRequest"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "ModelContribution": {
+        "properties": {
+          "measurement": {
+            "type": "string",
+            "title": "Measurement"
+          },
+          "contribution_percentage_points": {
+            "type": "number",
+            "title": "Contribution Percentage Points"
+          },
+          "direction": {
+            "type": "string",
+            "enum": [
+              "increases_model_risk",
+              "decreases_model_risk"
+            ],
+            "title": "Direction"
+          }
+        },
+        "type": "object",
+        "required": [
+          "measurement",
+          "contribution_percentage_points",
+          "direction"
+        ],
+        "title": "ModelContribution"
+      },
+      "Patient": {
+        "properties": {
+          "age": {
+            "type": "number",
+            "maximum": 110.0,
+            "minimum": 18.0,
+            "title": "Age"
+          },
+          "sex": {
+            "type": "string",
+            "enum": [
+              "male",
+              "female",
+              "unknown"
+            ],
+            "title": "Sex",
+            "default": "unknown"
+          },
+          "weight_kg": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 350.0,
+                "minimum": 20.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Weight Kg"
+          },
+          "admission_type": {
+            "type": "string",
+            "enum": [
+              "emergency",
+              "elective",
+              "urgent",
+              "other",
+              "unknown"
+            ],
+            "title": "Admission Type",
+            "default": "unknown"
+          },
+          "baseline_creatinine": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 30.0,
+                "minimum": 0.1
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Baseline Creatinine"
+          },
+          "baseline_hour": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 8760.0,
+                "minimum": -168.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Baseline Hour"
+          },
+          "chronic_kidney_disease": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Chronic Kidney Disease"
+          },
+          "diabetes": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Diabetes"
+          },
+          "hypertension": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Hypertension"
+          },
+          "heart_failure": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Heart Failure"
+          },
+          "chronic_dialysis": {
+            "type": "boolean",
+            "title": "Chronic Dialysis",
+            "default": false
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "age"
+        ],
+        "title": "Patient"
+      },
+      "PredictionRequest": {
+        "properties": {
+          "patient": {
+            "$ref": "#/components/schemas/Patient"
+          },
+          "at_hour": {
+            "type": "number",
+            "maximum": 8760.0,
+            "minimum": 0.0,
+            "title": "At Hour"
+          },
+          "readings": {
+            "items": {
+              "$ref": "#/components/schemas/Reading"
+            },
+            "type": "array",
+            "maxItems": 10000,
+            "minItems": 1,
+            "title": "Readings"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "patient",
+          "at_hour",
+          "readings"
+        ],
+        "title": "PredictionRequest"
+      },
+      "PredictionResponse": {
+        "properties": {
+          "at_hour": {
+            "type": "number",
+            "title": "At Hour"
+          },
+          "target": {
+            "type": "string",
+            "title": "Target"
+          },
+          "horizon_hours": {
+            "type": "integer",
+            "title": "Horizon Hours"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "predicted",
+              "aki_already_observed",
+              "outside_new_aki_cohort",
+              "insufficient_data"
+            ],
+            "title": "Status"
+          },
+          "predicted_risk": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 1.0,
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Predicted Risk"
+          },
+          "predicted_risk_percent": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 100.0,
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Predicted Risk Percent"
+          },
+          "risk_category": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "low",
+                  "moderate",
+                  "high"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Risk Category"
+          },
+          "alert": {
+            "type": "boolean",
+            "title": "Alert"
+          },
+          "alert_options": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Alert Options"
+          },
+          "alert_threshold": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Alert Threshold"
+          },
+          "clinical_assessment": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Clinical Assessment"
+          },
+          "data_quality": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Data Quality"
+          },
+          "model_contributions": {
+            "items": {
+              "$ref": "#/components/schemas/ModelContribution"
+            },
+            "type": "array",
+            "title": "Model Contributions"
+          },
+          "input_sensitivity": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Input Sensitivity"
+          },
+          "model": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Model"
+          },
+          "notice": {
+            "type": "string",
+            "title": "Notice"
+          },
+          "lead_time_note": {
+            "type": "string",
+            "title": "Lead Time Note"
+          }
+        },
+        "type": "object",
+        "required": [
+          "at_hour",
+          "target",
+          "horizon_hours",
+          "status",
+          "predicted_risk",
+          "predicted_risk_percent",
+          "risk_category",
+          "alert",
+          "alert_threshold",
+          "clinical_assessment",
+          "data_quality",
+          "model_contributions",
+          "model",
+          "notice",
+          "lead_time_note"
+        ],
+        "title": "PredictionResponse"
+      },
+      "Reading": {
+        "properties": {
+          "hour": {
+            "type": "number",
+            "maximum": 8760.0,
+            "minimum": -168.0,
+            "title": "Hour",
+            "description": "Measurement time, hours relative to ICU admission"
+          },
+          "available_hour": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 9000.0,
+                "minimum": -168.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Available Hour"
+          },
+          "creatinine": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Creatinine"
+          },
+          "bun": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Bun"
+          },
+          "potassium": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Potassium"
+          },
+          "bicarbonate": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Bicarbonate"
+          },
+          "lactate": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Lactate"
+          },
+          "sodium": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sodium"
+          },
+          "glucose": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Glucose"
+          },
+          "hemoglobin": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Hemoglobin"
+          },
+          "wbc": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Wbc"
+          },
+          "map": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Map"
+          },
+          "heart_rate": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Heart Rate"
+          },
+          "spo2": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Spo2"
+          },
+          "respiratory_rate": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Respiratory Rate"
+          },
+          "temperature": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Temperature"
+          },
+          "weight_kg": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Weight Kg"
+          },
+          "urine_output_ml": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Urine Output Ml"
+          },
+          "urine_interval_hours": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 24.0,
+                "exclusiveMinimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Urine Interval Hours"
+          },
+          "fluid_input_ml": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Fluid Input Ml"
+          },
+          "ventilation": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ventilation"
+          },
+          "vasopressor": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Vasopressor"
+          },
+          "diuretic": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Diuretic"
+          },
+          "nephrotoxic_drug": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Nephrotoxic Drug"
+          },
+          "rrt": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rrt"
+          },
+          "dialysis_history": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Dialysis History"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "hour"
+        ],
+        "title": "Reading"
+      },
+      "StoredBatchRequest": {
+        "properties": {
+          "stay_ids": {
+            "items": {
+              "type": "string",
+              "maxLength": 80,
+              "minLength": 1
+            },
+            "type": "array",
+            "maxItems": 25,
+            "minItems": 1,
+            "title": "Stay Ids"
+          },
+          "at_hour": {
+            "type": "number",
+            "maximum": 8760.0,
+            "minimum": 0.0,
+            "title": "At Hour"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "stay_ids",
+          "at_hour"
+        ],
+        "title": "StoredBatchRequest"
+      },
+      "StoredPredictionResponse": {
+        "properties": {
+          "at_hour": {
+            "type": "number",
+            "title": "At Hour"
+          },
+          "target": {
+            "type": "string",
+            "title": "Target"
+          },
+          "horizon_hours": {
+            "type": "integer",
+            "title": "Horizon Hours"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "predicted",
+              "aki_already_observed",
+              "outside_new_aki_cohort",
+              "insufficient_data"
+            ],
+            "title": "Status"
+          },
+          "predicted_risk": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 1.0,
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Predicted Risk"
+          },
+          "predicted_risk_percent": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 100.0,
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Predicted Risk Percent"
+          },
+          "risk_category": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "low",
+                  "moderate",
+                  "high"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Risk Category"
+          },
+          "alert": {
+            "type": "boolean",
+            "title": "Alert"
+          },
+          "alert_options": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Alert Options"
+          },
+          "alert_threshold": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Alert Threshold"
+          },
+          "clinical_assessment": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Clinical Assessment"
+          },
+          "data_quality": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Data Quality"
+          },
+          "model_contributions": {
+            "items": {
+              "$ref": "#/components/schemas/ModelContribution"
+            },
+            "type": "array",
+            "title": "Model Contributions"
+          },
+          "input_sensitivity": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Input Sensitivity"
+          },
+          "model": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Model"
+          },
+          "notice": {
+            "type": "string",
+            "title": "Notice"
+          },
+          "lead_time_note": {
+            "type": "string",
+            "title": "Lead Time Note"
+          },
+          "stay_id": {
+            "type": "string",
+            "title": "Stay Id"
+          },
+          "source": {
+            "type": "string",
+            "enum": [
+              "mimic",
+              "eicu"
+            ],
+            "title": "Source"
+          }
+        },
+        "type": "object",
+        "required": [
+          "at_hour",
+          "target",
+          "horizon_hours",
+          "status",
+          "predicted_risk",
+          "predicted_risk_percent",
+          "risk_category",
+          "alert",
+          "alert_threshold",
+          "clinical_assessment",
+          "data_quality",
+          "model_contributions",
+          "model",
+          "notice",
+          "lead_time_note",
+          "stay_id",
+          "source"
+        ],
+        "title": "StoredPredictionResponse"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    },
+    "securitySchemes": {
+      "APIKeyHeader": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-API-Key"
+      }
+    }
+  }
+}

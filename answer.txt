@@ -1,0 +1,194 @@
+AKI EARLY WARNING - FRONTEND HANDOFF ANSWERS
+These are recommended product decisions based on the project discussion.
+Implement the frontend separately; this workspace's active scope is the model,
+data pipeline, FastAPI backend and Windows console demo.
+
+A. PURPOSE AND USERS
+
+Q1. Who should use it?
+Primary first-version audience: hackathon judges, with a realistic ICU workflow
+for doctors and ICU nurses. Include a separate Model Analytics area for researchers.
+Present this version as a research demonstration, not an approved clinical system.
+
+Q2. Intended product and access?
+A hybrid: a multi-patient ICU monitoring overview plus an individual-patient
+research/replay view. Doctors and nurses inspect patients, trends and alerts.
+Researchers inspect evaluation results and replay cases. Administrators manage
+demo access and data configuration. Role-based authorization is future scope;
+do not imply that selectable demo roles provide security.
+
+B. LOGIN, WELCOME AND AUTHENTICATION
+
+Q3. Authentication?
+For the first local hackathon version, use a clearly labelled "Enter demo" flow
+or predefined demo personas. Do not collect real names, emails or passwords.
+A frontend demo login is navigation only. The initial prediction backend does
+not implement account registration or production authentication.
+Before any public deployment or real hospital use, add actual backend
+authentication, authorization and appropriate data protection.
+
+Q4. After entry?
+Go directly to the dashboard with a short introduction and optional "How it works"
+panel. Explain the 24-hour prediction goal, patient trends, cross-hospital design
+and the difference between an early risk warning and AKI already detected.
+Avoid a mandatory extra welcome page.
+
+C. MAIN DASHBOARD
+
+Q5. Dashboard content?
+A compact overview with monitored patients, elevated model-risk patients,
+existing AKI flags, recent predictions and input completeness.
+Include patient search and a small risk distribution chart.
+Show a selected replay time and last measurement time so historical records
+are never presented as live hospital monitoring.
+Counts must come from available backend results. Show unavailable values as
+unavailable, rather than inventing counts.
+
+Q6. Patient directory?
+Search by deidentified stay/patient ID; filter by source, available risk category
+and existing AKI status. Sources: MIMIC demo and eICU demo.
+Selecting a stay opens the available extracted record and trends, not a claim
+to expose the complete hospital record.
+Support existing demo stays, CSV history upload and manual timestamped readings.
+CSV and manual predictions need not create permanent patient records initially.
+Use stay ID as the main API key because a patient may have several ICU stays.
+
+D. AKI PREDICTION AND PATIENT INFORMATION
+
+Q7. Prediction screen?
+Both: predicted new creatinine-defined AKI in the next 24 hours, and recognition
+of existing AKI from available KDIGO creatinine/urine criteria.
+If AKI is already observed or dialysis makes the patient ineligible, show that
+status instead of presenting a new-AKI risk as if the patient were eligible.
+A next-24-hours forecast does not establish a full 24 hours of advance warning.
+
+Q8. Individual patient page?
+Show age, recorded sex, admission context, source and selected ICU hour;
+current risk estimate when available; creatinine trend; BUN, urine output,
+blood pressure and other available labs/vitals; measurement timestamps;
+contributing model factors; and missing/stale-data notices.
+Keep the summary visible and use expandable sections for additional data.
+Mark unavailable history and treatments explicitly.
+Call explanations "model contributions", not proven causes.
+The initial core model uses harmonized lab/vital trends, documented urine volumes and demographics.
+Accepted contextual inputs are not necessarily active model features;
+render the model's supported-feature metadata accurately.
+
+Q9. Replay?
+Use a timeline slider and optional play/pause. Update predictions using only
+measurements available at the selected hour.
+Provide an explicitly labelled retrospective outcome overlay for later
+creatinine changes and first observed AKI onset.
+Keep future outcome information visually separate from prediction-time inputs.
+Mark alerts and display the actual lead time only when it can be calculated.
+
+E. GRAPHS AND VISUALIZATIONS
+
+Q10. Graphs?
+Main patient view: creatinine, predicted risk, urine output where interpretable,
+BUN and selectable vital-sign/lab trends, with missing periods visible.
+Use actual measurement points; do not imply continuous laboratory monitoring.
+Separate Model Analytics area: ROC, precision-recall, calibration, source/hospital
+comparisons, cohort sizes, missingness, false-alert burden and lead-time results.
+Only display graphs backed by real available results.
+Use the explanation method actually provided by the model; do not label it
+SHAP unless SHAP has been implemented.
+
+F. ML MODEL AND DATABASES
+
+Q11. Functionality before model readiness?
+Build genuine backend-connected functionality. Mark unavailable model results
+as unavailable. Synthetic input examples may be used when prominently labelled.
+Never present synthetic predictions or fabricated accuracy as clinical validation.
+The backend should return model/data provenance alongside predictions.
+
+Q12. Dataset status?
+No full-data PhysioNet approval was confirmed by the user.
+The official unrestricted MIMIC-IV demo v2.2 (100 patients) and eICU-CRD demo
+v2.0.1 (over 2,500 ICU stays) are accessible without credentials.
+Selected relevant CSV.gz tables have been downloaded and verified.
+The local database is SQLite with normalized stays and observations.
+Full restricted datasets remain a later step requiring approved access.
+Do not claim extraction, training or validation has finished until the backend
+reports that it has.
+Sources:
+https://physionet.org/content/mimic-iv-demo/2.2/
+https://physionet.org/content/eicu-crd-demo/2.0.1/
+
+G. VISUAL DESIGN AND DEVELOPMENT
+
+Q13. Style?
+Recommended: clinical white/light-gray surfaces, teal/light-blue accents,
+clear typography and consistent warning colors. Light mode first.
+Distinguish elevated future risk from existing AKI with text/icons as well as color.
+Dark mode is optional after functionality is complete.
+
+Q14. Polish and responsiveness?
+Functional first, with clean, polished charts and restrained transitions.
+Desktop-first, responsive for tablets. Phones may support the summary view;
+a dense ICU chart interface need not be optimized for phones in the first version.
+This design work belongs to the separate frontend developer.
+
+Q15. Deadline and team?
+The user gave flexibility and prioritized a working model/backend or credible demo.
+No exact deadline or team size has been supplied.
+Another developer handles the frontend; Codex is implementing the backend,
+data extraction, model pipeline, API documentation and .bat console launcher.
+Do not invent team-member counts.
+
+Q16. Running and deployment?
+Local Windows laptop first, with a .bat launcher for console results and a
+separate command/launcher for FastAPI. The frontend calls documented JSON APIs.
+CSV and manual-input modes should both work.
+Online judge access is optional future deployment, after suitable authentication
+and configuration. The local API should bind to 127.0.0.1 by default.
+
+PROJECT POSITIONING
+
+"We're building an AI-powered ICU early-warning system designed to predict
+acute kidney injury up to 24 hours ahead, giving doctors more time to intervene,
+with a design intended for use across hospitals."
+
+The hackathon demonstration should emphasize clear patient trends, timely
+warnings, understandable model contributions and honest external evaluation.
+Demo-sample results are exploratory; they do not establish clinical readiness.
+
+
+BACKEND HANDOFF UPDATE
+The backend and trained demo models are now available. Start with demo.bat or
+run.bat for terminal results, and start_api.bat for FastAPI. See docs/API.md,
+docs/openapi.json and reports/RESULTS.md for the contract and exact evaluation.
+
+
+LOGIC AUDIT UPDATE
+Version 0.2 uses sample-time outcomes, availability-safe inputs, valid baseline
+comparisons and dialysis censoring. Run verify.bat for checks. See
+reports/LOGIC_AUDIT.md and reports/RESULTS.md. Demo includes a successful
+warning, a missed early window and a false alert; these are retrospective cases.
+
+
+COMPLETION UPDATE (0.3)
+Readiness, patient search, bounded batch predictions, caller-history replay,
+input-sensitivity diagnostics and an optional shared API key are available.
+The shared key is not registration or role-based authorization. See
+docs/FRONTEND_HANDOFF.md and docs/REQUIREMENTS.md for the current handoff.
+Ventilation/drug/admission fields are accepted as context, not active features.
+
+
+CLINICAL CASE REVIEW
+Logical case expectations and independent reference checks are documented in
+docs/CLINICAL_TEST_CASES.md. Confirmed timed zero urine does not require weight;
+positive-volume normalized rates do. Lab corrections preserve first as-of
+recognition while reporting the latest corrected result availability separately.
+Current test counts and results are in reports/LOGIC_AUDIT.md.
+
+
+ACCURACY AND ALERT REVIEW
+Five new challenger configurations were tested using only source development
+patients, including hospital-isolated folds. None passed the recorded improvement
+gate; the current model was retained. Medication, ventilation and admission type
+remain context because their source meanings/timing are not adequately aligned.
+An optional fewer-alert policy is now returned beside standard warnings.
+GET /v1/alert-profiles shows thresholds, false alerts and missed-window tradeoffs.
+This changes warning policy, not the predicted risk. Keep standard as default.
+See reports/IMPROVEMENTS.md for exact results.
