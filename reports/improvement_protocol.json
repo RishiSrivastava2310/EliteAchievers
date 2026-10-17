@@ -1,0 +1,76 @@
+{
+  "recorded_at": "2026-10-17T20:06:03.485910+00:00",
+  "model_sha256": "04c3e99c8b7c9782791098fd0300c564fe90466644b6068442212b4c0c6d5042",
+  "source": "eicu",
+  "features_sha256": "37cedb24525f185e88cffc713beadb87feccb874b04efb22b3c6ed7cc255170c",
+  "candidates": [
+    {
+      "name": "incumbent",
+      "estimator": {
+        "name": "boosted_leaf3_full",
+        "kind": "hist_gradient_boosting",
+        "max_leaf_nodes": 3,
+        "feature_set": "full"
+      }
+    },
+    {
+      "name": "patient_balanced",
+      "estimator": {
+        "name": "boosted_leaf3_full",
+        "kind": "hist_gradient_boosting",
+        "max_leaf_nodes": 3,
+        "feature_set": "full"
+      },
+      "patient_balanced": true
+    },
+    {
+      "name": "regularized",
+      "estimator": {
+        "name": "boosted_leaf3_full",
+        "kind": "hist_gradient_boosting",
+        "max_leaf_nodes": 3,
+        "feature_set": "full",
+        "min_samples_leaf": 40,
+        "l2_regularization": 10
+      }
+    },
+    {
+      "name": "patient_balanced_regularized",
+      "estimator": {
+        "name": "boosted_leaf3_full",
+        "kind": "hist_gradient_boosting",
+        "max_leaf_nodes": 3,
+        "feature_set": "full",
+        "min_samples_leaf": 40,
+        "l2_regularization": 10
+      },
+      "patient_balanced": true
+    },
+    {
+      "name": "blend_75_tree",
+      "estimator": {
+        "name": "boosted_leaf3_full",
+        "kind": "hist_gradient_boosting",
+        "max_leaf_nodes": 3,
+        "feature_set": "full"
+      },
+      "tree_fraction": 0.75
+    },
+    {
+      "name": "blend_50_tree",
+      "estimator": {
+        "name": "boosted_leaf3_full",
+        "kind": "hist_gradient_boosting",
+        "max_leaf_nodes": 3,
+        "feature_set": "full"
+      },
+      "tree_fraction": 0.5
+    }
+  ],
+  "partition_policy": "Only incumbent source development patients; no calibration, test, or opposite-source outcomes are used.",
+  "validation": "3 patient-isolated folds and 3 hospital-isolated folds; purge all held-hospital patient IDs from each fitting fold.",
+  "selection_score": "AUPRC - 0.5*creatinine-stress-p95 - 0.25*missing-group-stress-p95, averaged equally across the two fold families.",
+  "qualification_gate": "Mean score gain >=.01, no family AUPRC drop >.01, no Brier increase >.005, no creatinine-stress increase >.02, improve >=4/6 fold scores.",
+  "deployment": "Do not replace production automatically; record an eligible challenger for concrete review.",
+  "limit": "Bounded exploratory comparison on previously used development data; not fresh external validation. No context-only predictor is silently activated."
+}

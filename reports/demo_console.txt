@@ -1,0 +1,138 @@
+
+ILLUSTRATIVE INPUT SCENARIO: stable (synthetic inputs, real trained demo model)
+
+====================================================================
+AKI EARLY WARNING | research demonstration
+====================================================================
+Prediction time: ICU hour 12.0
+Result: PREDICTED
+Estimated next-24h AKI risk: 8.93%
+Risk category: MODERATE
+Early risk alert: NO
+Demo alert threshold: 16.94%
+Creatinine-based AKI already observed: False
+Latest creatinine: 0.81 mg/dL
+Latest creatinine stage: 0
+Urine-output stage: unknown / incomplete intervals
+Measurements available: 10/11 model groups
+Main model contributions (not proven causes):
+ - respiratory_rate: -3.45 percentage points
+ - icu_hours: +3.00 percentage points
+ - map: -1.95 percentage points
+Input sensitivity: threshold consistent under tested changes
+  Creatinine stress estimate: 8.93%-15.24% (not a confidence interval)
+Data note: Missing inputs in past 24h: urine_output_ml
+Model: boosted_leaf3_full | trained on eicu open demo
+Research demo risk estimate; not a validated clinical probability or treatment recommendation.
+A next-24h forecast does not establish 24h of advance warning.
+
+ILLUSTRATIVE INPUT SCENARIO: concerning_trend (synthetic inputs, real trained demo model)
+
+====================================================================
+AKI EARLY WARNING | research demonstration
+====================================================================
+Prediction time: ICU hour 12.0
+Result: PREDICTED
+Estimated next-24h AKI risk: 45.84%
+Risk category: HIGH
+Early risk alert: YES
+Demo alert threshold: 16.94%
+Creatinine-based AKI already observed: False
+Latest creatinine: 1.0 mg/dL
+Latest creatinine stage: 0
+Urine-output stage: unknown / incomplete intervals
+Measurements available: 10/11 model groups
+Main model contributions (not proven causes):
+ - creatinine: +31.88 percentage points
+ - respiratory_rate: -10.21 percentage points
+ - map: +6.92 percentage points
+Input sensitivity: sensitive
+  Creatinine stress estimate: 43.41%-52.05% (not a confidence interval)
+Data note: Missing inputs in past 24h: urine_output_ml
+Data note: Prediction is sensitive to small input changes or missing measurements; review the sensitivity diagnostic.
+Model: boosted_leaf3_full | trained on eicu open demo
+Research demo risk estimate; not a validated clinical probability or treatment recommendation.
+A next-24h forecast does not establish 24h of advance warning.
+
+ILLUSTRATIVE INPUT SCENARIO: existing_aki (synthetic inputs, real trained demo model)
+
+====================================================================
+AKI EARLY WARNING | research demonstration
+====================================================================
+Prediction time: ICU hour 12.0
+Result: AKI ALREADY OBSERVED
+Creatinine-based AKI already observed: True
+Latest creatinine: 1.3 mg/dL
+Latest creatinine stage: 1
+Urine-output stage: unknown / incomplete intervals
+ - Creatinine-based AKI has already been observed in this history
+Measurements available: 10/11 model groups
+Data note: Missing inputs in past 24h: urine_output_ml
+Model: boosted_leaf3_full | trained on eicu open demo
+Research demo risk estimate; not a validated clinical probability or treatment recommendation.
+A next-24h forecast does not establish 24h of advance warning.
+
+REAL OPEN-DEMO PATIENT | preserved historical audit case
+
+====================================================================
+AKI EARLY WARNING | research demonstration
+====================================================================
+Prediction time: ICU hour 150.0
+Result: PREDICTED
+Estimated next-24h AKI risk: 46.89%
+Risk category: HIGH
+Early risk alert: YES
+Demo alert threshold: 16.94%
+Creatinine-based AKI already observed: False
+Latest creatinine: 1.4 mg/dL
+Latest creatinine stage: 0
+Urine-output stage: unknown / incomplete intervals
+Measurements available: 9/11 model groups
+Main model contributions (not proven causes):
+ - creatinine: +36.77 percentage points
+ - map: +6.96 percentage points
+ - bun: +6.54 percentage points
+Input sensitivity: sensitive
+  Creatinine stress estimate: 25.09%-46.89% (not a confidence interval)
+Data note: Missing inputs in past 24h: lactate, temperature
+Data note: Current urine-output criteria are unknown: complete collection intervals and an available weight are required.
+Data note: Prediction is sensitive to small input changes or missing measurements; review the sensitivity diagnostic.
+Model: boosted_leaf3_full | trained on eicu open demo
+Research demo risk estimate; not a validated clinical probability or treatment recommendation.
+A next-24h forecast does not establish 24h of advance warning.
+Retrospective comparison only: qualifying AKI sample was collected 18.35 hours after this prediction.
+Case selected to illustrate a successful alert; see overall results and examples/missed_case.json for limitations.
+
+REAL CASE LIMITATIONS | selected retrospective audit windows
+MISSED EARLY WARNING WINDOW | risk 4.73% | alert NO
+  Qualifying AKI sample 19.48 hours later. A later alert can still occur.
+FALSE ALERT WITHIN THIS 24H HORIZON | risk 20.07% | alert YES
+  No observed qualifying AKI in the next 24h, with follow-up testing.
+JSON saved: C:\Users\Shaurya\Downloads\AKI\reports\latest_demo.json
+
+REAL-DATA DEMO EVALUATION (patient-separated; exploratory)
+
+Training source: eicu
+  Test internal: 93 patients, 270 windows
+    AUROC=0.802  AUPRC=0.572  prevalence=0.211
+    sensitivity=0.772  precision=0.352  Brier=0.129
+    median measured-sample lead hours=13.150
+  Test mimic: 50 patients, 215 windows
+    AUROC=0.755  AUPRC=0.502  prevalence=0.251
+    sensitivity=0.815  precision=0.364  Brier=0.166
+    median measured-sample lead hours=10.991
+
+Training source: mimic
+  Test internal: 8 patients, 31 windows
+    AUROC=0.554  AUPRC=0.294  prevalence=0.258
+    sensitivity=1.000  precision=0.267  Brier=0.235
+    median measured-sample lead hours=17.443
+  Test eicu: 646 patients, 1981 windows
+    AUROC=0.620  AUPRC=0.301  prevalence=0.207
+    sensitivity=0.990  precision=0.213  Brier=0.174
+    median measured-sample lead hours=18.333
+
+Full results: C:\Users\Shaurya\Downloads\AKI\reports\evaluation.json
+Small open demo samples do not establish clinical readiness or universal hospital performance.
+
+Press any key to continue . . . 

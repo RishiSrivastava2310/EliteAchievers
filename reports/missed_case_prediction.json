@@ -1,0 +1,199 @@
+{
+  "at_hour": 78.0,
+  "target": "new creatinine-defined AKI within the next 24 hours",
+  "horizon_hours": 24,
+  "status": "predicted",
+  "predicted_risk": 0.047261,
+  "predicted_risk_percent": 4.73,
+  "risk_category": "low",
+  "alert": false,
+  "alert_options": {
+    "standard": {
+      "threshold": 0.169446,
+      "alert": false
+    },
+    "fewer_alerts": {
+      "threshold": 0.22014197371504052,
+      "alert": false,
+      "tradeoff": "Fewer alerts can mean more missed AKI. The 70% sensitivity floor is a demo policy on source calibration, not a guarantee externally."
+    }
+  },
+  "alert_threshold": 0.169446,
+  "clinical_assessment": {
+    "creatinine_aki_observed": false,
+    "first_documented_creatinine_aki_hour": null,
+    "latest_creatinine_stage": 0,
+    "latest_creatinine": 0.54,
+    "observed_reference_creatinine": 0.53,
+    "reference_method": "preceding observed 7-day minimum; pre-admission baseline may be missing",
+    "urine_stage": null,
+    "urine_aki_observed": false,
+    "first_observed_urine_aki_measurement_hour": null,
+    "urine_6h": {
+      "rate_ml_kg_h": null,
+      "volume_ml": null,
+      "coverage_hours": 0.0,
+      "complete": false
+    },
+    "urine_12h": {
+      "rate_ml_kg_h": null,
+      "volume_ml": null,
+      "coverage_hours": 0.0,
+      "complete": false
+    },
+    "urine_24h": {
+      "rate_ml_kg_h": null,
+      "volume_ml": null,
+      "coverage_hours": 0.0,
+      "complete": false
+    },
+    "rrt_observed": false,
+    "dialysis_history_observed": false,
+    "eligible_for_new_aki_forecast": true,
+    "ineligibility_reasons": [],
+    "creatinine_comparison_available": true
+  },
+  "data_quality": {
+    "available_model_inputs": 9,
+    "coverage_window_hours": 24,
+    "total_model_inputs": 11,
+    "missing_inputs": [
+      "respiratory_rate",
+      "temperature"
+    ],
+    "stale_inputs": [
+      "respiratory_rate"
+    ],
+    "latest_measurements": {
+      "creatinine": {
+        "value": 0.54,
+        "hour": 60.2,
+        "age_hours": 17.8,
+        "unit": "mg/dL"
+      },
+      "bun": {
+        "value": 17.0,
+        "hour": 60.2,
+        "age_hours": 17.8,
+        "unit": "mg/dL"
+      },
+      "potassium": {
+        "value": 3.8,
+        "hour": 72.666667,
+        "age_hours": 5.333,
+        "unit": "mmol/L"
+      },
+      "bicarbonate": {
+        "value": 31.4,
+        "hour": 72.666667,
+        "age_hours": 5.333,
+        "unit": "mmol/L"
+      },
+      "lactate": {
+        "value": 1.37,
+        "hour": 72.666667,
+        "age_hours": 5.333,
+        "unit": "mmol/L"
+      },
+      "map": {
+        "value": 89.0,
+        "hour": 78.0,
+        "age_hours": 0.0,
+        "unit": "mmHg"
+      },
+      "heart_rate": {
+        "value": 104.0,
+        "hour": 78.0,
+        "age_hours": 0.0,
+        "unit": "bpm"
+      },
+      "spo2": {
+        "value": 100.0,
+        "hour": 78.0,
+        "age_hours": 0.0,
+        "unit": "%"
+      },
+      "respiratory_rate": {
+        "value": 30.5,
+        "hour": 23.0,
+        "age_hours": 55.0,
+        "unit": "/min"
+      },
+      "urine_output_ml": {
+        "value": 2450.0,
+        "hour": 62.0,
+        "age_hours": 16.0,
+        "unit": "mL per specified interval"
+      }
+    },
+    "warnings": [
+      "Missing inputs in past 24h: respiratory_rate, temperature",
+      "Old measurements: respiratory_rate",
+      "Current urine-output criteria are unknown: complete collection intervals are required; positive-volume rates also require an available weight."
+    ]
+  },
+  "model_contributions": [
+    {
+      "measurement": "creatinine",
+      "contribution_percentage_points": 2.51,
+      "direction": "increases_model_risk"
+    },
+    {
+      "measurement": "spo2",
+      "contribution_percentage_points": -1.696,
+      "direction": "decreases_model_risk"
+    },
+    {
+      "measurement": "bun",
+      "contribution_percentage_points": -1.037,
+      "direction": "decreases_model_risk"
+    },
+    {
+      "measurement": "icu_hours",
+      "contribution_percentage_points": -0.31,
+      "direction": "decreases_model_risk"
+    },
+    {
+      "measurement": "map",
+      "contribution_percentage_points": 0.05,
+      "direction": "increases_model_risk"
+    }
+  ],
+  "input_sensitivity": {
+    "status": "threshold_consistent_under_tested_changes",
+    "threshold_sensitive": false,
+    "large_score_change": false,
+    "large_change_policy_percentage_points": 10,
+    "review_required": false,
+    "creatinine_stress_mg_dl": 0.04,
+    "clinical_boundary_sensitive": false,
+    "tested_variants": 10,
+    "unscorable_variants": 0,
+    "ranges": {
+      "creatinine": {
+        "minimum_risk_percent": 4.73,
+        "maximum_risk_percent": 5.16,
+        "crosses_alert_threshold": false,
+        "maximum_change_percentage_points": 0.43
+      },
+      "missing_group": {
+        "minimum_risk_percent": 3.89,
+        "maximum_risk_percent": 9.18,
+        "crosses_alert_threshold": false,
+        "maximum_change_percentage_points": 4.46
+      }
+    },
+    "meaning": "Input-sensitivity diagnostic only: latest creatinine +/-0.04 mg/dL or one measured group removed. Ranges are not confidence intervals or bounds on true clinical risk."
+  },
+  "model": {
+    "version": "0.3.0",
+    "training_source": "eicu",
+    "data_scope": "official unrestricted demo samples",
+    "algorithm": "boosted_leaf3_full",
+    "validation_status": "research_demo_not_clinically_validated",
+    "calibration": "Monotone sigmoid fitted on patient-disjoint source calibration subset",
+    "explanation_method": "Replace one feature group with development-set medians; report probability difference. Non-additive and non-causal; not SHAP."
+  },
+  "notice": "Research demo risk estimate; not a validated clinical probability or treatment recommendation.",
+  "lead_time_note": "A next-24h forecast does not establish 24h of advance warning."
+}

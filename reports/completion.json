@@ -1,0 +1,58 @@
+{
+  "checked_at": "2026-10-17T20:12:03.643360+00:00",
+  "model_version": "0.3.0",
+  "model_sha256": "04c3e99c8b7c9782791098fd0300c564fe90466644b6068442212b4c0c6d5042",
+  "tests": 215,
+  "failures_or_errors": 0,
+  "readiness": {
+    "ready": true,
+    "version": "0.3.0",
+    "checks": {
+      "model": {
+        "ok": true,
+        "version": "0.3.0",
+        "sha256": "04c3e99c8b7c9782791098fd0300c564fe90466644b6068442212b4c0c6d5042"
+      },
+      "database": {
+        "ok": true,
+        "sources": {
+          "eicu": 2500,
+          "mimic": 140
+        }
+      },
+      "evaluation": {
+        "ok": true,
+        "reason": "Model/report hashes match"
+      }
+    }
+  },
+  "same_feature_values_as_0_2": true,
+  "comparison_excluded_metadata": [
+    "onset_documented_hour"
+  ],
+  "adversarial_clinical_tests": 80,
+  "recognition_timing_audit": {
+    "revised_stays_checked": 29,
+    "updated_at": "2026-10-17T19:57:33.485182+00:00",
+    "changed_stays": {
+      "eicu-425870": {
+        "old_documented_hour": 54.2,
+        "new_documented_hour": 54.15,
+        "affected_windows": 4
+      }
+    },
+    "model_inputs_labels_and_sample_times_unchanged": true,
+    "model_weights_unchanged": true,
+    "model_sha256": "04c3e99c8b7c9782791098fd0300c564fe90466644b6068442212b4c0c6d5042",
+    "meaning": "First recognition preserves earliest as-of qualifying versions; current stage/value still reflect latest corrected results."
+  },
+  "live_http_current_artifact": {
+    "http_smoke.json": true,
+    "http_launcher_smoke.json": true
+  },
+  "engineering_sensitivity_example": {
+    "prior_change_pp": 14.74,
+    "current_change_pp": 6.31
+  },
+  "scope": "Working hackathon backend/model; context-only treatments and research/clinical limits remain explicit"
+}

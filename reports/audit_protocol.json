@@ -1,0 +1,12 @@
+{
+  "recorded_at": "2026-10-17T19:05:54.767670+00:00",
+  "purpose": "Logic audit and development-only retuning after correcting clinical timing and censoring.",
+  "endpoint": "First qualifying creatinine sample collected within (prediction, prediction+24h]; result availability limits features. Sample time is observed onset, not biological onset.",
+  "partitions": "Retain baseline calibration/test patient IDs. Newly eligible patients go only to development. Previously inspected holdouts are reused audit sets, not fresh validation.",
+  "search": "Grouped 3-fold development CV; select highest mean AUPRC, then lowest Brier. Prespecified logistic C=.01,.1,1; boosted leaves=3,7,15 and stronger-regularized leaves=7. Full and lean (last/age, 24h slope, creatinine delta/ratio, age/sex/ICU time) representations. Compact features also retain 24h documented urine volume.",
+  "calibration": "Source calibration patients only; positive-slope sigmoid or explicit raw fallback.",
+  "threshold": "Source calibration maximum precision at window sensitivity >=0.80; frozen for external use.",
+  "minimum_coverage": "Recent creatinine, earlier comparison measured within preceding 7 days of latest sample, and >=3 measurement groups in preceding 24h. Operational research eligibility, not a clinical guideline.",
+  "evaluation": "Window metrics, patient-block bootstrap intervals, event-level detection and measured-sample lead. Reverse-source tests; fixed logistic hospital holdouts.",
+  "prohibitions": "No target-hospital refitting, no external-score hyperparameter selection, no post-test threshold selection, no guarantee of 24h lead."
+}

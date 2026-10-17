@@ -1,0 +1,45 @@
+{
+  "eicu": {
+    "stays_considered": 2500,
+    "censored_incomplete_followup_windows": 10898,
+    "negative_windows": 1571,
+    "included_stays": 727,
+    "censored_aki_sample_already_collected_windows": 350,
+    "excluded_no_recent_comparable_creatinine_windows": 538,
+    "positive_windows": 410,
+    "censored_prior_rrt_or_dialysis_windows": 43,
+    "excluded_chronic_dialysis": 1,
+    "censored_rrt_before_observed_outcome_windows": 1
+  },
+  "mimic": {
+    "stays_considered": 140,
+    "censored_aki_sample_already_collected_windows": 45,
+    "censored_incomplete_followup_windows": 589,
+    "negative_windows": 161,
+    "included_stays": 61,
+    "positive_windows": 54,
+    "excluded_no_recent_comparable_creatinine_windows": 17,
+    "excluded_chronic_dialysis": 3,
+    "censored_rrt_before_observed_outcome_windows": 4,
+    "censored_prior_rrt_or_dialysis_windows": 1
+  },
+  "definition": {
+    "population": "Adult ICU stays; first observed creatinine-defined AKI; prior AKI/dialysis/RRT excluded",
+    "prediction_times": "ICU hours 12-168, every 6h",
+    "horizon_hours": 24,
+    "onset": "first qualifying creatinine SAMPLE measurement time, using final available corrections; not biological onset",
+    "features": "Only measurements and revisions available by prediction time",
+    "baseline": "minimum earlier measured creatinine within 7 days of the qualifying sample",
+    "minimum_inputs": "Recent creatinine, valid earlier 7-day comparison, >=3 measurement groups in preceding 24h",
+    "negative_label": "full 24h ICU follow-up and a creatinine sample collected in hours 18-24 of horizon",
+    "rrt": "Censor if RRT begins before a future observed AKI endpoint; exclude already collected AKI samples even if not yet reported",
+    "limitations": [
+      "Unknown pre-admission AKI/CKD can be misclassified",
+      "Intermittent testing can miss true physiologic onset",
+      "Urine intervals not inferred from irregular source charting; primary outcome is creatinine-defined",
+      "Discharge, death or missing late creatinine causes censoring; informative observation remains possible",
+      "No prospective or clinical validation; selected source demos are not representative"
+    ],
+    "documentation_time": "First recognition preserves earliest as-of qualifying versions; current stage/value still reflect latest corrected results."
+  }
+}

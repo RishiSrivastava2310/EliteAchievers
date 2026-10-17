@@ -1,0 +1,13 @@
+{
+  "recorded_at": "2026-10-17T19:24:12.359451+00:00",
+  "goal": "Complete backend handoff and reduce prediction discontinuities under small input changes.",
+  "partitions": "Reuse preserved source development/calibration/test patient IDs. All selection/stress preparation uses development patients only. Holdouts are previously inspected audit sets, not fresh validation.",
+  "candidates": "Prior 14 candidates plus 3 additive spline-logistic models (lean, C .01/.1/1), 2 group-dropout regularized boosted models (full/lean), and 1 group-dropout spline-logistic (lean,C .1). Total 20.",
+  "stress": "Up to 90 randomly selected distinct development patients/source, one window/patient. Rebuild features from raw available readings after changing latest creatinine +/-0.04 mg/dL or removing one optional measurement group. Skip variants that meet existing AKI or minimum-coverage exclusion. Magnitude is an illustrative engineering stress, not a laboratory error specification.",
+  "selection": "3-fold grouped development CV. Score = mean AUPRC - 0.5*mean fold p95 absolute creatinine-stress risk difference - 0.25*mean fold p95 single-group-missing risk difference; tie lower Brier. Report all terms.",
+  "dropout": "Training-fold-only augmentation: one extra copy, randomly mask one optional group in 50% of copied rows. No creatinine masking. Labels remain original observed outcomes; derived copies are not independent patients.",
+  "calibration_and_threshold": "Source calibration only, same positive-slope sigmoid and maximum precision at sensitivity >=.80 policy. No target adjustment.",
+  "inference": "Keep exact clinical rules. Expose score range and threshold crossing under the same stress scenarios as a sensitivity diagnostic, not confidence interval. Preserve alert at calibrated threshold; flag borderline alerts explicitly.",
+  "evaluation": "Report nominal and stress results, both source directions, patient bootstrap intervals, existing fixed hospital baseline. No claims of clinical validation.",
+  "handoff": "Readiness/artifact consistency, caller-history/bounded batch API, optional API-key integration, automatic example/report regeneration and doctor command. No frontend."
+}

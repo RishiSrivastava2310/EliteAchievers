@@ -1,0 +1,8 @@
+{
+  "recorded_at": "2026-10-17T20:11:14.536908+00:00",
+  "model_sha256": "04c3e99c8b7c9782791098fd0300c564fe90466644b6068442212b4c0c6d5042",
+  "threshold_selection": "Source calibration only; preserve standard and compare one prespecified stricter profile with >=0.70 source-calibration window sensitivity.",
+  "external_policy": "Freeze both thresholds before evaluating internal or opposite-source audit outcomes. Do not select profiles from those results.",
+  "default_policy_changed": false,
+  "note": "Previously inspected demo audit sets, not fresh validation."
+}

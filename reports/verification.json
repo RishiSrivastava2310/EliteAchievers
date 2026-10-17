@@ -1,0 +1,149 @@
+{
+  "status": "passed",
+  "checked_at": "2026-10-17T20:11:47.995007+00:00",
+  "model_sha256": "04c3e99c8b7c9782791098fd0300c564fe90466644b6068442212b4c0c6d5042",
+  "features_sha256": "37cedb24525f185e88cffc713beadb87feccb874b04efb22b3c6ed7cc255170c",
+  "sqlite_integrity": "passed",
+  "foreign_keys": "passed",
+  "raw_publisher_hashes_verified": 23,
+  "observation_count": 772791,
+  "invalid_availability_times": 0,
+  "sampled_raw_to_feature_and_label_parity": [
+    {
+      "source": "eicu",
+      "stay_id": "eicu-1837638",
+      "at_hour": 18.0
+    },
+    {
+      "source": "eicu",
+      "stay_id": "eicu-975692",
+      "at_hour": 12.0
+    },
+    {
+      "source": "eicu",
+      "stay_id": "eicu-2819402",
+      "at_hour": 18.0
+    },
+    {
+      "source": "eicu",
+      "stay_id": "eicu-2705983",
+      "at_hour": 12.0
+    },
+    {
+      "source": "eicu",
+      "stay_id": "eicu-250724",
+      "at_hour": 18.0
+    },
+    {
+      "source": "eicu",
+      "stay_id": "eicu-1076979",
+      "at_hour": 18.0
+    },
+    {
+      "source": "eicu",
+      "stay_id": "eicu-1664335",
+      "at_hour": 12.0
+    },
+    {
+      "source": "eicu",
+      "stay_id": "eicu-2293457",
+      "at_hour": 42.0
+    },
+    {
+      "source": "eicu",
+      "stay_id": "eicu-3199449",
+      "at_hour": 36.0
+    },
+    {
+      "source": "eicu",
+      "stay_id": "eicu-3333069",
+      "at_hour": 12.0
+    },
+    {
+      "source": "mimic",
+      "stay_id": "mimic-39711498",
+      "at_hour": 96.0
+    },
+    {
+      "source": "mimic",
+      "stay_id": "mimic-39880770",
+      "at_hour": 120.0
+    },
+    {
+      "source": "mimic",
+      "stay_id": "mimic-35889503",
+      "at_hour": 12.0
+    },
+    {
+      "source": "mimic",
+      "stay_id": "mimic-37509585",
+      "at_hour": 42.0
+    },
+    {
+      "source": "mimic",
+      "stay_id": "mimic-30955999",
+      "at_hour": 48.0
+    },
+    {
+      "source": "mimic",
+      "stay_id": "mimic-34629895",
+      "at_hour": 18.0
+    },
+    {
+      "source": "mimic",
+      "stay_id": "mimic-37293400",
+      "at_hour": 120.0
+    },
+    {
+      "source": "mimic",
+      "stay_id": "mimic-33281088",
+      "at_hour": 84.0
+    },
+    {
+      "source": "mimic",
+      "stay_id": "mimic-39711498",
+      "at_hour": 138.0
+    },
+    {
+      "source": "mimic",
+      "stay_id": "mimic-35889503",
+      "at_hour": 36.0
+    }
+  ],
+  "scenarios": {
+    "stable": {
+      "status": "predicted",
+      "predicted_risk_percent": 8.93,
+      "alert": false
+    },
+    "concerning_trend": {
+      "status": "predicted",
+      "predicted_risk_percent": 45.84,
+      "alert": true
+    },
+    "existing_aki": {
+      "status": "aki_already_observed",
+      "predicted_risk_percent": null,
+      "alert": false
+    },
+    "real_patient": {
+      "status": "predicted",
+      "predicted_risk_percent": 46.89,
+      "alert": true
+    },
+    "missed_case": {
+      "status": "predicted",
+      "predicted_risk_percent": 4.73,
+      "alert": false
+    },
+    "false_alert": {
+      "status": "predicted",
+      "predicted_risk_percent": 20.07,
+      "alert": true
+    }
+  },
+  "sparse_input_abstention": "passed",
+  "context_only_flags_do_not_affect_risk": "passed",
+  "unresolved_robustness_findings": "reports/sensitivity_audit.json",
+  "note": "Functional assertions pass. Borderline alert sensitivity remains unresolved; neither this audit nor the test suite is clinical validation."
+}

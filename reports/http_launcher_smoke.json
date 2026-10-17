@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "health": {
+    "status": "ok",
+    "version": "0.3.0",
+    "model_available": true,
+    "mode": "research_demo",
+    "authentication": "shared_api_key"
+  },
+  "readiness": "passed",
+  "optional_api_key": "passed",
+  "frontend_cors_preflight": "passed",
+  "batch_prediction": "passed",
+  "stored_batch_prediction": "passed",
+  "patient_search": "passed",
+  "launch_mode": "start_api.bat",
+  "caller_history": "passed",
+  "input_sensitivity": "passed",
+  "json_prediction": "passed",
+  "csv_prediction": "passed",
+  "stored_replay": "passed",
+  "risk_history": "passed",
+  "retrospective_outcome": "passed",
+  "future_input_rejection": "passed",
+  "model_sha256": "04c3e99c8b7c9782791098fd0300c564fe90466644b6068442212b4c0c6d5042",
+  "training_source": "eicu",
+  "estimated_example_risk_percent": 8.93
+}

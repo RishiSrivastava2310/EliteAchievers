@@ -1,0 +1,88 @@
+{
+  "checked_at": "2026-10-17T20:11:59.067455+00:00",
+  "model_sha256": "04c3e99c8b7c9782791098fd0300c564fe90466644b6068442212b4c0c6d5042",
+  "admission_counts": [
+    {
+      "source": "eicu",
+      "admission_type": "emergency",
+      "stays": 1291
+    },
+    {
+      "source": "eicu",
+      "admission_type": "unknown",
+      "stays": 1209
+    },
+    {
+      "source": "mimic",
+      "admission_type": "elective",
+      "stays": 5
+    },
+    {
+      "source": "mimic",
+      "admission_type": "unknown",
+      "stays": 104
+    },
+    {
+      "source": "mimic",
+      "admission_type": "urgent",
+      "stays": 31
+    }
+  ],
+  "context_counts": [
+    {
+      "source": "eicu",
+      "variable": "diuretic",
+      "rows": 1408,
+      "stays": 471
+    },
+    {
+      "source": "eicu",
+      "variable": "nephrotoxic_drug",
+      "rows": 632,
+      "stays": 345
+    },
+    {
+      "source": "eicu",
+      "variable": "vasopressor",
+      "rows": 6578,
+      "stays": 338
+    },
+    {
+      "source": "eicu",
+      "variable": "ventilation",
+      "rows": 1694,
+      "stays": 585
+    },
+    {
+      "source": "mimic",
+      "variable": "diuretic",
+      "rows": 225,
+      "stays": 53
+    },
+    {
+      "source": "mimic",
+      "variable": "nephrotoxic_drug",
+      "rows": 334,
+      "stays": 63
+    },
+    {
+      "source": "mimic",
+      "variable": "vasopressor",
+      "rows": 1675,
+      "stays": 52
+    },
+    {
+      "source": "mimic",
+      "variable": "ventilation",
+      "rows": 73,
+      "stays": 66
+    }
+  ],
+  "decisions": {
+    "medication": "eICU orders and infusion records are currently merged into one flag, unlike MIMIC administration sources. Orders are not proof of administration. Missing entries are not confirmed non-exposure.",
+    "ventilation": "Positive procedure/treatment mentions lack a harmonized current on/off interval and verified absence. A past mention is not proof of ventilation at prediction time.",
+    "admission_type": "eICU unitadmitsource is a location (ED/floor/OR), whereas MIMIC admission_type describes admission urgency. Current categories are incomplete and not equivalent."
+  },
+  "context_fields_activated": false,
+  "note": "Counts describe documentation, not confirmed absence or current treatment."
+}
