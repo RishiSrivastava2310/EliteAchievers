@@ -1,0 +1,167 @@
+{
+  "downloaded_at": "2026-10-17T18:48:41.276294+00:00",
+  "files": [
+    {
+      "source": "mimic",
+      "file": "hosp/patients.csv.gz",
+      "url": "https://physionet.org/files/mimic-iv-demo/2.2/hosp/patients.csv.gz",
+      "sha256": "59dcc6cd8450ddf03ad32cc7d76e41caa4c9633541715987f590c74835cf6fae",
+      "bytes": 1083
+    },
+    {
+      "source": "mimic",
+      "file": "hosp/admissions.csv.gz",
+      "url": "https://physionet.org/files/mimic-iv-demo/2.2/hosp/admissions.csv.gz",
+      "sha256": "910b9f160ffdf1e08ea673585393f347c773ccc87d66875c627584a903ae8493",
+      "bytes": 11072
+    },
+    {
+      "source": "mimic",
+      "file": "hosp/labevents.csv.gz",
+      "url": "https://physionet.org/files/mimic-iv-demo/2.2/hosp/labevents.csv.gz",
+      "sha256": "d51a4cf1ea63245abe7d544b0d50a928e9ee2ec5eb9a5ce85500aed0bd6c6dfc",
+      "bytes": 1963979
+    },
+    {
+      "source": "mimic",
+      "file": "hosp/d_labitems.csv.gz",
+      "url": "https://physionet.org/files/mimic-iv-demo/2.2/hosp/d_labitems.csv.gz",
+      "sha256": "72ea5f020469fd24543bd98ab3bd0a4f645a5a4b7802d9d52af20d736f9d76db",
+      "bytes": 13520
+    },
+    {
+      "source": "mimic",
+      "file": "hosp/diagnoses_icd.csv.gz",
+      "url": "https://physionet.org/files/mimic-iv-demo/2.2/hosp/diagnoses_icd.csv.gz",
+      "sha256": "958565670c0b3903c0c12825366dc2bae8561d2d55f16feac0c949dd630ed3e4",
+      "bytes": 24198
+    },
+    {
+      "source": "mimic",
+      "file": "hosp/prescriptions.csv.gz",
+      "url": "https://physionet.org/files/mimic-iv-demo/2.2/hosp/prescriptions.csv.gz",
+      "sha256": "33c392ba5b9299b08eca0a61911ba106f0aebdba26ed31b856bb9ffd49fe3654",
+      "bytes": 606447
+    },
+    {
+      "source": "mimic",
+      "file": "icu/icustays.csv.gz",
+      "url": "https://physionet.org/files/mimic-iv-demo/2.2/icu/icustays.csv.gz",
+      "sha256": "e05e81aa52a3022e522b6832a898101a69b84e64c17bb344d819e458d5bc21b3",
+      "bytes": 5667
+    },
+    {
+      "source": "mimic",
+      "file": "icu/d_items.csv.gz",
+      "url": "https://physionet.org/files/mimic-iv-demo/2.2/icu/d_items.csv.gz",
+      "sha256": "1690467a822345226a041c1149237c418aa60098c6b699fb4cef64d73588a01f",
+      "bytes": 57073
+    },
+    {
+      "source": "mimic",
+      "file": "icu/chartevents.csv.gz",
+      "url": "https://physionet.org/files/mimic-iv-demo/2.2/icu/chartevents.csv.gz",
+      "sha256": "90f096ad3db847ed1aaec073f8d86053c51fea7b616d3b046410e030f083d560",
+      "bytes": 5549389
+    },
+    {
+      "source": "mimic",
+      "file": "icu/outputevents.csv.gz",
+      "url": "https://physionet.org/files/mimic-iv-demo/2.2/icu/outputevents.csv.gz",
+      "sha256": "3bcf68adaa11070d6c24e13d4bfaaf718606cd33b0df7f28e0de240c357a869e",
+      "bytes": 96413
+    },
+    {
+      "source": "mimic",
+      "file": "icu/inputevents.csv.gz",
+      "url": "https://physionet.org/files/mimic-iv-demo/2.2/icu/inputevents.csv.gz",
+      "sha256": "69597dca47e554e16645ca505167e9f39b07c1724e915ba54ccfb40f5fa0078a",
+      "bytes": 788253
+    },
+    {
+      "source": "mimic",
+      "file": "icu/procedureevents.csv.gz",
+      "url": "https://physionet.org/files/mimic-iv-demo/2.2/icu/procedureevents.csv.gz",
+      "sha256": "37454f286dc1eee6cef666b4fdf91452eb8bea6bfc3cf98d4ad179ebb4a741fa",
+      "bytes": 44817
+    },
+    {
+      "source": "eicu",
+      "file": "patient.csv.gz",
+      "url": "https://physionet.org/files/eicu-crd-demo/2.0.1/patient.csv.gz",
+      "sha256": "15e1eb52169828e3cfff3b67132a087298de4d0365bbb31bb294f6043bffd474",
+      "bytes": 136791
+    },
+    {
+      "source": "eicu",
+      "file": "hospital.csv.gz",
+      "url": "https://physionet.org/files/eicu-crd-demo/2.0.1/hospital.csv.gz",
+      "sha256": "4ed356f9c4e7c8ce80e89241697e94b77f21c2f325cd6ad126794b1e92805ef4",
+      "bytes": 759
+    },
+    {
+      "source": "eicu",
+      "file": "lab.csv.gz",
+      "url": "https://physionet.org/files/eicu-crd-demo/2.0.1/lab.csv.gz",
+      "sha256": "e06852850abeb65211bc22ac43f17121ba41b14656fac862396449af84d8273a",
+      "bytes": 5729763
+    },
+    {
+      "source": "eicu",
+      "file": "vitalPeriodic.csv.gz",
+      "url": "https://physionet.org/files/eicu-crd-demo/2.0.1/vitalPeriodic.csv.gz",
+      "sha256": "04dc093a2e77cd4c52ac7f2a47a8356fbb7456c7f15deb20d5abb1ca4303231d",
+      "bytes": 19391070
+    },
+    {
+      "source": "eicu",
+      "file": "vitalAperiodic.csv.gz",
+      "url": "https://physionet.org/files/eicu-crd-demo/2.0.1/vitalAperiodic.csv.gz",
+      "sha256": "c294f46647990cb648b3ebfa589e83f330bdc0c2c922b5e8f23aa0ef99954635",
+      "bytes": 2619980
+    },
+    {
+      "source": "eicu",
+      "file": "intakeOutput.csv.gz",
+      "url": "https://physionet.org/files/eicu-crd-demo/2.0.1/intakeOutput.csv.gz",
+      "sha256": "45db8ee0e64a4e3745284bde5828f740175770c45d00ea0c27daff789d18106e",
+      "bytes": 1826646
+    },
+    {
+      "source": "eicu",
+      "file": "infusiondrug.csv.gz",
+      "url": "https://physionet.org/files/eicu-crd-demo/2.0.1/infusiondrug.csv.gz",
+      "sha256": "3b9f024d28682884a820763ac516ae68b247ebf17903fee4f38240c04886d527",
+      "bytes": 403703
+    },
+    {
+      "source": "eicu",
+      "file": "medication.csv.gz",
+      "url": "https://physionet.org/files/eicu-crd-demo/2.0.1/medication.csv.gz",
+      "sha256": "480a251570a27932110452f66f248061f712c306663c274f78f90875648cb720",
+      "bytes": 1458011
+    },
+    {
+      "source": "eicu",
+      "file": "treatment.csv.gz",
+      "url": "https://physionet.org/files/eicu-crd-demo/2.0.1/treatment.csv.gz",
+      "sha256": "daefee030fa1ad29593dce880ad86bdfbdbb1e33fcb3e78fa21d71cb01a08628",
+      "bytes": 460899
+    },
+    {
+      "source": "eicu",
+      "file": "pastHistory.csv.gz",
+      "url": "https://physionet.org/files/eicu-crd-demo/2.0.1/pastHistory.csv.gz",
+      "sha256": "3af6e3101c037347365d81daf73ea487ba12e14a6a10f0b2ed53beed2e30c7d5",
+      "bytes": 142402
+    },
+    {
+      "source": "eicu",
+      "file": "diagnosis.csv.gz",
+      "url": "https://physionet.org/files/eicu-crd-demo/2.0.1/diagnosis.csv.gz",
+      "sha256": "c99770c25fdeaee1eb34e490f982bd17459bc8902f951a2ae23adef65e7b1b52",
+      "bytes": 360548
+    }
+  ],
+  "license": "Open Data Commons Open Database License 1.0; see raw source LICENSE.txt files"
+}
