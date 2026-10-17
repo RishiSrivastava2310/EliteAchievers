@@ -1,0 +1,50 @@
+{
+  "patient": {
+    "age": 65,
+    "sex": "male",
+    "weight_kg": 75,
+    "admission_type": "emergency"
+  },
+  "at_hour": 12,
+  "readings": [
+    {
+      "potassium": 4.2,
+      "bicarbonate": 24,
+      "lactate": 1.2,
+      "heart_rate": 80,
+      "spo2": 97,
+      "respiratory_rate": 18,
+      "temperature": 37,
+      "hour": 0,
+      "creatinine": 0.8,
+      "bun": 20,
+      "map": 78
+    },
+    {
+      "potassium": 4.2,
+      "bicarbonate": 24,
+      "lactate": 1.2,
+      "heart_rate": 80,
+      "spo2": 97,
+      "respiratory_rate": 18,
+      "temperature": 37,
+      "hour": 6,
+      "creatinine": 0.88,
+      "bun": 27,
+      "map": 66
+    },
+    {
+      "potassium": 4.2,
+      "bicarbonate": 24,
+      "lactate": 1.2,
+      "heart_rate": 80,
+      "spo2": 97,
+      "respiratory_rate": 18,
+      "temperature": 37,
+      "hour": 12,
+      "creatinine": 1.0,
+      "bun": 35,
+      "map": 57
+    }
+  ]
+}

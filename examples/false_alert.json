@@ -1,0 +1,259 @@
+{
+  "patient": {
+    "age": 68.0,
+    "sex": "female",
+    "weight_kg": 75.9,
+    "admission_type": "unknown",
+    "chronic_dialysis": false
+  },
+  "at_hour": 12.0,
+  "readings": [
+    {
+      "hour": -25.25,
+      "available_hour": -24.8,
+      "hemoglobin": 14.4,
+      "wbc": 9.9
+    },
+    {
+      "hour": -25.25,
+      "available_hour": -24.316667,
+      "creatinine": 0.8,
+      "bun": 12.0,
+      "potassium": 3.9,
+      "bicarbonate": 26.0,
+      "sodium": 138.0,
+      "glucose": 114.0
+    },
+    {
+      "hour": -5.483333,
+      "available_hour": -5.483333,
+      "potassium": 4.2,
+      "bicarbonate": 25.5,
+      "lactate": 1.1,
+      "sodium": 137.0,
+      "glucose": 118.0,
+      "hemoglobin": 12.7
+    },
+    {
+      "hour": -4.066667,
+      "available_hour": -4.066667,
+      "potassium": 4.0,
+      "bicarbonate": 24.3,
+      "lactate": 0.8,
+      "sodium": 136.0,
+      "glucose": 129.0,
+      "hemoglobin": 11.0
+    },
+    {
+      "hour": -3.266667,
+      "available_hour": -3.266667,
+      "potassium": 4.1,
+      "bicarbonate": 24.1,
+      "lactate": 0.9,
+      "sodium": 134.0,
+      "glucose": 135.0,
+      "hemoglobin": 10.0
+    },
+    {
+      "hour": -2.616667,
+      "available_hour": -2.616667,
+      "potassium": 4.2,
+      "bicarbonate": 22.1,
+      "lactate": 1.2,
+      "sodium": 135.0,
+      "glucose": 152.0,
+      "hemoglobin": 10.1
+    },
+    {
+      "hour": -1.516667,
+      "available_hour": -1.516667,
+      "potassium": 4.2,
+      "bicarbonate": 20.3,
+      "lactate": 1.1,
+      "sodium": 135.0,
+      "glucose": 224.0,
+      "hemoglobin": 9.1
+    },
+    {
+      "hour": 0.55,
+      "available_hour": 0.7,
+      "potassium": 3.9,
+      "bicarbonate": 21.5,
+      "lactate": 1.96,
+      "sodium": 133.0,
+      "glucose": 184.0,
+      "hemoglobin": 9.5
+    },
+    {
+      "hour": 0.633333,
+      "available_hour": 1.583333,
+      "hemoglobin": 8.6,
+      "wbc": 17.3
+    },
+    {
+      "hour": 0.633333,
+      "available_hour": 2.016667,
+      "creatinine": 0.57,
+      "bun": 9.0,
+      "potassium": 4.0,
+      "bicarbonate": 21.0,
+      "sodium": 138.0,
+      "glucose": 179.0
+    },
+    {
+      "hour": 0.966667,
+      "available_hour": 0.966667,
+      "vasopressor": 1.0
+    },
+    {
+      "hour": 1.016667,
+      "available_hour": 1.016667,
+      "ventilation": 1.0
+    },
+    {
+      "hour": 2.0,
+      "available_hour": 2.0,
+      "map": 78.0,
+      "heart_rate": 97.0,
+      "spo2": 100.0,
+      "respiratory_rate": 17.0,
+      "temperature": 36.6
+    },
+    {
+      "hour": 2.266667,
+      "available_hour": 2.616667,
+      "hemoglobin": 10.3
+    },
+    {
+      "hour": 3.0,
+      "available_hour": 3.0,
+      "map": 77.5,
+      "heart_rate": 96.08333333333333,
+      "spo2": 100.0,
+      "respiratory_rate": 18.583333333333332,
+      "temperature": 36.925000000000004
+    },
+    {
+      "hour": 4.0,
+      "available_hour": 4.0,
+      "map": 75.25,
+      "heart_rate": 91.75,
+      "spo2": 100.0,
+      "respiratory_rate": 20.75,
+      "temperature": 37.208333333333336
+    },
+    {
+      "hour": 4.183333,
+      "available_hour": 4.483333,
+      "hemoglobin": 9.6
+    },
+    {
+      "hour": 4.183333,
+      "available_hour": 4.5,
+      "potassium": 4.7,
+      "bicarbonate": 21.6,
+      "lactate": 1.68,
+      "sodium": 132.0,
+      "glucose": 147.0,
+      "hemoglobin": 10.2
+    },
+    {
+      "hour": 5.0,
+      "available_hour": 5.0,
+      "map": 84.0,
+      "heart_rate": 92.08333333333333,
+      "spo2": 99.75,
+      "respiratory_rate": 21.5,
+      "temperature": 37.666666666666664
+    },
+    {
+      "hour": 6.0,
+      "available_hour": 6.0,
+      "map": 80.83333333333333,
+      "heart_rate": 97.25,
+      "spo2": 98.83333333333333,
+      "respiratory_rate": 20.75,
+      "temperature": 37.775
+    },
+    {
+      "hour": 7.0,
+      "available_hour": 7.0,
+      "map": 78.0,
+      "heart_rate": 98.41666666666667,
+      "spo2": 92.16666666666667,
+      "respiratory_rate": 22.75,
+      "temperature": 37.69166666666667
+    },
+    {
+      "hour": 7.866667,
+      "available_hour": 8.216667,
+      "hemoglobin": 9.4,
+      "wbc": 15.6
+    },
+    {
+      "hour": 7.866667,
+      "available_hour": 8.516667,
+      "creatinine": 0.64,
+      "bun": 8.0,
+      "potassium": 4.1,
+      "bicarbonate": 23.0,
+      "sodium": 136.0,
+      "glucose": 109.0
+    },
+    {
+      "hour": 8.0,
+      "available_hour": 8.0,
+      "map": 77.4,
+      "heart_rate": 96.0,
+      "spo2": 93.91666666666667,
+      "respiratory_rate": 21.583333333333332,
+      "temperature": 37.766666666666666
+    },
+    {
+      "hour": 9.0,
+      "available_hour": 9.0,
+      "map": 79.0,
+      "heart_rate": 92.75,
+      "spo2": 93.75,
+      "respiratory_rate": 18.833333333333332,
+      "temperature": 37.8
+    },
+    {
+      "hour": 9.433333,
+      "available_hour": 9.533333,
+      "urine_output_ml": 2900.0
+    },
+    {
+      "hour": 10.0,
+      "available_hour": 10.0,
+      "map": 75.75,
+      "heart_rate": 90.83333333333333,
+      "spo2": 94.58333333333333,
+      "respiratory_rate": 18.666666666666668,
+      "temperature": 37.708333333333336
+    },
+    {
+      "hour": 10.133333,
+      "available_hour": 10.233333,
+      "hemoglobin": 10.1
+    },
+    {
+      "hour": 11.0,
+      "available_hour": 11.0,
+      "map": 77.16666666666667,
+      "heart_rate": 90.75,
+      "spo2": 94.83333333333333,
+      "respiratory_rate": 23.333333333333332,
+      "temperature": 37.675000000000004
+    },
+    {
+      "hour": 12.0,
+      "available_hour": 12.0,
+      "map": 79.66666666666667,
+      "heart_rate": 86.125,
+      "spo2": 94.25,
+      "respiratory_rate": 23.5,
+      "temperature": 37.575
+    }
+  ]
+}

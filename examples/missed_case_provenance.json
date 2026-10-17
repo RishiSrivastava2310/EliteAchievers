@@ -1,0 +1,19 @@
+{
+  "source": "eicu-crd-demo/2.0.1",
+  "source_url": "https://physionet.org/content/eicu-crd-demo/2.0.1/",
+  "license": "Open Data Commons Open Database License 1.0",
+  "stay_id": "eicu-1072883",
+  "patient_id": "eicu-009-10046",
+  "at_hour": 78.0,
+  "partition": "Preserved patient-disjoint eicu internal audit set, previously inspected",
+  "selection": "First positive window without an alert, sorted by stay/time. This is a missed EARLY WINDOW, not necessarily a completely missed AKI episode; a later alert may occur.",
+  "retrospective_outcome": {
+    "observed_aki_within_24h": true,
+    "creatinine_aki_measurement_hour": 97.483333,
+    "creatinine_aki_documented_hour": 98.45,
+    "hours_after_prediction": 19.483333000000002
+  },
+  "request_file": "examples/missed_case.json",
+  "note": "Future outcome is separate from, and never included in, prediction inputs. An illustration is not an overall performance estimate.",
+  "model_sha256": "04c3e99c8b7c9782791098fd0300c564fe90466644b6068442212b4c0c6d5042"
+}

@@ -1,0 +1,19 @@
+{
+  "source": "eicu-crd-demo/2.0.1",
+  "source_url": "https://physionet.org/content/eicu-crd-demo/2.0.1/",
+  "license": "Open Data Commons Open Database License 1.0",
+  "stay_id": "eicu-2361839",
+  "patient_id": "eicu-022-100769",
+  "at_hour": 150.0,
+  "partition": "Preserved patient-disjoint eicu internal audit set, previously inspected",
+  "selection": "Preserved prior successful illustration when still eligible; otherwise first detected positive with >=18h sample lead. Selected using outcomes, not representative.",
+  "retrospective_outcome": {
+    "observed_aki_within_24h": true,
+    "creatinine_aki_measurement_hour": 168.35,
+    "creatinine_aki_documented_hour": 168.35,
+    "hours_after_prediction": 18.349999999999994
+  },
+  "request_file": "examples/real_patient.json",
+  "note": "Future outcome is separate from, and never included in, prediction inputs. An illustration is not an overall performance estimate.",
+  "model_sha256": "04c3e99c8b7c9782791098fd0300c564fe90466644b6068442212b4c0c6d5042"
+}

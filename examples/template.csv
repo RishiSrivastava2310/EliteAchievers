@@ -1,0 +1,4 @@
+hour,age,sex,weight_kg,creatinine,bun,map,heart_rate,potassium,bicarbonate,lactate
+0,65,male,75,0.8,16,82,80,4.2,24,1.2
+6,65,male,75,0.82,17,80,80,4.2,24,1.2
+12,65,male,75,0.81,17,81,80,4.2,24,1.2

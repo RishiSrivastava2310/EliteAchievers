@@ -1,0 +1,2162 @@
+{
+  "patient": {
+    "age": 77.0,
+    "sex": "female",
+    "weight_kg": 104.3,
+    "admission_type": "emergency",
+    "chronic_dialysis": false
+  },
+  "at_hour": 150.0,
+  "readings": [
+    {
+      "hour": -3.683333,
+      "available_hour": -3.683333,
+      "bicarbonate": 47.0
+    },
+    {
+      "hour": -3.483333,
+      "available_hour": -3.483333,
+      "creatinine": 1.5,
+      "bun": 24.0,
+      "potassium": 4.7,
+      "bicarbonate": 37.0,
+      "sodium": 146.0,
+      "glucose": 129.0,
+      "hemoglobin": 10.7,
+      "wbc": 8.9
+    },
+    {
+      "hour": -2.566667,
+      "available_hour": -2.566667,
+      "bicarbonate": 44.0
+    },
+    {
+      "hour": -2.366667,
+      "available_hour": -2.366667,
+      "urine_output_ml": 300.0
+    },
+    {
+      "hour": 0.533333,
+      "available_hour": 0.533333,
+      "bicarbonate": 41.0
+    },
+    {
+      "hour": 1.0,
+      "available_hour": 1.0,
+      "map": 45.5,
+      "heart_rate": 54.45454545454545,
+      "spo2": 100.0,
+      "respiratory_rate": 18.272727272727273
+    },
+    {
+      "hour": 2.0,
+      "available_hour": 2.0,
+      "map": 96.33333333333333,
+      "heart_rate": 53.75,
+      "spo2": 100.0,
+      "respiratory_rate": 16.0
+    },
+    {
+      "hour": 2.133333,
+      "available_hour": 2.133333,
+      "bicarbonate": 37.0
+    },
+    {
+      "hour": 2.166667,
+      "available_hour": 2.166667,
+      "urine_output_ml": 120.0
+    },
+    {
+      "hour": 3.0,
+      "available_hour": 3.0,
+      "map": 88.5,
+      "heart_rate": 49.416666666666664,
+      "respiratory_rate": 14.666666666666666
+    },
+    {
+      "hour": 3.1,
+      "available_hour": 3.1,
+      "urine_output_ml": 85.0
+    },
+    {
+      "hour": 4.0,
+      "available_hour": 4.0,
+      "map": 76.41666666666667,
+      "heart_rate": 50.166666666666664,
+      "respiratory_rate": 14.416666666666666
+    },
+    {
+      "hour": 4.1,
+      "available_hour": 4.1,
+      "urine_output_ml": 30.0
+    },
+    {
+      "hour": 5.0,
+      "available_hour": 5.0,
+      "map": 72.16666666666667,
+      "heart_rate": 51.25,
+      "spo2": 92.7,
+      "respiratory_rate": 14.25
+    },
+    {
+      "hour": 5.1,
+      "available_hour": 5.1,
+      "urine_output_ml": 30.0
+    },
+    {
+      "hour": 6.0,
+      "available_hour": 6.0,
+      "map": 69.66666666666667,
+      "heart_rate": 53.0,
+      "spo2": 90.91666666666667,
+      "respiratory_rate": 14.416666666666666
+    },
+    {
+      "hour": 6.1,
+      "available_hour": 6.1,
+      "urine_output_ml": 30.0
+    },
+    {
+      "hour": 7.0,
+      "available_hour": 7.0,
+      "map": 70.91666666666667,
+      "heart_rate": 47.75,
+      "spo2": 93.75,
+      "respiratory_rate": 14.166666666666666
+    },
+    {
+      "hour": 7.1,
+      "available_hour": 7.1,
+      "urine_output_ml": 20.0
+    },
+    {
+      "hour": 8.0,
+      "available_hour": 8.0,
+      "map": 73.75,
+      "heart_rate": 49.75,
+      "spo2": 95.83333333333333,
+      "respiratory_rate": 14.666666666666666
+    },
+    {
+      "hour": 8.1,
+      "available_hour": 8.1,
+      "urine_output_ml": 20.0
+    },
+    {
+      "hour": 9.0,
+      "available_hour": 9.0,
+      "map": 66.16666666666667,
+      "heart_rate": 52.75,
+      "spo2": 91.66666666666667,
+      "respiratory_rate": 14.333333333333334
+    },
+    {
+      "hour": 9.1,
+      "available_hour": 9.1,
+      "urine_output_ml": 15.0
+    },
+    {
+      "hour": 10.0,
+      "available_hour": 10.0,
+      "map": 66.08333333333333,
+      "heart_rate": 53.0,
+      "spo2": 96.83333333333333,
+      "respiratory_rate": 14.083333333333334
+    },
+    {
+      "hour": 10.1,
+      "available_hour": 10.1,
+      "urine_output_ml": 20.0
+    },
+    {
+      "hour": 11.0,
+      "available_hour": 11.0,
+      "map": 64.16666666666667,
+      "heart_rate": 52.75,
+      "spo2": 93.25,
+      "respiratory_rate": 14.583333333333334
+    },
+    {
+      "hour": 11.1,
+      "available_hour": 11.1,
+      "urine_output_ml": 20.0
+    },
+    {
+      "hour": 12.0,
+      "available_hour": 12.0,
+      "map": 74.83333333333333,
+      "heart_rate": 54.083333333333336,
+      "spo2": 91.66666666666667,
+      "respiratory_rate": 15.0
+    },
+    {
+      "hour": 12.1,
+      "available_hour": 12.1,
+      "urine_output_ml": 30.0
+    },
+    {
+      "hour": 12.266667,
+      "available_hour": 12.266667,
+      "creatinine": 1.6,
+      "bun": 28.0,
+      "potassium": 4.6,
+      "bicarbonate": 31.0,
+      "sodium": 143.0,
+      "glucose": 118.0,
+      "hemoglobin": 9.3,
+      "wbc": 7.3
+    },
+    {
+      "hour": 12.783333,
+      "available_hour": 12.783333,
+      "bicarbonate": 39.0
+    },
+    {
+      "hour": 13.0,
+      "available_hour": 13.0,
+      "map": 68.66666666666667,
+      "heart_rate": 52.75,
+      "spo2": 90.33333333333333,
+      "respiratory_rate": 14.333333333333334
+    },
+    {
+      "hour": 13.1,
+      "available_hour": 13.1,
+      "urine_output_ml": 30.0
+    },
+    {
+      "hour": 14.0,
+      "available_hour": 14.0,
+      "map": 63.0,
+      "heart_rate": 51.916666666666664,
+      "spo2": 91.25,
+      "respiratory_rate": 15.666666666666666
+    },
+    {
+      "hour": 14.1,
+      "available_hour": 14.1,
+      "urine_output_ml": 30.0
+    },
+    {
+      "hour": 15.0,
+      "available_hour": 15.0,
+      "map": 72.5,
+      "heart_rate": 51.166666666666664,
+      "spo2": 89.75,
+      "respiratory_rate": 15.25
+    },
+    {
+      "hour": 15.1,
+      "available_hour": 15.1,
+      "urine_output_ml": 30.0
+    },
+    {
+      "hour": 16.0,
+      "available_hour": 16.0,
+      "map": 77.41666666666667,
+      "heart_rate": 50.25,
+      "spo2": 89.0,
+      "respiratory_rate": 15.0
+    },
+    {
+      "hour": 16.1,
+      "available_hour": 16.1,
+      "urine_output_ml": 25.0
+    },
+    {
+      "hour": 17.0,
+      "available_hour": 17.0,
+      "map": 66.25,
+      "heart_rate": 51.0,
+      "spo2": 89.75,
+      "respiratory_rate": 14.333333333333334
+    },
+    {
+      "hour": 17.1,
+      "available_hour": 17.1,
+      "urine_output_ml": 10.0
+    },
+    {
+      "hour": 18.0,
+      "available_hour": 18.0,
+      "map": 68.25,
+      "heart_rate": 51.416666666666664,
+      "spo2": 91.75,
+      "respiratory_rate": 14.5
+    },
+    {
+      "hour": 18.1,
+      "available_hour": 18.1,
+      "urine_output_ml": 20.0
+    },
+    {
+      "hour": 19.0,
+      "available_hour": 19.0,
+      "map": 79.75,
+      "heart_rate": 53.583333333333336,
+      "spo2": 90.83333333333333,
+      "respiratory_rate": 14.916666666666666
+    },
+    {
+      "hour": 19.1,
+      "available_hour": 19.1,
+      "urine_output_ml": 20.0
+    },
+    {
+      "hour": 20.0,
+      "available_hour": 20.0,
+      "bicarbonate": 33.0,
+      "map": 74.25,
+      "heart_rate": 52.5,
+      "spo2": 90.16666666666667,
+      "respiratory_rate": 15.666666666666666
+    },
+    {
+      "hour": 20.1,
+      "available_hour": 20.1,
+      "urine_output_ml": 75.0
+    },
+    {
+      "hour": 21.0,
+      "available_hour": 21.0,
+      "map": 84.75,
+      "heart_rate": 53.416666666666664,
+      "spo2": 90.91666666666667,
+      "respiratory_rate": 14.166666666666666
+    },
+    {
+      "hour": 21.1,
+      "available_hour": 21.1,
+      "urine_output_ml": 75.0
+    },
+    {
+      "hour": 22.0,
+      "available_hour": 22.0,
+      "map": 97.16666666666667,
+      "heart_rate": 57.166666666666664,
+      "spo2": 91.66666666666667,
+      "respiratory_rate": 13.583333333333334
+    },
+    {
+      "hour": 22.1,
+      "available_hour": 22.1,
+      "urine_output_ml": 60.0
+    },
+    {
+      "hour": 23.0,
+      "available_hour": 23.0,
+      "map": 92.5,
+      "heart_rate": 57.25,
+      "spo2": 90.33333333333333,
+      "respiratory_rate": 13.75
+    },
+    {
+      "hour": 23.1,
+      "available_hour": 23.1,
+      "urine_output_ml": 60.0
+    },
+    {
+      "hour": 24.0,
+      "available_hour": 24.0,
+      "map": 96.41666666666667,
+      "heart_rate": 58.916666666666664,
+      "spo2": 91.25,
+      "respiratory_rate": 18.083333333333332
+    },
+    {
+      "hour": 24.1,
+      "available_hour": 24.1,
+      "urine_output_ml": 100.0
+    },
+    {
+      "hour": 25.0,
+      "available_hour": 25.0,
+      "map": 94.41666666666667,
+      "heart_rate": 60.75,
+      "spo2": 92.0,
+      "respiratory_rate": 17.083333333333332
+    },
+    {
+      "hour": 25.1,
+      "available_hour": 25.1,
+      "urine_output_ml": 35.0
+    },
+    {
+      "hour": 26.0,
+      "available_hour": 26.0,
+      "map": 93.25,
+      "heart_rate": 65.41666666666667,
+      "spo2": 90.58333333333333,
+      "respiratory_rate": 21.25
+    },
+    {
+      "hour": 26.1,
+      "available_hour": 26.1,
+      "urine_output_ml": 50.0
+    },
+    {
+      "hour": 27.0,
+      "available_hour": 27.0,
+      "map": 90.16666666666667,
+      "heart_rate": 62.666666666666664,
+      "spo2": 89.75,
+      "respiratory_rate": 17.666666666666668
+    },
+    {
+      "hour": 27.1,
+      "available_hour": 27.1,
+      "urine_output_ml": 75.0
+    },
+    {
+      "hour": 28.0,
+      "available_hour": 28.0,
+      "map": 84.75,
+      "heart_rate": 62.75,
+      "spo2": 91.66666666666667,
+      "respiratory_rate": 17.5
+    },
+    {
+      "hour": 28.1,
+      "available_hour": 28.1,
+      "urine_output_ml": 32.0
+    },
+    {
+      "hour": 29.0,
+      "available_hour": 29.0,
+      "map": 77.66666666666667,
+      "heart_rate": 62.0,
+      "spo2": 92.83333333333333,
+      "respiratory_rate": 18.0
+    },
+    {
+      "hour": 29.1,
+      "available_hour": 29.1,
+      "urine_output_ml": 30.0
+    },
+    {
+      "hour": 30.0,
+      "available_hour": 30.0,
+      "map": 65.0,
+      "heart_rate": 58.333333333333336,
+      "spo2": 94.08333333333333,
+      "respiratory_rate": 17.5
+    },
+    {
+      "hour": 30.1,
+      "available_hour": 30.1,
+      "urine_output_ml": 30.0
+    },
+    {
+      "hour": 31.0,
+      "available_hour": 31.0,
+      "map": 90.83333333333333,
+      "heart_rate": 63.333333333333336,
+      "spo2": 93.91666666666667,
+      "respiratory_rate": 17.833333333333332
+    },
+    {
+      "hour": 31.1,
+      "available_hour": 31.1,
+      "urine_output_ml": 45.0
+    },
+    {
+      "hour": 32.0,
+      "available_hour": 32.0,
+      "map": 88.0,
+      "heart_rate": 61.916666666666664,
+      "spo2": 94.08333333333333,
+      "respiratory_rate": 15.166666666666666
+    },
+    {
+      "hour": 32.1,
+      "available_hour": 32.1,
+      "urine_output_ml": 30.0
+    },
+    {
+      "hour": 33.0,
+      "available_hour": 33.0,
+      "map": 89.58333333333333,
+      "heart_rate": 62.25,
+      "spo2": 93.66666666666667,
+      "respiratory_rate": 16.333333333333332
+    },
+    {
+      "hour": 33.1,
+      "available_hour": 33.1,
+      "urine_output_ml": 30.0
+    },
+    {
+      "hour": 34.0,
+      "available_hour": 34.0,
+      "map": 86.25,
+      "heart_rate": 64.16666666666667,
+      "spo2": 90.58333333333333,
+      "respiratory_rate": 18.5
+    },
+    {
+      "hour": 34.1,
+      "available_hour": 34.1,
+      "urine_output_ml": 32.0
+    },
+    {
+      "hour": 35.0,
+      "available_hour": 35.0,
+      "map": 77.16666666666667,
+      "heart_rate": 64.41666666666667,
+      "spo2": 88.75,
+      "respiratory_rate": 18.166666666666668
+    },
+    {
+      "hour": 35.1,
+      "available_hour": 35.1,
+      "urine_output_ml": 35.0
+    },
+    {
+      "hour": 35.816667,
+      "available_hour": 35.816667,
+      "creatinine": 1.6,
+      "bun": 42.0,
+      "potassium": 4.0,
+      "bicarbonate": 30.0,
+      "sodium": 137.0,
+      "glucose": 161.0
+    },
+    {
+      "hour": 36.0,
+      "available_hour": 36.0,
+      "map": 68.41666666666667,
+      "heart_rate": 61.833333333333336,
+      "spo2": 88.83333333333333,
+      "respiratory_rate": 17.333333333333332
+    },
+    {
+      "hour": 36.8,
+      "available_hour": 36.8,
+      "bicarbonate": 36.0
+    },
+    {
+      "hour": 37.0,
+      "available_hour": 37.0,
+      "map": 73.75,
+      "heart_rate": 63.333333333333336,
+      "spo2": 91.16666666666667,
+      "respiratory_rate": 17.833333333333332
+    },
+    {
+      "hour": 38.0,
+      "available_hour": 38.0,
+      "map": 100.08333333333333,
+      "heart_rate": 61.416666666666664,
+      "spo2": 90.91666666666667,
+      "respiratory_rate": 16.333333333333332
+    },
+    {
+      "hour": 38.1,
+      "available_hour": 38.1,
+      "urine_output_ml": 75.0
+    },
+    {
+      "hour": 39.0,
+      "available_hour": 39.0,
+      "map": 116.08333333333333,
+      "heart_rate": 60.083333333333336,
+      "spo2": 92.91666666666667,
+      "respiratory_rate": 16.416666666666668
+    },
+    {
+      "hour": 39.1,
+      "available_hour": 39.1,
+      "urine_output_ml": 25.0
+    },
+    {
+      "hour": 40.0,
+      "available_hour": 40.0,
+      "map": 86.41666666666667,
+      "heart_rate": 60.75,
+      "spo2": 93.0,
+      "respiratory_rate": 17.083333333333332
+    },
+    {
+      "hour": 40.1,
+      "available_hour": 40.1,
+      "urine_output_ml": 50.0
+    },
+    {
+      "hour": 41.0,
+      "available_hour": 41.0,
+      "map": 80.5,
+      "heart_rate": 60.833333333333336,
+      "spo2": 89.58333333333333,
+      "respiratory_rate": 17.916666666666668
+    },
+    {
+      "hour": 41.1,
+      "available_hour": 41.1,
+      "urine_output_ml": 100.0
+    },
+    {
+      "hour": 42.0,
+      "available_hour": 42.0,
+      "map": 84.66666666666667,
+      "heart_rate": 60.166666666666664,
+      "spo2": 88.58333333333333,
+      "respiratory_rate": 18.166666666666668
+    },
+    {
+      "hour": 42.1,
+      "available_hour": 42.1,
+      "urine_output_ml": 225.0
+    },
+    {
+      "hour": 43.0,
+      "available_hour": 43.0,
+      "map": 88.83333333333333,
+      "heart_rate": 59.833333333333336,
+      "spo2": 90.08333333333333,
+      "respiratory_rate": 18.25
+    },
+    {
+      "hour": 43.1,
+      "available_hour": 43.1,
+      "urine_output_ml": 150.0
+    },
+    {
+      "hour": 44.0,
+      "available_hour": 44.0,
+      "map": 96.33333333333333,
+      "heart_rate": 60.416666666666664,
+      "spo2": 91.58333333333333,
+      "respiratory_rate": 18.583333333333332
+    },
+    {
+      "hour": 44.1,
+      "available_hour": 44.1,
+      "urine_output_ml": 125.0
+    },
+    {
+      "hour": 45.0,
+      "available_hour": 45.0,
+      "map": 88.25,
+      "heart_rate": 59.583333333333336,
+      "spo2": 88.66666666666667,
+      "respiratory_rate": 18.333333333333332
+    },
+    {
+      "hour": 45.1,
+      "available_hour": 45.1,
+      "urine_output_ml": 100.0
+    },
+    {
+      "hour": 46.0,
+      "available_hour": 46.0,
+      "map": 85.33333333333333,
+      "heart_rate": 58.416666666666664,
+      "spo2": 90.33333333333333,
+      "respiratory_rate": 17.333333333333332
+    },
+    {
+      "hour": 46.1,
+      "available_hour": 46.1,
+      "urine_output_ml": 100.0
+    },
+    {
+      "hour": 47.0,
+      "available_hour": 47.0,
+      "map": 81.75,
+      "heart_rate": 57.333333333333336,
+      "spo2": 93.83333333333333,
+      "respiratory_rate": 17.833333333333332
+    },
+    {
+      "hour": 47.1,
+      "available_hour": 47.1,
+      "urine_output_ml": 60.0
+    },
+    {
+      "hour": 48.0,
+      "available_hour": 48.0,
+      "map": 84.75,
+      "heart_rate": 57.0,
+      "spo2": 95.83333333333333,
+      "respiratory_rate": 20.75
+    },
+    {
+      "hour": 48.1,
+      "available_hour": 48.1,
+      "urine_output_ml": 100.0
+    },
+    {
+      "hour": 49.0,
+      "available_hour": 49.0,
+      "map": 82.5,
+      "heart_rate": 60.083333333333336,
+      "spo2": 87.0,
+      "respiratory_rate": 21.833333333333332
+    },
+    {
+      "hour": 49.1,
+      "available_hour": 49.1,
+      "urine_output_ml": 50.0
+    },
+    {
+      "hour": 50.0,
+      "available_hour": 50.0,
+      "map": 77.91666666666667,
+      "heart_rate": 59.25,
+      "spo2": 87.08333333333333,
+      "respiratory_rate": 15.75
+    },
+    {
+      "hour": 50.1,
+      "available_hour": 50.1,
+      "urine_output_ml": 250.0
+    },
+    {
+      "hour": 50.516667,
+      "available_hour": 50.516667,
+      "bicarbonate": 33.0
+    },
+    {
+      "hour": 51.0,
+      "available_hour": 51.0,
+      "map": 76.66666666666667,
+      "heart_rate": 58.416666666666664,
+      "spo2": 91.33333333333333,
+      "respiratory_rate": 13.166666666666666
+    },
+    {
+      "hour": 51.1,
+      "available_hour": 51.1,
+      "urine_output_ml": 180.0
+    },
+    {
+      "hour": 52.0,
+      "available_hour": 52.0,
+      "map": 74.83333333333333,
+      "heart_rate": 57.583333333333336,
+      "spo2": 89.33333333333333,
+      "respiratory_rate": 13.833333333333334
+    },
+    {
+      "hour": 52.1,
+      "available_hour": 52.1,
+      "urine_output_ml": 100.0
+    },
+    {
+      "hour": 53.0,
+      "available_hour": 53.0,
+      "map": 75.16666666666667,
+      "heart_rate": 56.916666666666664,
+      "spo2": 92.25,
+      "respiratory_rate": 14.0
+    },
+    {
+      "hour": 53.1,
+      "available_hour": 53.1,
+      "urine_output_ml": 175.0
+    },
+    {
+      "hour": 54.0,
+      "available_hour": 54.0,
+      "map": 75.41666666666667,
+      "heart_rate": 56.5,
+      "spo2": 95.16666666666667,
+      "respiratory_rate": 13.083333333333334
+    },
+    {
+      "hour": 54.1,
+      "available_hour": 54.1,
+      "urine_output_ml": 100.0
+    },
+    {
+      "hour": 55.0,
+      "available_hour": 55.0,
+      "map": 65.66666666666667,
+      "heart_rate": 59.333333333333336,
+      "spo2": 93.58333333333333,
+      "respiratory_rate": 15.0
+    },
+    {
+      "hour": 55.1,
+      "available_hour": 55.1,
+      "urine_output_ml": 80.0
+    },
+    {
+      "hour": 56.0,
+      "available_hour": 56.0,
+      "map": 68.33333333333333,
+      "heart_rate": 57.083333333333336,
+      "spo2": 91.5,
+      "respiratory_rate": 13.833333333333334
+    },
+    {
+      "hour": 56.1,
+      "available_hour": 56.1,
+      "urine_output_ml": 60.0
+    },
+    {
+      "hour": 57.0,
+      "available_hour": 57.0,
+      "map": 70.75,
+      "heart_rate": 54.75,
+      "spo2": 93.58333333333333,
+      "respiratory_rate": 13.0
+    },
+    {
+      "hour": 57.1,
+      "available_hour": 57.1,
+      "urine_output_ml": 60.0
+    },
+    {
+      "hour": 58.0,
+      "available_hour": 58.0,
+      "map": 71.83333333333333,
+      "heart_rate": 54.083333333333336,
+      "spo2": 95.08333333333333,
+      "respiratory_rate": 12.833333333333334
+    },
+    {
+      "hour": 58.1,
+      "available_hour": 58.1,
+      "urine_output_ml": 70.0
+    },
+    {
+      "hour": 59.0,
+      "available_hour": 59.0,
+      "map": 69.16666666666667,
+      "heart_rate": 53.583333333333336,
+      "spo2": 95.16666666666667,
+      "respiratory_rate": 13.083333333333334
+    },
+    {
+      "hour": 59.1,
+      "available_hour": 59.1,
+      "urine_output_ml": 70.0
+    },
+    {
+      "hour": 60.0,
+      "available_hour": 60.0,
+      "map": 64.41666666666667,
+      "heart_rate": 52.583333333333336,
+      "spo2": 94.5,
+      "respiratory_rate": 12.416666666666666
+    },
+    {
+      "hour": 60.1,
+      "available_hour": 60.1,
+      "urine_output_ml": 60.0
+    },
+    {
+      "hour": 60.216667,
+      "available_hour": 60.216667,
+      "creatinine": 1.7,
+      "bun": 50.0,
+      "potassium": 4.4,
+      "bicarbonate": 31.0,
+      "sodium": 137.0,
+      "glucose": 164.0,
+      "hemoglobin": 8.9,
+      "wbc": 11.9
+    },
+    {
+      "hour": 60.55,
+      "available_hour": 60.55,
+      "bicarbonate": 35.0
+    },
+    {
+      "hour": 61.0,
+      "available_hour": 61.0,
+      "map": 64.0,
+      "heart_rate": 52.083333333333336,
+      "spo2": 95.08333333333333,
+      "respiratory_rate": 12.583333333333334
+    },
+    {
+      "hour": 61.1,
+      "available_hour": 61.1,
+      "urine_output_ml": 45.0
+    },
+    {
+      "hour": 62.0,
+      "available_hour": 62.0,
+      "map": 68.08333333333333,
+      "heart_rate": 52.666666666666664,
+      "spo2": 96.25,
+      "respiratory_rate": 12.583333333333334
+    },
+    {
+      "hour": 62.1,
+      "available_hour": 62.1,
+      "urine_output_ml": 30.0
+    },
+    {
+      "hour": 63.0,
+      "available_hour": 63.0,
+      "map": 68.58333333333333,
+      "heart_rate": 53.083333333333336,
+      "spo2": 96.0,
+      "respiratory_rate": 12.75
+    },
+    {
+      "hour": 63.1,
+      "available_hour": 63.1,
+      "urine_output_ml": 75.0
+    },
+    {
+      "hour": 64.0,
+      "available_hour": 64.0,
+      "map": 72.5,
+      "heart_rate": 54.583333333333336,
+      "spo2": 93.16666666666667,
+      "respiratory_rate": 14.0
+    },
+    {
+      "hour": 65.0,
+      "available_hour": 65.0,
+      "map": 69.66666666666667,
+      "heart_rate": 53.0,
+      "spo2": 91.41666666666667,
+      "respiratory_rate": 12.583333333333334
+    },
+    {
+      "hour": 65.1,
+      "available_hour": 65.1,
+      "urine_output_ml": 60.0
+    },
+    {
+      "hour": 65.816667,
+      "available_hour": 65.816667,
+      "bicarbonate": 35.0
+    },
+    {
+      "hour": 66.0,
+      "available_hour": 66.0,
+      "map": 78.25,
+      "heart_rate": 53.083333333333336,
+      "spo2": 89.5,
+      "respiratory_rate": 13.25
+    },
+    {
+      "hour": 67.0,
+      "available_hour": 67.0,
+      "map": 77.08333333333333,
+      "heart_rate": 53.5,
+      "spo2": 91.58333333333333,
+      "respiratory_rate": 13.833333333333334
+    },
+    {
+      "hour": 67.1,
+      "available_hour": 67.1,
+      "urine_output_ml": 80.0
+    },
+    {
+      "hour": 68.0,
+      "available_hour": 68.0,
+      "map": 68.66666666666667,
+      "heart_rate": 53.333333333333336,
+      "spo2": 91.58333333333333,
+      "respiratory_rate": 13.916666666666666
+    },
+    {
+      "hour": 69.0,
+      "available_hour": 69.0,
+      "map": 70.5,
+      "heart_rate": 52.833333333333336,
+      "spo2": 91.16666666666667,
+      "respiratory_rate": 14.666666666666666
+    },
+    {
+      "hour": 69.1,
+      "available_hour": 69.1,
+      "urine_output_ml": 60.0
+    },
+    {
+      "hour": 70.0,
+      "available_hour": 70.0,
+      "map": 79.16666666666667,
+      "heart_rate": 56.666666666666664,
+      "spo2": 85.91666666666667,
+      "respiratory_rate": 18.166666666666668
+    },
+    {
+      "hour": 70.1,
+      "available_hour": 70.1,
+      "urine_output_ml": 15.0
+    },
+    {
+      "hour": 71.0,
+      "available_hour": 71.0,
+      "map": 61.5,
+      "heart_rate": 52.75,
+      "spo2": 89.41666666666667,
+      "respiratory_rate": 13.416666666666666
+    },
+    {
+      "hour": 71.1,
+      "available_hour": 71.1,
+      "urine_output_ml": 40.0
+    },
+    {
+      "hour": 72.0,
+      "available_hour": 72.0,
+      "map": 68.5,
+      "heart_rate": 54.75,
+      "spo2": 89.83333333333333,
+      "respiratory_rate": 12.5
+    },
+    {
+      "hour": 72.1,
+      "available_hour": 72.1,
+      "urine_output_ml": 75.0
+    },
+    {
+      "hour": 73.0,
+      "available_hour": 73.0,
+      "map": 93.58333333333333,
+      "heart_rate": 64.0,
+      "spo2": 92.25,
+      "respiratory_rate": 16.0
+    },
+    {
+      "hour": 73.1,
+      "available_hour": 73.1,
+      "urine_output_ml": 15.0
+    },
+    {
+      "hour": 74.0,
+      "available_hour": 74.0,
+      "map": 70.41666666666667,
+      "heart_rate": 63.333333333333336,
+      "spo2": 93.33333333333333,
+      "respiratory_rate": 13.583333333333334
+    },
+    {
+      "hour": 74.1,
+      "available_hour": 74.1,
+      "urine_output_ml": 20.0
+    },
+    {
+      "hour": 75.0,
+      "available_hour": 75.0,
+      "map": 56.083333333333336,
+      "heart_rate": 62.166666666666664,
+      "spo2": 91.08333333333333,
+      "respiratory_rate": 12.083333333333334
+    },
+    {
+      "hour": 75.1,
+      "available_hour": 75.1,
+      "urine_output_ml": 32.0
+    },
+    {
+      "hour": 75.85,
+      "available_hour": 75.85,
+      "vasopressor": 1.0
+    },
+    {
+      "hour": 76.0,
+      "available_hour": 76.0,
+      "map": 55.0,
+      "heart_rate": 63.666666666666664,
+      "spo2": 89.83333333333333,
+      "respiratory_rate": 12.666666666666666
+    },
+    {
+      "hour": 76.1,
+      "available_hour": 76.1,
+      "urine_output_ml": 30.0
+    },
+    {
+      "hour": 77.0,
+      "available_hour": 77.0,
+      "map": 61.166666666666664,
+      "heart_rate": 65.33333333333333,
+      "spo2": 92.83333333333333,
+      "respiratory_rate": 12.5
+    },
+    {
+      "hour": 77.1,
+      "available_hour": 77.1,
+      "urine_output_ml": 24.0
+    },
+    {
+      "hour": 78.0,
+      "available_hour": 78.0,
+      "map": 70.08333333333333,
+      "heart_rate": 73.66666666666667,
+      "spo2": 95.83333333333333,
+      "respiratory_rate": 13.75
+    },
+    {
+      "hour": 78.1,
+      "available_hour": 78.1,
+      "urine_output_ml": 28.0
+    },
+    {
+      "hour": 79.0,
+      "available_hour": 79.0,
+      "map": 66.75,
+      "heart_rate": 70.83333333333333,
+      "spo2": 94.33333333333333,
+      "respiratory_rate": 13.166666666666666
+    },
+    {
+      "hour": 79.1,
+      "available_hour": 79.1,
+      "urine_output_ml": 32.0
+    },
+    {
+      "hour": 80.0,
+      "available_hour": 80.0,
+      "map": 79.5,
+      "heart_rate": 70.83333333333333,
+      "spo2": 94.0,
+      "respiratory_rate": 12.5
+    },
+    {
+      "hour": 80.1,
+      "available_hour": 80.1,
+      "urine_output_ml": 20.0
+    },
+    {
+      "hour": 81.0,
+      "available_hour": 81.0,
+      "map": 78.58333333333333,
+      "heart_rate": 70.75,
+      "spo2": 92.66666666666667,
+      "respiratory_rate": 14.25
+    },
+    {
+      "hour": 81.1,
+      "available_hour": 81.1,
+      "urine_output_ml": 34.0
+    },
+    {
+      "hour": 82.0,
+      "available_hour": 82.0,
+      "map": 83.08333333333333,
+      "heart_rate": 71.66666666666667,
+      "spo2": 94.0,
+      "respiratory_rate": 15.416666666666666
+    },
+    {
+      "hour": 82.1,
+      "available_hour": 82.1,
+      "urine_output_ml": 30.0
+    },
+    {
+      "hour": 82.516667,
+      "available_hour": 82.516667,
+      "creatinine": 1.7,
+      "bun": 51.0,
+      "potassium": 4.2,
+      "bicarbonate": 30.0,
+      "sodium": 141.0,
+      "glucose": 156.0,
+      "hemoglobin": 9.7,
+      "wbc": 30.3
+    },
+    {
+      "hour": 83.0,
+      "available_hour": 83.0,
+      "map": 69.91666666666667,
+      "heart_rate": 73.16666666666667,
+      "spo2": 93.91666666666667,
+      "respiratory_rate": 13.5
+    },
+    {
+      "hour": 83.1,
+      "available_hour": 83.1,
+      "urine_output_ml": 30.0
+    },
+    {
+      "hour": 84.0,
+      "available_hour": 84.0,
+      "map": 69.16666666666667,
+      "heart_rate": 73.16666666666667,
+      "spo2": 91.75,
+      "respiratory_rate": 12.166666666666666
+    },
+    {
+      "hour": 84.1,
+      "available_hour": 84.1,
+      "urine_output_ml": 34.0
+    },
+    {
+      "hour": 85.0,
+      "available_hour": 85.0,
+      "map": 66.0,
+      "heart_rate": 73.5,
+      "spo2": 89.75,
+      "respiratory_rate": 12.083333333333334
+    },
+    {
+      "hour": 85.05,
+      "available_hour": 85.05,
+      "bicarbonate": 32.0
+    },
+    {
+      "hour": 85.1,
+      "available_hour": 85.1,
+      "urine_output_ml": 20.0
+    },
+    {
+      "hour": 86.0,
+      "available_hour": 86.0,
+      "map": 67.33333333333333,
+      "heart_rate": 73.41666666666667,
+      "spo2": 91.75,
+      "respiratory_rate": 12.083333333333334
+    },
+    {
+      "hour": 86.1,
+      "available_hour": 86.1,
+      "urine_output_ml": 32.0,
+      "vasopressor": 1.0
+    },
+    {
+      "hour": 87.0,
+      "available_hour": 87.0,
+      "map": 69.0,
+      "heart_rate": 74.91666666666667,
+      "spo2": 92.25,
+      "respiratory_rate": 12.0
+    },
+    {
+      "hour": 87.1,
+      "available_hour": 87.1,
+      "urine_output_ml": 60.0,
+      "vasopressor": 1.0
+    },
+    {
+      "hour": 88.0,
+      "available_hour": 88.0,
+      "map": 68.5,
+      "heart_rate": 75.83333333333333,
+      "spo2": 92.33333333333333,
+      "respiratory_rate": 12.083333333333334
+    },
+    {
+      "hour": 88.1,
+      "available_hour": 88.1,
+      "urine_output_ml": 30.0,
+      "vasopressor": 1.0
+    },
+    {
+      "hour": 89.0,
+      "available_hour": 89.0,
+      "map": 69.25,
+      "heart_rate": 76.91666666666667,
+      "spo2": 92.83333333333333,
+      "respiratory_rate": 12.0
+    },
+    {
+      "hour": 89.1,
+      "available_hour": 89.1,
+      "urine_output_ml": 75.0,
+      "vasopressor": 1.0
+    },
+    {
+      "hour": 90.0,
+      "available_hour": 90.0,
+      "map": 67.25,
+      "heart_rate": 75.0,
+      "spo2": 94.0,
+      "respiratory_rate": 12.083333333333334
+    },
+    {
+      "hour": 90.1,
+      "available_hour": 90.1,
+      "urine_output_ml": 25.0,
+      "vasopressor": 1.0
+    },
+    {
+      "hour": 91.0,
+      "available_hour": 91.0,
+      "map": 70.16666666666667,
+      "heart_rate": 69.41666666666667,
+      "spo2": 91.25,
+      "respiratory_rate": 12.083333333333334
+    },
+    {
+      "hour": 91.1,
+      "available_hour": 91.1,
+      "urine_output_ml": 90.0,
+      "vasopressor": 1.0
+    },
+    {
+      "hour": 92.0,
+      "available_hour": 92.0,
+      "map": 70.41666666666667,
+      "heart_rate": 66.5,
+      "spo2": 90.75,
+      "respiratory_rate": 12.0
+    },
+    {
+      "hour": 92.1,
+      "available_hour": 92.1,
+      "urine_output_ml": 42.0,
+      "vasopressor": 1.0
+    },
+    {
+      "hour": 92.25,
+      "available_hour": 92.25,
+      "bicarbonate": 32.0
+    },
+    {
+      "hour": 93.0,
+      "available_hour": 93.0,
+      "map": 68.41666666666667,
+      "heart_rate": 63.583333333333336,
+      "spo2": 91.0,
+      "respiratory_rate": 11.916666666666666
+    },
+    {
+      "hour": 93.1,
+      "available_hour": 93.1,
+      "urine_output_ml": 35.0,
+      "vasopressor": 1.0
+    },
+    {
+      "hour": 94.0,
+      "available_hour": 94.0,
+      "map": 67.91666666666667,
+      "heart_rate": 61.666666666666664,
+      "spo2": 93.16666666666667,
+      "respiratory_rate": 11.083333333333334
+    },
+    {
+      "hour": 94.1,
+      "available_hour": 94.1,
+      "urine_output_ml": 60.0,
+      "vasopressor": 1.0
+    },
+    {
+      "hour": 95.0,
+      "available_hour": 95.0,
+      "map": 63.25,
+      "heart_rate": 60.083333333333336,
+      "spo2": 93.16666666666667,
+      "respiratory_rate": 10.833333333333334
+    },
+    {
+      "hour": 95.1,
+      "available_hour": 95.1,
+      "urine_output_ml": 40.0,
+      "vasopressor": 1.0
+    },
+    {
+      "hour": 96.0,
+      "available_hour": 96.0,
+      "map": 64.25,
+      "heart_rate": 59.75,
+      "spo2": 93.83333333333333,
+      "respiratory_rate": 11.0
+    },
+    {
+      "hour": 96.1,
+      "available_hour": 96.1,
+      "urine_output_ml": 65.0,
+      "vasopressor": 1.0
+    },
+    {
+      "hour": 97.0,
+      "available_hour": 97.0,
+      "map": 69.33333333333333,
+      "heart_rate": 58.25,
+      "spo2": 94.41666666666667,
+      "respiratory_rate": 10.916666666666666
+    },
+    {
+      "hour": 97.1,
+      "available_hour": 97.1,
+      "urine_output_ml": 45.0,
+      "vasopressor": 1.0
+    },
+    {
+      "hour": 98.0,
+      "available_hour": 98.0,
+      "map": 72.75,
+      "heart_rate": 57.833333333333336,
+      "spo2": 94.83333333333333,
+      "respiratory_rate": 11.166666666666666
+    },
+    {
+      "hour": 98.1,
+      "available_hour": 98.1,
+      "urine_output_ml": 75.0,
+      "vasopressor": 1.0
+    },
+    {
+      "hour": 99.0,
+      "available_hour": 99.0,
+      "map": 68.83333333333333,
+      "heart_rate": 55.916666666666664,
+      "spo2": 94.75,
+      "respiratory_rate": 10.916666666666666
+    },
+    {
+      "hour": 99.1,
+      "available_hour": 99.1,
+      "urine_output_ml": 125.0,
+      "vasopressor": 1.0
+    },
+    {
+      "hour": 100.0,
+      "available_hour": 100.0,
+      "map": 72.25,
+      "heart_rate": 57.0,
+      "spo2": 96.75,
+      "respiratory_rate": 10.666666666666666
+    },
+    {
+      "hour": 100.1,
+      "available_hour": 100.1,
+      "urine_output_ml": 50.0,
+      "vasopressor": 1.0
+    },
+    {
+      "hour": 101.0,
+      "available_hour": 101.0,
+      "map": 75.08333333333333,
+      "heart_rate": 56.0,
+      "spo2": 95.33333333333333,
+      "respiratory_rate": 11.0
+    },
+    {
+      "hour": 101.1,
+      "available_hour": 101.1,
+      "urine_output_ml": 125.0,
+      "vasopressor": 1.0
+    },
+    {
+      "hour": 102.0,
+      "available_hour": 102.0,
+      "map": 69.66666666666667,
+      "heart_rate": 56.166666666666664,
+      "spo2": 91.83333333333333,
+      "respiratory_rate": 11.416666666666666
+    },
+    {
+      "hour": 102.1,
+      "available_hour": 102.1,
+      "urine_output_ml": 50.0,
+      "vasopressor": 1.0
+    },
+    {
+      "hour": 103.0,
+      "available_hour": 103.0,
+      "map": 71.66666666666667,
+      "heart_rate": 56.0,
+      "spo2": 95.25,
+      "respiratory_rate": 11.916666666666666
+    },
+    {
+      "hour": 103.1,
+      "available_hour": 103.1,
+      "urine_output_ml": 50.0
+    },
+    {
+      "hour": 104.0,
+      "available_hour": 104.0,
+      "map": 65.33333333333333,
+      "heart_rate": 55.416666666666664,
+      "spo2": 95.0,
+      "respiratory_rate": 10.25
+    },
+    {
+      "hour": 104.1,
+      "available_hour": 104.1,
+      "urine_output_ml": 50.0
+    },
+    {
+      "hour": 105.0,
+      "available_hour": 105.0,
+      "map": 64.5,
+      "heart_rate": 55.5,
+      "spo2": 90.91666666666667,
+      "respiratory_rate": 10.166666666666666
+    },
+    {
+      "hour": 105.1,
+      "available_hour": 105.1,
+      "urine_output_ml": 50.0
+    },
+    {
+      "hour": 106.0,
+      "available_hour": 106.0,
+      "map": 65.83333333333333,
+      "heart_rate": 56.0,
+      "spo2": 93.08333333333333,
+      "respiratory_rate": 11.333333333333334
+    },
+    {
+      "hour": 106.1,
+      "available_hour": 106.1,
+      "urine_output_ml": 50.0
+    },
+    {
+      "hour": 107.0,
+      "available_hour": 107.0,
+      "map": 67.25,
+      "heart_rate": 54.833333333333336,
+      "spo2": 92.91666666666667,
+      "respiratory_rate": 12.833333333333334
+    },
+    {
+      "hour": 107.1,
+      "available_hour": 107.1,
+      "urine_output_ml": 50.0,
+      "vasopressor": 1.0
+    },
+    {
+      "hour": 107.35,
+      "available_hour": 107.35,
+      "vasopressor": 1.0
+    },
+    {
+      "hour": 107.916667,
+      "available_hour": 107.916667,
+      "bicarbonate": 32.0
+    },
+    {
+      "hour": 108.0,
+      "available_hour": 108.0,
+      "map": 68.08333333333333,
+      "heart_rate": 54.583333333333336,
+      "spo2": 94.33333333333333,
+      "respiratory_rate": 13.833333333333334
+    },
+    {
+      "hour": 108.1,
+      "available_hour": 108.1,
+      "urine_output_ml": 60.0,
+      "vasopressor": 1.0
+    },
+    {
+      "hour": 108.183333,
+      "available_hour": 108.183333,
+      "creatinine": 1.3,
+      "bun": 38.0,
+      "potassium": 4.0,
+      "bicarbonate": 29.0,
+      "sodium": 136.0,
+      "glucose": 120.0,
+      "hemoglobin": 9.0,
+      "wbc": 19.1
+    },
+    {
+      "hour": 109.0,
+      "available_hour": 109.0,
+      "map": 65.25,
+      "heart_rate": 54.583333333333336,
+      "spo2": 94.66666666666667,
+      "respiratory_rate": 13.0
+    },
+    {
+      "hour": 109.1,
+      "available_hour": 109.1,
+      "urine_output_ml": 50.0,
+      "vasopressor": 1.0
+    },
+    {
+      "hour": 110.0,
+      "available_hour": 110.0,
+      "map": 64.75,
+      "heart_rate": 54.666666666666664,
+      "spo2": 94.66666666666667,
+      "respiratory_rate": 11.0
+    },
+    {
+      "hour": 110.1,
+      "available_hour": 110.1,
+      "urine_output_ml": 40.0,
+      "vasopressor": 1.0
+    },
+    {
+      "hour": 111.0,
+      "available_hour": 111.0,
+      "map": 68.91666666666667,
+      "heart_rate": 55.5,
+      "spo2": 95.75,
+      "respiratory_rate": 12.5
+    },
+    {
+      "hour": 111.1,
+      "available_hour": 111.1,
+      "vasopressor": 1.0
+    },
+    {
+      "hour": 111.183333,
+      "available_hour": 111.183333,
+      "urine_output_ml": 45.0
+    },
+    {
+      "hour": 112.0,
+      "available_hour": 112.0,
+      "map": 66.16666666666667,
+      "heart_rate": 55.666666666666664,
+      "spo2": 95.83333333333333,
+      "respiratory_rate": 16.166666666666668
+    },
+    {
+      "hour": 112.1,
+      "available_hour": 112.1,
+      "urine_output_ml": 43.0,
+      "vasopressor": 1.0
+    },
+    {
+      "hour": 112.933333,
+      "available_hour": 112.933333,
+      "vasopressor": 1.0
+    },
+    {
+      "hour": 113.0,
+      "available_hour": 113.0,
+      "map": 69.83333333333333,
+      "heart_rate": 57.0,
+      "spo2": 93.83333333333333,
+      "respiratory_rate": 13.0
+    },
+    {
+      "hour": 113.1,
+      "available_hour": 113.1,
+      "urine_output_ml": 48.0,
+      "vasopressor": 1.0
+    },
+    {
+      "hour": 114.0,
+      "available_hour": 114.0,
+      "map": 72.25,
+      "heart_rate": 59.416666666666664,
+      "spo2": 92.16666666666667,
+      "respiratory_rate": 16.0
+    },
+    {
+      "hour": 114.1,
+      "available_hour": 114.1,
+      "urine_output_ml": 35.0,
+      "vasopressor": 1.0
+    },
+    {
+      "hour": 115.0,
+      "available_hour": 115.0,
+      "map": 71.16666666666667,
+      "heart_rate": 60.416666666666664,
+      "spo2": 91.33333333333333,
+      "respiratory_rate": 16.416666666666668
+    },
+    {
+      "hour": 115.1,
+      "available_hour": 115.1,
+      "urine_output_ml": 65.0
+    },
+    {
+      "hour": 116.0,
+      "available_hour": 116.0,
+      "map": 75.83333333333333,
+      "heart_rate": 63.583333333333336,
+      "spo2": 90.5,
+      "respiratory_rate": 16.583333333333332
+    },
+    {
+      "hour": 116.1,
+      "available_hour": 116.1,
+      "urine_output_ml": 60.0
+    },
+    {
+      "hour": 117.0,
+      "available_hour": 117.0,
+      "map": 70.58333333333333,
+      "heart_rate": 62.5,
+      "spo2": 90.16666666666667,
+      "respiratory_rate": 16.833333333333332
+    },
+    {
+      "hour": 117.1,
+      "available_hour": 117.1,
+      "urine_output_ml": 35.0
+    },
+    {
+      "hour": 118.0,
+      "available_hour": 118.0,
+      "map": 67.0,
+      "heart_rate": 61.666666666666664,
+      "spo2": 91.41666666666667,
+      "respiratory_rate": 16.416666666666668
+    },
+    {
+      "hour": 118.1,
+      "available_hour": 118.1,
+      "urine_output_ml": 60.0
+    },
+    {
+      "hour": 119.0,
+      "available_hour": 119.0,
+      "map": 70.41666666666667,
+      "heart_rate": 62.333333333333336,
+      "spo2": 94.58333333333333,
+      "respiratory_rate": 14.416666666666666
+    },
+    {
+      "hour": 119.1,
+      "available_hour": 119.1,
+      "urine_output_ml": 45.0
+    },
+    {
+      "hour": 120.0,
+      "available_hour": 120.0,
+      "map": 66.33333333333333,
+      "heart_rate": 62.833333333333336,
+      "spo2": 93.16666666666667,
+      "respiratory_rate": 13.833333333333334
+    },
+    {
+      "hour": 120.1,
+      "available_hour": 120.1,
+      "urine_output_ml": 40.0
+    },
+    {
+      "hour": 121.0,
+      "available_hour": 121.0,
+      "map": 68.5,
+      "heart_rate": 67.0,
+      "spo2": 92.41666666666667,
+      "respiratory_rate": 17.416666666666668
+    },
+    {
+      "hour": 121.1,
+      "available_hour": 121.1,
+      "urine_output_ml": 45.0
+    },
+    {
+      "hour": 122.0,
+      "available_hour": 122.0,
+      "map": 75.5,
+      "heart_rate": 69.58333333333333,
+      "spo2": 92.66666666666667,
+      "respiratory_rate": 20.0
+    },
+    {
+      "hour": 122.1,
+      "available_hour": 122.1,
+      "urine_output_ml": 100.0
+    },
+    {
+      "hour": 123.0,
+      "available_hour": 123.0,
+      "map": 67.75,
+      "heart_rate": 65.58333333333333,
+      "spo2": 95.41666666666667,
+      "respiratory_rate": 16.5
+    },
+    {
+      "hour": 123.1,
+      "available_hour": 123.1,
+      "urine_output_ml": 30.0
+    },
+    {
+      "hour": 124.0,
+      "available_hour": 124.0,
+      "map": 67.58333333333333,
+      "heart_rate": 64.83333333333333,
+      "spo2": 97.16666666666667,
+      "respiratory_rate": 17.083333333333332
+    },
+    {
+      "hour": 124.1,
+      "available_hour": 124.1,
+      "urine_output_ml": 60.0
+    },
+    {
+      "hour": 125.0,
+      "available_hour": 125.0,
+      "map": 78.66666666666667,
+      "heart_rate": 67.58333333333333,
+      "spo2": 98.33333333333333,
+      "respiratory_rate": 19.0
+    },
+    {
+      "hour": 125.1,
+      "available_hour": 125.1,
+      "urine_output_ml": 60.0
+    },
+    {
+      "hour": 126.0,
+      "available_hour": 126.0,
+      "map": 74.0,
+      "heart_rate": 66.08333333333333,
+      "spo2": 90.91666666666667,
+      "respiratory_rate": 19.083333333333332
+    },
+    {
+      "hour": 126.1,
+      "available_hour": 126.1,
+      "urine_output_ml": 40.0
+    },
+    {
+      "hour": 127.0,
+      "available_hour": 127.0,
+      "map": 66.91666666666667,
+      "heart_rate": 63.416666666666664,
+      "spo2": 93.41666666666667,
+      "respiratory_rate": 16.833333333333332
+    },
+    {
+      "hour": 127.1,
+      "available_hour": 127.1,
+      "urine_output_ml": 40.0
+    },
+    {
+      "hour": 127.6,
+      "available_hour": 127.6,
+      "urine_output_ml": 200.0
+    },
+    {
+      "hour": 128.0,
+      "available_hour": 128.0,
+      "map": 70.83333333333333,
+      "heart_rate": 65.08333333333333,
+      "spo2": 92.83333333333333,
+      "respiratory_rate": 17.166666666666668
+    },
+    {
+      "hour": 128.1,
+      "available_hour": 128.1,
+      "urine_output_ml": 200.0
+    },
+    {
+      "hour": 128.6,
+      "available_hour": 128.6,
+      "urine_output_ml": 200.0
+    },
+    {
+      "hour": 129.0,
+      "available_hour": 129.0,
+      "map": 67.08333333333333,
+      "heart_rate": 64.0,
+      "spo2": 91.25,
+      "respiratory_rate": 16.083333333333332
+    },
+    {
+      "hour": 129.1,
+      "available_hour": 129.1,
+      "urine_output_ml": 250.0
+    },
+    {
+      "hour": 130.0,
+      "available_hour": 130.0,
+      "map": 68.66666666666667,
+      "heart_rate": 59.666666666666664,
+      "spo2": 93.33333333333333,
+      "respiratory_rate": 13.666666666666666
+    },
+    {
+      "hour": 130.1,
+      "available_hour": 130.1,
+      "urine_output_ml": 125.0
+    },
+    {
+      "hour": 130.6,
+      "available_hour": 130.6,
+      "urine_output_ml": 175.0
+    },
+    {
+      "hour": 131.0,
+      "available_hour": 131.0,
+      "map": 82.75,
+      "heart_rate": 67.58333333333333,
+      "spo2": 86.83333333333333,
+      "respiratory_rate": 16.333333333333332
+    },
+    {
+      "hour": 131.1,
+      "available_hour": 131.1,
+      "urine_output_ml": 75.0
+    },
+    {
+      "hour": 132.0,
+      "available_hour": 132.0,
+      "map": 67.08333333333333,
+      "heart_rate": 62.583333333333336,
+      "spo2": 89.0,
+      "respiratory_rate": 12.166666666666666
+    },
+    {
+      "hour": 132.1,
+      "available_hour": 132.1,
+      "urine_output_ml": 100.0
+    },
+    {
+      "hour": 133.0,
+      "available_hour": 133.0,
+      "map": 82.25,
+      "heart_rate": 64.66666666666667,
+      "spo2": 87.91666666666667,
+      "respiratory_rate": 12.833333333333334
+    },
+    {
+      "hour": 133.1,
+      "available_hour": 133.1,
+      "urine_output_ml": 200.0
+    },
+    {
+      "hour": 133.116667,
+      "available_hour": 133.116667,
+      "bicarbonate": 31.0
+    },
+    {
+      "hour": 134.0,
+      "available_hour": 134.0,
+      "map": 55.666666666666664,
+      "heart_rate": 61.666666666666664,
+      "spo2": 89.41666666666667,
+      "respiratory_rate": 12.0
+    },
+    {
+      "hour": 134.1,
+      "available_hour": 134.1,
+      "urine_output_ml": 80.0
+    },
+    {
+      "hour": 135.0,
+      "available_hour": 135.0,
+      "map": 56.0,
+      "heart_rate": 61.0,
+      "spo2": 89.91666666666667,
+      "respiratory_rate": 12.0
+    },
+    {
+      "hour": 135.1,
+      "available_hour": 135.1,
+      "urine_output_ml": 100.0
+    },
+    {
+      "hour": 136.0,
+      "available_hour": 136.0,
+      "map": 63.0,
+      "heart_rate": 62.666666666666664,
+      "spo2": 89.91666666666667,
+      "respiratory_rate": 12.666666666666666
+    },
+    {
+      "hour": 136.1,
+      "available_hour": 136.1,
+      "urine_output_ml": 60.0
+    },
+    {
+      "hour": 136.466667,
+      "available_hour": 136.466667,
+      "creatinine": 1.3,
+      "bun": 33.0,
+      "potassium": 3.8,
+      "bicarbonate": 31.0,
+      "sodium": 135.0,
+      "glucose": 94.0,
+      "hemoglobin": 8.1,
+      "wbc": 14.4
+    },
+    {
+      "hour": 137.0,
+      "available_hour": 137.0,
+      "map": 59.0,
+      "heart_rate": 64.25,
+      "spo2": 91.91666666666667,
+      "respiratory_rate": 12.333333333333334
+    },
+    {
+      "hour": 137.1,
+      "available_hour": 137.1,
+      "urine_output_ml": 48.0,
+      "diuretic": 1.0
+    },
+    {
+      "hour": 138.0,
+      "available_hour": 138.0,
+      "map": 59.5,
+      "heart_rate": 62.75,
+      "spo2": 96.16666666666667,
+      "respiratory_rate": 12.5
+    },
+    {
+      "hour": 138.1,
+      "available_hour": 138.1,
+      "urine_output_ml": 150.0,
+      "diuretic": 1.0
+    },
+    {
+      "hour": 139.0,
+      "available_hour": 139.0,
+      "map": 59.5,
+      "heart_rate": 64.83333333333333,
+      "spo2": 91.16666666666667,
+      "respiratory_rate": 14.083333333333334
+    },
+    {
+      "hour": 139.1,
+      "available_hour": 139.1,
+      "urine_output_ml": 275.0,
+      "diuretic": 1.0
+    },
+    {
+      "hour": 140.0,
+      "available_hour": 140.0,
+      "map": 66.0,
+      "heart_rate": 64.91666666666667,
+      "spo2": 90.25,
+      "respiratory_rate": 13.666666666666666
+    },
+    {
+      "hour": 140.1,
+      "available_hour": 140.1,
+      "urine_output_ml": 280.0,
+      "diuretic": 1.0
+    },
+    {
+      "hour": 141.0,
+      "available_hour": 141.0,
+      "map": 62.0,
+      "heart_rate": 61.416666666666664,
+      "spo2": 92.41666666666667,
+      "respiratory_rate": 12.333333333333334
+    },
+    {
+      "hour": 141.1,
+      "available_hour": 141.1,
+      "urine_output_ml": 350.0,
+      "diuretic": 1.0
+    },
+    {
+      "hour": 142.0,
+      "available_hour": 142.0,
+      "map": 64.0,
+      "heart_rate": 58.083333333333336,
+      "spo2": 91.58333333333333,
+      "respiratory_rate": 12.083333333333334
+    },
+    {
+      "hour": 142.1,
+      "available_hour": 142.1,
+      "urine_output_ml": 300.0,
+      "diuretic": 1.0
+    },
+    {
+      "hour": 143.0,
+      "available_hour": 143.0,
+      "map": 55.5,
+      "heart_rate": 57.416666666666664,
+      "spo2": 92.25,
+      "respiratory_rate": 12.0
+    },
+    {
+      "hour": 143.1,
+      "available_hour": 143.1,
+      "urine_output_ml": 480.0,
+      "diuretic": 1.0
+    },
+    {
+      "hour": 143.766667,
+      "available_hour": 143.766667,
+      "creatinine": 1.4,
+      "bun": 36.0,
+      "potassium": 4.0,
+      "bicarbonate": 29.0,
+      "sodium": 135.0,
+      "glucose": 178.0
+    },
+    {
+      "hour": 144.0,
+      "available_hour": 144.0,
+      "map": 61.0,
+      "heart_rate": 59.5,
+      "spo2": 92.5,
+      "respiratory_rate": 12.583333333333334
+    },
+    {
+      "hour": 144.1,
+      "available_hour": 144.1,
+      "urine_output_ml": 500.0,
+      "diuretic": 1.0
+    },
+    {
+      "hour": 145.0,
+      "available_hour": 145.0,
+      "map": 55.5,
+      "heart_rate": 61.666666666666664,
+      "spo2": 92.0,
+      "respiratory_rate": 14.416666666666666
+    },
+    {
+      "hour": 145.1,
+      "available_hour": 145.1,
+      "urine_output_ml": 480.0,
+      "diuretic": 1.0
+    },
+    {
+      "hour": 146.0,
+      "available_hour": 146.0,
+      "map": 53.5,
+      "heart_rate": 61.416666666666664,
+      "spo2": 92.5,
+      "respiratory_rate": 15.416666666666666
+    },
+    {
+      "hour": 146.1,
+      "available_hour": 146.1,
+      "urine_output_ml": 360.0,
+      "diuretic": 1.0
+    },
+    {
+      "hour": 146.266667,
+      "available_hour": 146.266667,
+      "diuretic": 1.0
+    },
+    {
+      "hour": 147.0,
+      "available_hour": 147.0,
+      "map": 48.0,
+      "heart_rate": 59.833333333333336,
+      "spo2": 95.16666666666667,
+      "respiratory_rate": 12.583333333333334
+    },
+    {
+      "hour": 147.1,
+      "available_hour": 147.1,
+      "urine_output_ml": 300.0
+    },
+    {
+      "hour": 148.0,
+      "available_hour": 148.0,
+      "map": 66.0,
+      "heart_rate": 65.25,
+      "spo2": 93.91666666666667,
+      "respiratory_rate": 18.083333333333332
+    },
+    {
+      "hour": 148.1,
+      "available_hour": 148.1,
+      "urine_output_ml": 300.0
+    },
+    {
+      "hour": 149.0,
+      "available_hour": 149.0,
+      "map": 62.0,
+      "heart_rate": 64.08333333333333,
+      "spo2": 94.66666666666667,
+      "respiratory_rate": 16.75
+    },
+    {
+      "hour": 149.1,
+      "available_hour": 149.1,
+      "urine_output_ml": 350.0
+    },
+    {
+      "hour": 150.0,
+      "available_hour": 150.0,
+      "map": 67.33333333333333,
+      "heart_rate": 61.333333333333336,
+      "spo2": 95.33333333333333,
+      "respiratory_rate": 15.333333333333334
+    }
+  ]
+}

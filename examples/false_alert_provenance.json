@@ -1,0 +1,19 @@
+{
+  "source": "eicu-crd-demo/2.0.1",
+  "source_url": "https://physionet.org/content/eicu-crd-demo/2.0.1/",
+  "license": "Open Data Commons Open Database License 1.0",
+  "stay_id": "eicu-1066190",
+  "patient_id": "eicu-009-10062",
+  "at_hour": 12.0,
+  "partition": "Preserved patient-disjoint eicu internal audit set, previously inspected",
+  "selection": "First false-positive evaluated window sorted by stay/time. Full follow-up and late creatinine support no observed qualifying AKI within this horizon.",
+  "retrospective_outcome": {
+    "observed_aki_within_24h": false,
+    "creatinine_aki_measurement_hour": null,
+    "creatinine_aki_documented_hour": null,
+    "hours_after_prediction": null
+  },
+  "request_file": "examples/false_alert.json",
+  "note": "Future outcome is separate from, and never included in, prediction inputs. An illustration is not an overall performance estimate.",
+  "model_sha256": "04c3e99c8b7c9782791098fd0300c564fe90466644b6068442212b4c0c6d5042"
+}
