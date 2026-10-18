@@ -18,7 +18,7 @@ frontend.
 - **show_graphs.bat**: open graphs and plain explanations for 15 varied real patient stories. Use **Next patient** in the report, or **show_graphs.bat next** from the terminal.
 - **demo.bat**: print predictions, real retrospective examples and evaluation.
 - **run.bat**: menu for manual inputs, CSV, stored stays and results.
-- **start_api.bat**: API at http://127.0.0.1:8000; documentation at /docs.
+- **start_api.bat**: API at <http://127.0.0.1:8000>; documentation at /docs.
 - **doctor.bat**: check model, database and evaluation readiness.
 - **verify.bat --http**: tests, offline audit and a temporary real HTTP server.
 - Fresh machine: run **setup.bat**. It installs tested pinned dependencies,
@@ -82,8 +82,21 @@ add --skip-download to use the cached source files.
 
 Research demonstration: a next-24h forecast does not establish a full 24h warning.
 
-
 Optional AI explanations are configured server-side with GEMINI_API_KEY and
 GEMINI_MODEL in .env. Restart the API after changing settings. Graphs and risk
 scores remain available with no provider key. The provider name never appears
 in the graph report. See docs/GRAPH_DEMO.md for the one-minute walkthrough.
+
+---
+
+### Git Commands
+
+- To push changes
+
+```
+git status
+git add .
+git commit -m "message"
+git push
+```
+
