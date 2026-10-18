@@ -20,6 +20,12 @@ def print_prediction(result):
         print("Stay:", result["stay_id"])
     print("Prediction time: ICU hour", result["at_hour"])
     print("Result:", result["status"].replace("_", " ").upper())
+    summary = result.get("clinical_summary", {})
+    if summary:
+        print(summary["headline"])
+        print(summary["message"])
+        for finding in summary["current_findings"]:
+            print("CHECK NOW:", finding["message"])
     if result["predicted_risk_percent"] is not None:
         print(f"Estimated next-24h AKI risk: {result['predicted_risk_percent']:.2f}%")
         print("Risk category:", result["risk_category"].upper())

@@ -22,6 +22,8 @@ if /i "%~1"=="--http" (
   ".venv\Scripts\python.exe" scripts\smoke_http.py
   if errorlevel 1 exit /b 1
 )
+".venv\Scripts\python.exe" scripts\validate_product.py
+if errorlevel 1 exit /b 1
 ".venv\Scripts\python.exe" scripts\write_improvement_report.py
 if errorlevel 1 exit /b 1
 ".venv\Scripts\python.exe" scripts\write_completion_report.py

@@ -170,6 +170,22 @@ Machine-readable evidence: pytest.xml, verification.json, http_smoke.json,
 http_launcher_smoke.json and completion.json. Run verify.bat --http; the actual
 launcher smoke can also be run with scripts/smoke_http.py --launcher.
 
+## Visual patient-story demo
+
+show_graphs.bat opens a portable graph report with measured creatinine, actual
+model risk, a timeline and a separately revealed later outcome. Plot points are
+checked against available records and preserved prediction scores. Missing risk
+is not plotted as zero. Optional provider-backed prose is isolated from scoring,
+uses computed facts, and falls back to a local explanation. Provider identity
+stays out of the judge-facing display. See ../docs/GRAPH_DEMO.md.
+
+## Product-use validation
+
+[Patient-case validation](PRODUCT_VALIDATION.md) records the product behavior for
+steady readings, a rising trend, existing injury, missing history, confirmed zero
+urine, high potassium and dialysis exclusions. Plain-language summaries and
+current-result review are separate from future-risk scores.
+
 ## Additional improvement work
 
 The bounded development-only challenger study and optional source-calibrated

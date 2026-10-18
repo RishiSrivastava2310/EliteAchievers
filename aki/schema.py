@@ -225,6 +225,7 @@ class PredictionResponse(BaseModel):
     alert_options: dict = Field(default_factory=dict)
     alert_threshold: float = Field(ge=0, le=1)
     clinical_assessment: dict
+    clinical_summary: dict = Field(default_factory=dict)
     data_quality: dict
     model_contributions: list[ModelContribution]
     input_sensitivity: dict | None = None

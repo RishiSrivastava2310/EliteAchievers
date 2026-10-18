@@ -80,6 +80,68 @@
         ]
       }
     },
+    "/v1/summary-status": {
+      "get": {
+        "summary": "Get Summary Status",
+        "operationId": "get_summary_status_v1_summary_status_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ]
+      }
+    },
+    "/v1/summarize": {
+      "post": {
+        "summary": "Summarize Prediction",
+        "operationId": "summarize_prediction_v1_summarize_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PredictionRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ]
+      }
+    },
     "/v1/input-schema": {
       "get": {
         "summary": "Input Schema",
@@ -988,6 +1050,11 @@
             "type": "object",
             "title": "Clinical Assessment"
           },
+          "clinical_summary": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Clinical Summary"
+          },
           "data_quality": {
             "additionalProperties": true,
             "type": "object",
@@ -1455,6 +1522,11 @@
             "additionalProperties": true,
             "type": "object",
             "title": "Clinical Assessment"
+          },
+          "clinical_summary": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Clinical Summary"
           },
           "data_quality": {
             "additionalProperties": true,

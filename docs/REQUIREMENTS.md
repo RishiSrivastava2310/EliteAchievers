@@ -45,3 +45,9 @@ Additional improvement work: patient/hospital-isolated development comparisons,
 fold-local patient weighting, fixed probability blends and an optional stricter
 source-calibrated alert policy. No unsupported treatment field was activated.
 See ../reports/IMPROVEMENTS.md for accepted/rejected changes and missed-window costs.
+
+
+Patient-use validation checks plain-language result summaries, important current
+potassium review, unknown-history requests and earlier-versus-new kidney injury.
+The same summary is returned through JSON/CSV/batch and history. See
+../reports/PRODUCT_VALIDATION.md for the recorded patient scenarios.

@@ -189,3 +189,42 @@ responses have an empty alert_options. Missing/stale optional policy artifacts
 leave standard forecasting available; the profile endpoint then returns 503.
 prepare/train refreshes policies. See ../reports/IMPROVEMENTS.md for actual
 false-alert and missed-window counts, not a claim of a more accurate risk score.
+
+
+## Plain-language clinical summary
+
+Every prediction includes clinical_summary: headline, kidney_headline, message,
+review_required, urgent_review_required and current_findings.
+The summary explains the result in plain language, including earlier injury,
+dialysis history and missing information. A below-threshold forecast never
+labels the overall patient condition normal.
+
+The latest available potassium result >=6.0 mmol/L adds an urgent-review finding
+with its value, unit, sample time, entry time and age. It asks the ICU team to
+review the result; it does not prescribe treatment or assert an old value remains
+high. A newer sample or available correction replaces the earlier finding.
+This review flag is separate from the future kidney-warning alert and its
+optional stricter policy. The rule references UK Kidney Association 2023,
+guidelines 14.1/14.2; it is not a full monitor for all dangerous ICU conditions.
+
+History points retain the summary using only that point's available readings.
+Stored-batch counts may include urgent_reviews, separate from future-risk alerts.
+See ../reports/PRODUCT_VALIDATION.md for patient-case evidence.
+
+
+## Plain explanation endpoint
+
+POST /v1/summarize accepts the same patient-history body as /v1/predict.
+It computes the model result, then returns summary, headline and structured facts.
+Provider details and reason_code are backend metadata; display only the plain
+summary/headline/facts. Do not display provider names or API settings in the app.
+GET /v1/summary-status reports configured/model without exposing a key.
+
+GEMINI_API_KEY and GEMINI_MODEL configure the optional provider in .env.
+The current default is gemini-3.5-flash-lite; model names are configurable.
+The API key is sent in a header to Google's fixed API host, never a URL.
+Only computed facts go to the provider, with no patient IDs or raw history.
+Regular prediction endpoints never make provider calls. Missing keys, timeouts,
+invalid replies or provider errors return a local plain-language explanation.
+Exact numeric risk, clinical findings and alert decisions always come from the
+backend model/rules. Generated prose does not replace those fields.

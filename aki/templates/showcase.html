@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AKI Early Warning / Patient story</title>
+<style>
+:root{color-scheme:light;--ink:#17324d;--muted:#51677b;--teal:#087f8c;--orange:#ad4717;--line:#dce5ed}
+*{box-sizing:border-box}body{margin:0;background:#f5f8fb;color:var(--ink);font:16px/1.5 "Segoe UI",Arial,sans-serif}
+main{max-width:1160px;margin:auto;padding:38px 32px 24px}header{border-bottom:1px solid var(--line);padding-bottom:24px}
+.eyebrow{font-size:12px;letter-spacing:2px;font-weight:650;color:var(--teal)}h1{font-size:clamp(26px,4vw,42px);line-height:1.15;margin:10px 0 12px;font-weight:650;letter-spacing:-1px}
+p{margin:0}.intro{color:var(--muted);max-width:780px}.top{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap}.tag{font-size:12px;border:1px solid var(--line);padding:6px 10px;border-radius:20px;background:white}
+nav{display:flex;gap:8px;margin:24px 0 20px;flex-wrap:wrap}button{font:inherit;cursor:pointer;min-height:42px;border:1px solid #c5d4df;border-radius:7px;background:white;color:var(--ink);padding:8px 15px}
+button[aria-pressed=true]{background:var(--ink);color:white;border-color:var(--ink)}button:hover{border-color:var(--teal)}button:focus-visible,input:focus-visible{outline:3px solid #63c5ce;outline-offset:3px}
+.case-head{display:flex;justify-content:space-between;gap:16px;align-items:baseline;flex-wrap:wrap}.origin{font-size:13px;color:var(--teal);font-weight:600}.description{font-size:14px;color:var(--muted);margin-top:5px}
+.metrics{display:grid;grid-template-columns:1fr 1fr 1fr;gap:15px;margin:20px 0}.metric{background:white;border:1px solid var(--line);padding:16px 20px;border-radius:9px}.metric small{display:block;color:var(--muted);font-size:13px}.value{font-size:30px;letter-spacing:-.6px;line-height:1.3;margin:6px 0;font-variant-numeric:tabular-nums}.context{font-size:12px;color:var(--muted)}
+.status{font-size:24px}.status.warning{color:var(--orange)}.status.quiet{color:var(--teal)}
+.plot-shell{background:white;border:1px solid var(--line);padding:14px 10px 4px;border-radius:10px}.chart{display:block;width:100%;height:auto}.plot-caption{font-size:12px;color:var(--muted);padding:4px 12px 10px}
+.controls{padding:18px 0 8px;display:flex;gap:22px;align-items:center;flex-wrap:wrap}.timeline{flex:1;min-width:230px}label{font-size:14px}input[type=range]{width:100%;accent-color:var(--teal);margin-top:9px}.range-label{display:flex;justify-content:space-between;color:var(--muted);font-size:12px}.toggle{display:flex;gap:8px;align-items:center;font-size:14px}.toggle input{width:17px;height:17px;accent-color:var(--teal)}
+.explanation{margin-top:18px;padding:20px 24px;background:#e9f4f4;border-radius:9px;border-left:4px solid var(--teal)}h2{font-size:18px;margin:0 0 8px;font-weight:650}.explanation p{max-width:950px}.urgent{margin-top:10px;color:#8d3211;font-weight:600}
+.talk{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}.talk p{font-size:14px;max-width:870px}.talk strong{display:block;font-size:12px;letter-spacing:1px;color:var(--teal);margin-bottom:5px}
+footer{font-size:12px;color:var(--muted);margin-top:22px}.foot-row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.print{font-size:13px;min-height:36px}
+@media(max-width:650px){main{padding:22px 15px}.metrics{grid-template-columns:1fr 1fr}.metric:last-child{grid-column:1/-1}.value{font-size:26px}.plot-shell{padding:0;border:0;border-radius:0;margin:0 -9px}.explanation{padding:16px}.tag{display:none}.chart{min-height:260px;object-fit:contain}nav button{flex:1;font-size:13px;padding:8px}}
+@media print{body{background:white}main{padding:0;max-width:none}nav,.controls,.print,.patient-navigation button{display:none}.explanation,.metric,.plot-shell{break-inside:avoid}.chart{max-height:620px;object-fit:contain}header{padding-bottom:12px}.metrics{margin:12px 0}footer{margin-top:12px}}
+</style></head><body><main>
+<header><div class="top"><div class="eyebrow">AKI EARLY WARNING / PATIENT STORY</div><span class="tag">Interactive demonstration</span></div>
+<h1>See a kidney warning unfold.</h1><p class="intro">Follow the blood-test readings, see when the model raises a warning, and compare it with what happened later.</p></header>
+<nav aria-label="Choose a patient story" id="cases"></nav>
+<div class="top patient-navigation" style="margin-bottom:18px"><div class="origin" id="patientPosition"></div><div style="display:flex;gap:8px">
+<button id="previousPatient" type="button">Previous patient</button><button id="nextPatient" type="button">Next patient</button></div></div>
+<div class="case-head"><div><div class="origin" id="origin"></div><p class="description" id="description"></p></div><span class="tag" id="timeTag"></span></div>
+<section class="metrics" aria-label="Result at the selected time">
+<div class="metric"><small>Estimated risk in the next 24 hours</small><div class="value" id="risk"></div><div class="context" id="riskContext"></div></div>
+<div class="metric"><small>Kidney warning at this time</small><div class="value status" id="status"></div><div class="context" id="statusContext"></div></div>
+<div class="metric"><small id="leadLabel">Comparison with later records</small><div class="value" id="lead"></div><div class="context" id="leadContext"></div></div></section>
+<div class="plot-shell"><img class="chart" id="chart" alt=""><p class="plot-caption">Dots are recorded measurements or calculated predictions. Risk is recalculated every 6 hours in this replay. The view follows the selected time. Grey shading is time after that point. Dashed blood-test readings show later records only.</p></div>
+<div class="controls"><div class="timeline"><label for="replay">Move through the ICU stay: <strong id="replayHour"></strong></label><input id="replay" type="range" min="0" max="1" value="0" step="1"><div class="range-label"><span id="startHour"></span><span id="endHour"></span></div></div><label class="toggle"><input id="outcome" type="checkbox" checked>Show what happened later</label></div>
+<section class="explanation" aria-live="polite"><h2>What this means</h2><p id="explanation"></p><p class="urgent" id="urgent"></p></section>
+<div class="talk"><p><strong>A SIMPLE WAY TO EXPLAIN IT</strong><span id="talk"></span></p><button class="print" onclick="window.print()">Print / Save as PDF</button></div>
+<footer><div class="foot-row"><span id="sourceNote"></span><span>Historical demo / supports clinical review</span></div></footer>
+</main><script type="application/json" id="data">__SHOWCASE_DATA__</script><script>
+"use strict";
+const data=JSON.parse(document.getElementById("data").textContent);
+const el=id=>document.getElementById(id);
+let active=0;
+for(let i=0;i<data.cases.length;i++){const b=document.createElement("button");b.type="button";b.textContent=data.cases[i].label;b.dataset.case=i;b.addEventListener("click",()=>choose(i));el("cases").appendChild(b)}
+function choose(i){active=i;const c=data.cases[i];el("replay").max=c.frames.length-1;el("replay").value=c.default_index;el("replay").disabled=c.frames.length===1;el("outcome").disabled=c.kind!=="patient";render()}
+function movePatient(direction){
+const patients=data.cases.map((c,i)=>c.kind==="patient"?i:-1).filter(i=>i>=0);
+const position=patients.indexOf(active);
+choose(patients[position<0?0:(position+direction+patients.length)%patients.length]);
+}
+function render(){
+const c=data.cases[active],f=c.frames[Number(el("replay").value)],reveal=el("outcome").checked&&c.kind==="patient";
+for(const b of el("cases").children)b.setAttribute("aria-pressed",String(Number(b.dataset.case)===active));
+const patients=data.cases.filter(c=>c.kind==="patient");
+el("patientPosition").textContent=c.kind==="patient"?"Patient "+(patients.findIndex(p=>p.id===c.id)+1)+" of "+patients.length:"Illustrative comparison";
+el("origin").textContent=c.origin;el("description").textContent=c.description;el("timeTag").textContent="ICU hour "+f.hour;
+el("risk").textContent=f.risk===null?"Not scored":f.risk.toFixed(1)+"%";
+el("riskContext").textContent=f.risk===null?"See the explanation below":"A model estimate, not a confirmed injury";
+el("status").textContent=f.status==="aki_already_observed"?"Injury already seen":f.risk===null?"More context needed":f.alert?"Warning raised":"No warning raised";
+el("status").className="value status "+(f.alert||f.status==="aki_already_observed"?"warning":"quiet");
+el("statusContext").textContent=f.risk===null?"A new-injury score is not shown":"Warning threshold: "+f.threshold.toFixed(1)+"%";
+const delta=c.outcome_hour===null?null:Number((c.outcome_hour-f.hour).toFixed(6));
+el("leadLabel").textContent=c.kind==="patient"?"Comparison with later records":"About this example";
+let lead,leadContext;
+if(c.kind!=="patient"){lead="Illustrative";leadContext="Example inputs with a real model prediction";}
+else if(!reveal){lead="Not revealed";leadContext="Reveal later records with the checkbox";}
+else if(f.followup_status==="injury_recorded"){
+lead=delta.toFixed(2)+(f.alert?" hours":" hours later");
+leadContext=f.alert?"Between this warning and the injury sample":"Between the selected time and the injury sample";
+}
+else if(f.followup_status==="injury_already_recorded"){lead="Recorded";leadContext="Kidney-injury sample at ICU hour "+c.outcome_hour.toFixed(1);}
+else if(f.followup_status==="no_injury_recorded"){lead="None in 24 hours";leadContext="No qualifying injury sample in the next day of records";}
+else{lead="Follow-up incomplete";leadContext="The next-day record is too short or a later blood test is missing";}
+el("lead").textContent=lead;el("leadContext").textContent=leadContext;
+el("chart").src=f.plots[String(reveal)];
+el("chart").alt="Kidney blood-test readings and calculated risk through ICU hour "+f.hour+". "+(reveal?"Later blood tests are shown separately.":"Future readings are hidden.");
+el("replayHour").textContent="hour "+f.hour;el("startHour").textContent="hour "+c.frames[0].hour;el("endHour").textContent=c.frames.length>1?"hour "+c.frames.at(-1).hour:"12 hours of example history";
+el("explanation").textContent=f.explanation;
+el("urgent").textContent=f.current_findings.map(x=>x.message).join(" ");
+el("sourceNote").textContent=c.source_note;
+let talk;
+if(c.kind!=="patient")talk=c.id==="stable"?"The kidney reading stays nearly steady. The model stays below its warning threshold.":"The kidney reading rises and blood pressure falls in this example. The model raises a warning before the creatinine rule confirms an injury.";
+else if(!reveal)talk="Only readings available at the selected time enter the prediction. Reveal later records to compare the next-day outcome.";
+else if(f.followup_status==="injury_recorded")talk=(f.alert?"The model raised a warning.":"The model stayed below its warning threshold at this point.")+" A kidney-injury sample was recorded "+delta.toFixed(2)+" hours later. That later result was not used for this earlier prediction.";
+else if(f.followup_status==="no_injury_recorded")talk=(f.alert?"The model raised a warning for review.":"The model stayed below its warning threshold.")+" No qualifying kidney-injury sample was recorded in the following 24 hours, with a later blood test available for comparison.";
+else if(f.followup_status==="injury_already_recorded")talk="A qualifying kidney-injury sample has already been collected. The blood-test graph shows what the record contains at this stage.";
+else talk="This point does not have enough later follow-up to confirm a next-day outcome. The prediction still uses only the information available at this time.";
+el("talk").textContent=talk;
+}
+el("replay").addEventListener("input",render);el("outcome").addEventListener("change",render);
+el("previousPatient").addEventListener("click",()=>movePatient(-1));
+el("nextPatient").addEventListener("click",()=>movePatient(1));
+function chooseFromHash(){
+const requested=new URLSearchParams(location.hash.slice(1)).get("patient");
+const initial=data.cases.findIndex(c=>c.id===requested&&c.kind==="patient");
+choose(initial>=0?initial:0);
+}
+window.addEventListener("hashchange",chooseFromHash);
+chooseFromHash();
+</script></body></html>

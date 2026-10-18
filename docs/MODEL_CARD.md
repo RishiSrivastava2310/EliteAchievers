@@ -107,3 +107,10 @@ It changes alert decisions only; it is not an accuracy or calibration improvemen
 Selection requires >=70% source-calibration window sensitivity and a threshold
 above standard. External sensitivity is not guaranteed. Existing alert outputs
 remain standard. See ../reports/IMPROVEMENTS.md for the full tradeoff and limits.
+
+
+Plain-language clinical summaries accompany all results. A separate current-result
+review flag checks the latest available potassium >=6.0 mmol/L (UK Kidney
+Association 2023, 14.1/14.2), preserving result age and corrections. This is not a
+learned feature change, a treatment prescription or a complete ICU deterioration
+monitor. Kidney risk, alert policies and current-result review remain distinct.

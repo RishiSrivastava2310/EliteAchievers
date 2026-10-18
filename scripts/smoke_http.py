@@ -52,6 +52,7 @@ def main():
         **os.environ,
         "AKI_API_KEY": test_key,
         "AKI_CORS_ORIGINS": "http://localhost:5173",
+        "GEMINI_API_KEY": "",
     }
     use_launcher = "--launcher" in sys.argv
     command = (
@@ -122,6 +123,12 @@ def main():
             json.dumps(prediction, indent=2), encoding="utf-8"
         )
         assert prediction["input_sensitivity"]["tested_variants"] > 0
+        assert prediction["clinical_summary"]["headline"]
+        critical_body = json.loads(json.dumps(body))
+        critical_body["readings"][-1]["potassium"] = 6.7
+        status, critical = call(base, "/v1/predict", critical_body)
+        assert status == 200 and critical["clinical_summary"]["urgent_review_required"]
+        assert critical["clinical_summary"]["current_findings"][0]["value"] == 6.7
         status, batch = call(base, "/v1/predict/batch", {"requests": [body, body]})
         assert status == 200 and batch == [prediction, prediction]
         status, supplied_history = call(base, "/v1/predict/history", body)
@@ -137,6 +144,11 @@ def main():
             "text/csv",
         )
         assert status == 200 and csv_prediction["status"] == "predicted"
+        status, explanation = call(base, "/v1/summarize", body)
+        assert status == 200 and explanation["summary"]
+        assert explanation["provider"] == "local"
+        status, summary_settings = call(base, "/v1/summary-status")
+        assert status == 200 and not summary_settings["configured"]
         status, model = call(base, "/v1/model")
         assert status == 200
         status, profiles = call(base, "/v1/alert-profiles")
@@ -213,6 +225,8 @@ def main():
             "caller_history": "passed",
             "input_sensitivity": "passed",
             "alert_profile_tradeoff": "passed",
+            "plain_clinical_summary_and_current_potassium": "passed",
+            "plain_explanation_endpoint": "passed",
             "json_prediction": "passed",
             "csv_prediction": "passed",
             "stored_replay": "passed",

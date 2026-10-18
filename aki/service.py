@@ -14,6 +14,7 @@ from threadpoolctl import threadpool_limits
 from . import __version__
 from .alerting import prediction_alert_options
 from .clinical import assess
+from .clinical_summary import summarize
 from .config import MODEL_PATH, REPORTS
 from .features import MODEL_MEASUREMENTS, build_features, quality
 from .robustness import input_variants, scorable_features
@@ -235,12 +236,14 @@ def run_prediction(request: PredictionRequest):
             if clinical["dialysis_history_observed"] or clinical["rrt_observed"]
             else "aki_already_observed"
         )
+        result["clinical_summary"] = summarize(result, readings, t)
         return result
     if not 12 <= t <= 168:
         result["status"] = "outside_new_aki_cohort"
         result["data_quality"]["warnings"].append(
             "The initial model is trained for ICU hours 12-168 only"
         )
+        result["clinical_summary"] = summarize(result, readings, t)
         return result
     if (
         not clinical["creatinine_comparison_available"]
@@ -252,6 +255,7 @@ def run_prediction(request: PredictionRequest):
         result["data_quality"]["warnings"].append(
             "Requires recent creatinine, an earlier 7-day comparison, and at least 3 measurement groups in the past 24h"
         )
+        result["clinical_summary"] = summarize(result, readings, t)
         return result
     x = np.asarray([features.get(name, np.nan) for name in bundle["features"]], float)
     with threadpool_limits(limits=2):
@@ -279,6 +283,7 @@ def run_prediction(request: PredictionRequest):
             else "low",
         }
     )
+    result["clinical_summary"] = summarize(result, readings, t)
     return result
 
 
@@ -304,7 +309,14 @@ def prediction_history(body):
                     "predicted_risk_percent": None,
                     "alert": False,
                     "risk_category": None,
-                    "review_required": False,
+                    "review_required": True,
+                    "clinical_summary": {
+                        "headline": "No readings available yet",
+                        "message": "Add readings before calculating kidney risk.",
+                        "urgent_review_required": False,
+                        "review_required": True,
+                        "current_findings": [],
+                    },
                 }
             )
             continue
@@ -329,7 +341,9 @@ def prediction_history(body):
                         "alert",
                     )
                 },
-                "review_required": bool(
+                "clinical_summary": result["clinical_summary"],
+                "review_required": result["clinical_summary"]["review_required"]
+                or bool(
                     result["input_sensitivity"]
                     and result["input_sensitivity"]["review_required"]
                 ),

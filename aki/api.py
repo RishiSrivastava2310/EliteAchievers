@@ -95,6 +95,20 @@ def get_alert_profiles():
     return read_alert_profiles(model_info()["model_sha256"])
 
 
+@protected.get("/v1/summary-status")
+def get_summary_status():
+    from .summaries import summary_status
+
+    return summary_status()
+
+
+@protected.post("/v1/summarize")
+def summarize_prediction(body: PredictionRequest):
+    from .summaries import explain_result
+
+    return explain_result(run_prediction(body))
+
+
 @protected.get("/v1/input-schema")
 def input_schema():
     return {
@@ -272,6 +286,8 @@ def predict_stored_batch(body: StoredBatchRequest):
             counts[prediction["status"]] += 1
             if prediction["alert"]:
                 counts["alerts"] += 1
+            if prediction["clinical_summary"]["urgent_review_required"]:
+                counts["urgent_reviews"] += 1
         except HTTPException as exc:
             if exc.status_code not in (404, 422):
                 raise

@@ -63,3 +63,18 @@ rules resolve every clinical ambiguity. Admission baselines can be missing,
 source urine durations are unknown, false alerts remain frequent, and reverse
 cross-dataset transfer is weak. A clinician-reviewed cohort, an untouched external
 evaluation and prospective workflow testing remain necessary for clinical use.
+
+
+## Clinical-use review additions
+
+- A low kidney forecast with high potassium keeps the potassium review flag visible.
+- Delayed, corrected and older potassium samples follow measurement/availability time.
+- A missing risk estimate still shows important current findings.
+- Earlier kidney injury is described as earlier; a first-new-injury score is withheld.
+- A missing-history point asks for readings rather than implying a reassuring result.
+
+See ../tests/test_clinical_summary.py and ../reports/PRODUCT_VALIDATION.md.
+The potassium review threshold follows UK Kidney Association 2023, guidelines
+14.1/14.2: hospital potassium >=6.0 mmol/L warrants urgent ECG assessment.
+The product asks the ICU team to review; it does not prescribe treatment.
+Source: https://www.ukkidney.org/sites/default/files/FINAL%20VERSION%20-%20UKKA%20CLINICAL%20PRACTICE%20GUIDELINE%20-%20MANAGEMENT%20OF%20HYPERKALAEMIA%20IN%20ADULTS%20-%20191223.pdf

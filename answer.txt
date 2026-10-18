@@ -192,3 +192,20 @@ An optional fewer-alert policy is now returned beside standard warnings.
 GET /v1/alert-profiles shows thresholds, false alerts and missed-window tradeoffs.
 This changes warning policy, not the predicted risk. Keep standard as default.
 See reports/IMPROVEMENTS.md for exact results.
+
+
+PRODUCT VALIDATION UPDATE
+Plain-language result summaries now explain what the kidney warning means.
+A high latest potassium result remains visible even without a future-risk alert.
+Earlier kidney injury is distinguished from a first-new-injury prediction.
+JSON, CSV, batches, replay and the console carry these findings.
+reports/PRODUCT_VALIDATION.md shows concrete patient cases and their pass results.
+
+
+GRAPH DEMO AND PLAIN EXPLANATIONS
+Run show_graphs.bat for a portable patient-story report. It shows actual model
+risk, recorded creatinine and a timeline, with later outcomes clearly separated.
+The selected real case has a measured 18.35-hour warning interval.
+Synthetic comparison inputs are labelled. No made-up future outcome is shown.
+Optional server-side AI summaries use the .env provider settings. The interface
+only says "What this means"; provider branding remains in backend configuration.

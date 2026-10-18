@@ -38,6 +38,11 @@ authenticated server proxy rather than contain a shared secret.
 
 ## Display rules
 
+- Lead with clinical_summary.headline and the plain-language explanation.
+  urgent_review_required and current_findings stay visible independently of the
+  future kidney score or chosen alert profile. Findings include sample age.
+  A high potassium result can need attention even when future kidney risk is low.
+
 - predicted: show estimate, nominal alert and source threshold.
 - Optional policy comparison: GET /v1/alert-profiles and alert_options on each
   prediction expose standard and fewer_alerts. Keep standard as the default.
@@ -56,3 +61,11 @@ authenticated server proxy rather than contain a shared secret.
 
 docs/openapi.json is regenerated after training. API.md defines every field/unit.
 REQUIREMENTS.md distinguishes completed features from research/clinical limits.
+
+
+For a visual reference run show_graphs.bat; aki/templates/showcase.html is a
+standalone report template, not the separate application frontend.
+POST /v1/summarize takes the same history body as prediction and returns the
+plain explanation for a selected time. Use the heading "What this means".
+Provider/model/key metadata stays out of the interface. Keep exact model risk,
+clinical findings, sample timestamps and later-outcome comparison visible.
