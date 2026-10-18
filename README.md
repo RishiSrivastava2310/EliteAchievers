@@ -92,7 +92,6 @@ in the graph report. See docs/GRAPH_DEMO.md for the one-minute walkthrough.
 ### Git Commands
 
 - To push changes
-
 ```
 git status
 git add .
