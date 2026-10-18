@@ -100,3 +100,8 @@ git commit -m "message"
 git push
 ```
 
+- Git pull changes
+
+```
+git pull
+```
