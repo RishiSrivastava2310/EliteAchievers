@@ -101,7 +101,6 @@ git push
 ```
 
 - Git pull changes
-
 ```
 git pull
 ```
