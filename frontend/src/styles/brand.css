@@ -1,0 +1,68 @@
+.auth-cover {
+  position: relative;
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  flex: 1;
+  min-height: 590px;
+  overflow: hidden;
+  padding: 58px;
+  border-radius: 18px;
+  background: #267da3 url('/aki-nator-wave.svg') 44% center / auto 100% no-repeat;
+}
+.auth-cover-content {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 38px;
+}
+.auth-cover-mark {
+  display: block;
+  width: 105px;
+  height: 55px;
+  margin-bottom: 30px;
+  filter: brightness(0) invert(1);
+}
+.auth-cover h1 {
+  color: #fff;
+  font-size: 40px;
+  line-height: 1.2;
+  letter-spacing: -1px;
+  font-weight: 500;
+}
+.auth-cover p {
+  margin-top: 22px;
+  color: #dfedf1;
+  font-size: 16px;
+  line-height: 1.8;
+}
+.auth-cover-caption {
+  position: absolute;
+  left: 58px;
+  right: 58px;
+  bottom: 35px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 18px;
+  border-top: 1px solid #ffffff33;
+  color: #e0edf1;
+  font-size: 12px;
+}
+.auth-cover-caption span:first-child {
+  letter-spacing: 2px;
+  font-size: 12px;
+}
+.auth-header .brand {
+  padding: 0;
+}
+.auth-form-wrap .auth-switch {
+  text-align: center;
+}
+.auth-disclaimer p {
+  color: #8fa0aa;
+}
+.auth-copyright {
+  color: #93a1a8;
+  font-size: 12px;
+}

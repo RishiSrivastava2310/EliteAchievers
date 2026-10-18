@@ -1,0 +1,935 @@
+/* Clinical tools keep the existing shell; colour identifies a purpose or status. */
+:root {
+  --coral: #c35f49;
+  --coral-soft: #fff1ec;
+  --sage: #327064;
+  --sage-soft: #eff7f3;
+  --amber: #91651f;
+  --amber-soft: #fff7e7;
+  --blue-soft: #eff6fa;
+}
+
+.environment-inner {
+  gap: 24px;
+  padding-block: 10px;
+  color: #66737a;
+  font-size: 13px;
+}
+.environment-banner strong,
+.banner-detail {
+  color: #66737a;
+  font-size: 13px;
+}
+.research-label-inline {
+  color: #5c6971;
+  white-space: normal;
+  text-align: right;
+  font-size: 12px;
+}
+.banner-detail {
+  border: 0;
+  margin-left: 0;
+  padding-left: 6px;
+}
+.badge {
+  border-radius: 6px;
+  padding: 5px 10px;
+}
+.badge-teal,
+.badge-success {
+  color: #28685b;
+  background: #e8f3ed;
+}
+.badge-warning {
+  color: #805719;
+  background: #fff2d9;
+}
+.badge-danger {
+  color: #a2423b;
+  background: #fce9e4;
+}
+.badge-blue {
+  color: #276a8d;
+  background: #e8f2f9;
+}
+.nav-count {
+  min-width: 19px;
+  height: 19px;
+  font-size: 12px;
+  color: #9d4d39;
+  background: #fff0e9;
+}
+
+main:not([data-view='overview']) {
+  --secondary: #59666d;
+  --tertiary: #6f7b81;
+}
+main:not([data-view='overview']) .page-title {
+  align-items: center;
+  margin: 8px 0 34px;
+}
+main:not([data-view='overview']) h1 {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: clamp(29px, 2.65vw, 38px);
+  letter-spacing: -1.45px;
+  font-weight: 450;
+  line-height: 1.2;
+}
+.page-title-icon {
+  color: #315e61;
+  stroke-width: 1.45;
+}
+[data-view='analytics'] .page-title-icon,
+[data-view='validation'] .page-title-icon {
+  color: var(--coral);
+}
+[data-view='predictions'] .page-title-icon {
+  color: var(--blue);
+}
+[data-view='alerts'] .page-title-icon {
+  color: var(--amber);
+}
+main:not([data-view='overview']) .page-title p {
+  margin-top: 10px;
+  font-size: 15px;
+  letter-spacing: 0;
+}
+main:not([data-view='overview']) .panel-head h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 19px;
+  font-weight: 550;
+  letter-spacing: -0.45px;
+}
+main:not([data-view='overview']) .panel-head h2 svg {
+  color: #526c72;
+}
+main:not([data-view='overview']) .panel-head p,
+main:not([data-view='overview']) td small {
+  font-size: 13px;
+  color: var(--secondary);
+}
+main:not([data-view='overview']) th {
+  color: #67747a;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+}
+main:not([data-view='overview']) td {
+  color: #526169;
+}
+main:not([data-view='overview']) .panel {
+  border-color: #e3e9e8;
+}
+main:not([data-view='overview']) .notice {
+  color: #5d6c72;
+  background: #f5f7f7;
+  font-size: 14px;
+  border: 0;
+}
+main:not([data-view='overview']) .notice-danger {
+  color: #a13c3e;
+  background: #fff0ed;
+}
+
+/* Directory and replay are the entry points to the clinical workflow. */
+.directory-summary {
+  gap: 0;
+  padding: 0;
+  margin-bottom: 32px;
+  border: 0;
+  border-radius: 12px;
+  background: #f5f7f6;
+}
+.directory-summary > span {
+  flex: 1;
+  padding: 22px 25px;
+  min-height: 72px;
+  font-size: 14px;
+}
+.directory-summary .directory-total {
+  color: #356b60;
+  background: #eaf4ef;
+  border-radius: 12px 0 0 12px;
+}
+.directory-summary .directory-total svg {
+  color: #356b60;
+}
+.directory-summary b {
+  font-weight: 550;
+}
+.back-link {
+  font-size: 14px;
+  margin-bottom: 26px;
+}
+.patient-demographics {
+  margin: -7px 0 24px;
+  font-size: 14px;
+  gap: 18px 28px;
+}
+.patient-demographics svg {
+  color: #64777c;
+}
+.record-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 28px;
+}
+.record-navigation button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  min-height: 42px;
+  border: 0;
+  border-radius: 8px;
+  color: #59696e;
+  background: #f5f7f6;
+  font-size: 14px;
+}
+.record-navigation button:hover {
+  color: #214f49;
+  background: #e8f2ed;
+}
+.record-anchor {
+  scroll-margin-top: 28px;
+}
+.replay-panel {
+  padding: 27px 30px;
+  border-color: #dcebe5 !important;
+  background: #f0f7f3;
+}
+.replay-heading h2 {
+  font-size: 20px;
+  font-weight: 550;
+}
+.replay-heading > div > svg {
+  margin-right: 3px;
+  color: var(--sage);
+}
+.replay-heading > span,
+.replay-caption,
+.slider-labels {
+  color: #63766e;
+  font-size: 13px;
+}
+.replay-controls {
+  gap: 25px;
+  margin-block: 28px 20px;
+}
+.replay-controls > .button {
+  width: 49px;
+  min-height: 49px;
+  border: 0;
+  color: #fff;
+  background: #2f6d60;
+}
+.replay-controls > .button:hover {
+  color: #fff;
+  background: #24574c;
+}
+.replay-controls input[type='range'] {
+  accent-color: #327064;
+}
+.replay-hour-input {
+  align-self: center;
+  margin-bottom: 19px;
+  font-size: 14px;
+}
+.replay-hour-input input {
+  min-height: 42px;
+  border-color: #cfdfd7;
+  font-size: 15px;
+}
+.replay-caption {
+  border: 0;
+  padding: 0;
+  gap: 9px 20px;
+}
+.replay-caption strong {
+  color: #405e50;
+}
+
+/* Blue looks ahead. Sage describes evidence already observed. */
+.clinical-status-grid {
+  gap: 22px;
+}
+.prediction-panel,
+.recognition-panel {
+  padding: 27px 28px 24px;
+}
+.prediction-panel {
+  background: #f4f8fc;
+  border-color: #dfe9f1 !important;
+}
+.recognition-panel {
+  background: #f4f8f5;
+  border-color: #e0eae3 !important;
+}
+.recognition-panel[data-observed='true'] {
+  background: #fff7f3;
+  border-color: #f1ded5 !important;
+}
+.clinical-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  color: #286e98;
+  background: #e6eff7;
+}
+.recognition-panel .clinical-icon {
+  color: #327064;
+  background: #e3efe7;
+}
+.clinical-card-heading h2 {
+  font-size: 19px;
+  font-weight: 550;
+}
+.clinical-card-heading p,
+.recognition-result p,
+.recognition-evidence li {
+  font-size: 13px;
+  color: #5c6a70;
+}
+.clinical-card-heading > .badge {
+  align-self: flex-start;
+  margin-top: 4px;
+}
+.risk-large {
+  color: #255d7a;
+  font-size: 62px;
+  letter-spacing: -2.8px;
+  font-weight: 450;
+}
+.risk-large > span:not(.badge) {
+  color: #66879b;
+}
+.risk-large > .badge {
+  font-size: 13px;
+}
+.prediction-panel .progress-track {
+  height: 5px;
+  background: #e0e8ef;
+}
+.prediction-panel .progress-fill,
+.prediction-panel .progress-fill.warning {
+  background: #367ea6;
+}
+.clinical-card-footer {
+  border: 0;
+  padding-top: 8px;
+  color: #68767b;
+  font-size: 13px;
+}
+.recognition-evidence {
+  gap: 7px;
+  padding-left: 17px;
+  list-style: disc;
+  margin-bottom: 24px;
+}
+.recognition-evidence li {
+  display: list-item;
+  padding-left: 2px;
+}
+.recognition-result {
+  padding: 27px 0 13px;
+}
+.recognition-result > .badge {
+  font-size: 16px;
+  font-weight: 500;
+}
+.unavailable-risk strong {
+  color: #466476;
+}
+.measurement-stat > span {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 14px !important;
+}
+.measurement-stat > span svg {
+  color: #647b7a;
+}
+.measurement-stat.measurement-creatinine > span svg,
+.measurement-stat.measurement-bun > span svg {
+  color: #327064;
+}
+.measurement-stat.measurement-urineOutput > span svg {
+  color: #397e9d;
+}
+.measurement-stat.measurement-map > span svg {
+  color: #ad725b;
+}
+.patient-core-stats strong {
+  font-size: 34px;
+  font-weight: 450;
+}
+.patient-core-stats p,
+.patient-core-stats small {
+  color: #66757c;
+  font-size: 13px;
+}
+.detail-chart-grid .panel-head {
+  min-height: 105px;
+}
+.toggle-label,
+.chart-footnote,
+.retrospective-banner,
+.patient-alert-list small {
+  font-size: 13px;
+}
+[data-view='patients'] .dashboard-bottom .empty,
+[data-view='analytics'] > .panel > .empty {
+  min-height: 170px;
+}
+.prediction-picker {
+  background: #f4f7f9;
+  border: 0 !important;
+  gap: 18px 28px;
+}
+.prediction-picker label,
+.prediction-picker input,
+.prediction-picker select {
+  font-size: 14px;
+}
+.prediction-picker label > svg {
+  color: #47768c;
+}
+.selected-prediction-row {
+  background: #f3f8fb;
+}
+.selected-prediction-row .patient-id {
+  color: #246b8d;
+  font-weight: 550;
+}
+
+/* Warm accents distinguish research from bedside observation. */
+[data-view='analytics'] .metric-card {
+  background: #fbf7f5;
+  border: 0;
+}
+[data-view='analytics'] .metric-card > div > svg {
+  color: #b56550;
+}
+.metric-card p {
+  color: #68757a;
+  font-size: 13px;
+}
+.metric-card > strong {
+  font-size: 40px;
+  font-weight: 450;
+}
+.analytics-charts {
+  margin-top: 24px;
+}
+.analytics-charts .panel-head {
+  padding: 24px 24px 0;
+}
+.analytics-charts .empty {
+  min-height: 218px;
+  padding: 25px 24px 30px;
+}
+.analytics-charts .empty-icon {
+  color: #a77665;
+  background: #faf1ec;
+}
+.analytics-charts .empty h3 {
+  font-size: 15px;
+  font-weight: 500;
+}
+[data-view='analytics'] .research-note {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #fff1eb;
+  border: 0;
+  padding: 30px;
+}
+[data-view='analytics'] .research-note-icon {
+  margin: 0 0 20px;
+  padding: 0;
+  width: auto;
+  height: auto;
+  background: transparent;
+  color: #ae5946;
+}
+[data-view='analytics'] .research-note h2 {
+  font-size: 24px;
+  font-weight: 450;
+  margin-bottom: 12px;
+}
+[data-view='analytics'] .research-note p {
+  color: #775f57;
+  max-width: 450px;
+  font-size: 14px;
+}
+[data-view='analytics'] .dashboard-bottom {
+  margin-bottom: 24px;
+}
+.validation-flow {
+  gap: 25px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+.validation-flow > div:not(.flow-arrow) {
+  padding: 30px 32px;
+  border-radius: 14px;
+  background: #eff6f1;
+}
+.validation-flow > div:last-child {
+  background: #fdf0e9;
+}
+.validation-flow .source-tag {
+  font-size: 14px;
+  color: #3a6f60;
+  font-weight: 550;
+}
+.validation-flow .source-blue {
+  color: #ab5a44;
+}
+.validation-flow h2 {
+  font-size: 26px;
+  font-weight: 450;
+  letter-spacing: -0.8px;
+}
+.validation-flow .flow-arrow {
+  flex: 0 0 125px;
+  color: #9c6a54;
+}
+.flow-arrow small {
+  font-size: 13px;
+}
+.protocol-grid {
+  gap: 30px;
+  margin-top: 5px;
+}
+.protocol-grid svg {
+  color: #976452;
+}
+
+/* Status colours remain paired with explicit labels. */
+.alert-summary .stat-card {
+  border: 0;
+  border-radius: 14px;
+}
+.alert-summary .stat-red {
+  background: #fceee9;
+}
+.alert-summary .stat-orange {
+  background: #fff6e6;
+}
+.alert-summary .stat-blue {
+  background: #edf4f8;
+}
+.alert-summary .stat-red svg {
+  color: #ad5242;
+}
+.alert-summary .stat-orange svg {
+  color: #936a2d;
+}
+.alert-summary .stat-blue svg {
+  color: #427591;
+}
+.alert-summary strong {
+  font-weight: 450;
+}
+.alert-symbol {
+  display: grid;
+  place-items: center;
+  min-width: 38px;
+  height: 38px;
+  border-radius: 50%;
+}
+.alert-symbol.critical {
+  color: #ab5140;
+  background: #fcece6;
+}
+.alert-symbol.warning {
+  color: #906323;
+  background: #fff4dc;
+}
+.alert-symbol.info {
+  color: #376f8a;
+  background: #eaf2f7;
+}
+.alert-feed article {
+  padding-block: 26px;
+}
+.alert-title h3 {
+  font-size: 16px;
+  font-weight: 550;
+}
+.alert-feed p,
+.alert-feed small,
+.alert-actions .button,
+.alerts-toolbar select {
+  font-size: 14px;
+}
+.alert-feed article.reviewed {
+  background: #f9faf9;
+}
+.quality-stats .metric-card {
+  border: 0;
+  background: #f4f6f6;
+}
+.quality-stats .metric-teal {
+  background: #edf6f0;
+}
+.quality-stats .metric-teal > div > svg,
+.quality-number,
+.legend-recent {
+  color: #33705b;
+}
+.quality-stats .metric-amber {
+  background: #fff7e9;
+}
+.quality-stats .metric-amber > div > svg,
+.quality-stale,
+.legend-stale {
+  color: #8c6425;
+}
+.quality-stats .metric-coral {
+  background: #fcefe9;
+}
+.quality-stats .metric-coral > div > svg,
+.quality-missing,
+.legend-missing {
+  color: #ac5b47;
+}
+.availability-summary {
+  padding: 5px 0 28px;
+}
+.availability-labels {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+.availability-labels h2 {
+  font-size: 17px;
+  font-weight: 500;
+}
+.availability-labels > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 13px;
+}
+.availability-bar {
+  display: flex;
+  gap: 3px;
+  height: 12px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.availability-bar > span {
+  min-width: 0;
+}
+.availability-recent {
+  background: #79ab91;
+}
+.availability-stale {
+  background: #e4bf7c;
+}
+.availability-missing {
+  background: #e6a18a;
+}
+.quality-sources {
+  margin-top: 26px;
+}
+[data-view='quality'] .progress-fill {
+  background: #6c9c83;
+}
+[data-view='quality'] .progress-fill.warning {
+  background: #d2a45c;
+}
+
+/* Secondary explanations stay available without filling each page ending. */
+.disclosure {
+  margin-top: 26px;
+  border: 1px solid #e4e9e7;
+  border-radius: 12px;
+  background: #fff;
+}
+.disclosure summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  min-height: 62px;
+  padding: 18px 24px;
+  list-style: none;
+  color: #53625f;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+.disclosure summary::-webkit-details-marker {
+  display: none;
+}
+.disclosure summary:hover {
+  color: #253a32;
+  background: #f7f9f7;
+  border-radius: 12px;
+}
+.disclosure summary:focus-visible {
+  outline: 3px solid #267da355;
+  outline-offset: 3px;
+}
+.disclosure[open] summary svg {
+  transform: rotate(180deg);
+}
+.disclosure-content {
+  padding: 5px 24px 25px;
+}
+.disclosure-content > p + p {
+  margin-top: 14px;
+}
+.disclosure-content > .text-link {
+  margin-top: 18px;
+}
+.settings-grid .panel-head {
+  padding: 27px 28px 22px;
+}
+.settings-form {
+  padding-inline: 28px;
+}
+.settings-grid .panel-head h2 svg {
+  color: #59726b;
+}
+.settings-threshold .panel-head h2 svg {
+  color: #96703e;
+}
+.settings-threshold .threshold-value {
+  color: #78603a;
+  font-weight: 450;
+}
+.settings-threshold input[type='range'] {
+  accent-color: #a5814c;
+}
+.profile-large {
+  color: #477063;
+  background: #edf4ef;
+}
+.settings-storage {
+  align-self: start;
+}
+.auth-disclaimer {
+  border: 0;
+  padding-top: 0;
+}
+.auth-disclaimer p {
+  font-size: 13px;
+}
+.auth-copyright {
+  display: none;
+}
+
+@media (max-width: 1150px) {
+  .environment-inner .banner-detail {
+    display: none;
+  }
+  .directory-summary > span {
+    padding: 20px;
+  }
+}
+@media (max-width: 950px) {
+  .global-bar {
+    gap: 16px;
+  }
+  .workspace-areas {
+    gap: 14px;
+  }
+  main:not([data-view='overview']) .page-title {
+    align-items: flex-start;
+  }
+  main:not([data-view='overview']) .page-actions {
+    align-self: flex-start;
+  }
+  .clinical-card-heading > .badge {
+    display: inline-flex;
+  }
+  .directory-summary {
+    flex-wrap: wrap;
+  }
+  .directory-summary > span {
+    min-width: 230px;
+  }
+  .validation-flow {
+    gap: 18px;
+  }
+  .validation-flow > div:not(.flow-arrow) {
+    padding: 25px;
+  }
+  .validation-flow .flow-arrow {
+    flex-basis: 90px;
+  }
+}
+@media (max-width: 760px) {
+  .environment-inner {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .environment-inner .research-label-inline {
+    display: block !important;
+    text-align: left;
+    line-height: 1.5;
+  }
+}
+@media (max-width: 600px) {
+  .environment-inner {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .environment-inner .research-label-inline {
+    display: block;
+    text-align: left;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  main:not([data-view='overview']) .page-title {
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 26px;
+  }
+  main:not([data-view='overview']) h1 {
+    gap: 11px;
+    font-size: 29px;
+    letter-spacing: -1px;
+  }
+  .page-title-icon {
+    width: 25px;
+  }
+  .directory-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .directory-summary > span {
+    padding: 17px 20px;
+    min-height: 0;
+  }
+  .directory-summary .directory-total {
+    border-radius: 12px 12px 0 0;
+  }
+  .record-navigation {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .record-navigation button {
+    padding: 11px;
+    font-size: 13px;
+  }
+  .replay-panel {
+    padding: 22px;
+  }
+  .replay-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .replay-heading h2 {
+    font-size: 18px;
+  }
+  .replay-controls {
+    gap: 13px;
+  }
+  .replay-controls > .button {
+    width: 42px;
+    min-height: 42px;
+  }
+  .slider-labels span:nth-child(2),
+  .slider-labels span:nth-child(4) {
+    display: none;
+  }
+  .replay-hour-input {
+    gap: 5px;
+    flex-direction: column;
+    margin-bottom: 0;
+    font-size: 12px;
+  }
+  .replay-hour-input input {
+    width: 57px;
+  }
+  .prediction-panel,
+  .recognition-panel {
+    padding: 24px;
+  }
+  .clinical-card-heading {
+    flex-wrap: wrap;
+  }
+  .clinical-card-heading h2 {
+    font-size: 18px;
+  }
+  .clinical-icon {
+    width: 32px;
+    height: 32px;
+  }
+  .clinical-card-heading > .badge {
+    margin-left: 44px;
+    margin-top: 0;
+  }
+  .prediction-picker {
+    align-items: stretch;
+    padding: 22px;
+  }
+  .prediction-picker label {
+    flex-wrap: wrap;
+  }
+  .prediction-picker label select {
+    width: 100%;
+  }
+  .prediction-picker > .button {
+    margin-left: 0;
+  }
+  .availability-labels {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .availability-labels > div {
+    gap: 14px;
+  }
+  .validation-flow .flow-arrow {
+    flex-basis: auto;
+    transform: none;
+    align-items: center;
+    flex-direction: row;
+  }
+  .validation-flow .flow-arrow > svg {
+    transform: rotate(90deg);
+  }
+  .validation-flow > div:not(.flow-arrow) {
+    padding: 25px;
+  }
+  .alert-feed article {
+    gap: 12px;
+    padding: 22px 18px;
+  }
+  .alert-symbol {
+    min-width: 30px;
+    height: 30px;
+  }
+  .alert-feed article > div:nth-child(2) {
+    min-width: 0;
+  }
+  .alert-feed .alert-actions {
+    margin-left: 42px;
+  }
+  .alert-actions .button {
+    font-size: 13px;
+  }
+  .disclosure summary {
+    padding: 18px 20px;
+  }
+  .disclosure-content {
+    padding: 5px 20px 24px;
+  }
+}

@@ -1,0 +1,363 @@
+/* Recorded renal signals and outcomes follow the same historical replay. */
+.risk-history-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 0 26px 16px;
+}
+.risk-history-toolbar > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.risk-history-toolbar span,
+.risk-history-toolbar small {
+  color: var(--secondary);
+  font-size: 13px;
+}
+.risk-history-latest {
+  color: #286b8c;
+  font-size: 30px;
+  font-weight: 450;
+  letter-spacing: -0.7px;
+}
+.risk-history-toolbar .button {
+  min-height: 37px;
+  padding: 8px 13px;
+  font-size: 13px;
+}
+.risk-axis-note {
+  margin: 0 26px 10px;
+  padding: 9px 12px;
+  border-radius: 7px;
+  color: #426c82;
+  background: #edf5fa;
+  font-size: 13px;
+}
+.risk-history-context {
+  padding: 16px 26px 24px;
+}
+.risk-history-context p {
+  font-size: 13px;
+}
+.risk-history-unavailable {
+  padding: 12px 14px;
+  margin-top: 14px;
+  border-radius: 8px;
+  background: #f5f7f7;
+}
+.risk-history-unavailable strong {
+  color: #4e6268;
+  font-weight: 550;
+}
+.clinical-feature-graphs {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 24px;
+  margin-bottom: 26px;
+}
+.serum-panel,
+.mortality-panel {
+  align-self: start;
+}
+.serum-panel .panel-head,
+.mortality-panel .panel-head {
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding-bottom: 20px;
+}
+.serum-panel .panel-head h2,
+.mortality-panel .panel-head h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+}
+main:not([data-view='overview']) .serum-panel .panel-head h2,
+main:not([data-view='overview']) .mortality-panel .panel-head h2 {
+  font-size: 20px;
+}
+.serum-summary,
+.mortality-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 0 26px 20px;
+}
+.serum-value {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.serum-value strong,
+.mortality-value > strong {
+  font-size: 39px;
+  font-weight: 450;
+  letter-spacing: -1.4px;
+  line-height: 1.15;
+}
+.serum-value > span,
+.mortality-value > strong > span {
+  font-size: 15px;
+  color: var(--secondary);
+  letter-spacing: 0;
+  margin-left: 3px;
+}
+.mortality-value > strong {
+  color: #a65b49;
+}
+.mortality-value > p {
+  margin-top: 9px;
+  font-size: 13px;
+}
+.creatinine-signal {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 13px;
+  border-radius: 9px;
+  font-size: 14px;
+}
+.creatinine-signal strong {
+  font-weight: 550;
+}
+.signal-red {
+  color: #b23f39;
+  background: #fcece7;
+}
+.signal-orange {
+  color: #926019;
+  background: #fff4df;
+}
+.signal-blue {
+  color: #266d91;
+  background: #edf5fb;
+}
+.signal-neutral {
+  color: #65747a;
+  background: #f2f5f5;
+}
+.serum-red .serum-value strong {
+  color: #b23f39;
+}
+.serum-orange .serum-value strong {
+  color: #926019;
+}
+.serum-blue .serum-value strong {
+  color: #266d91;
+}
+.creatinine-comparisons,
+.outcome-counts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 0 26px 16px;
+}
+.creatinine-comparisons > div,
+.outcome-counts > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 15px;
+  border-radius: 10px;
+  background: #f5f8f7;
+}
+.creatinine-comparisons span,
+.creatinine-comparisons small,
+.outcome-counts span {
+  color: var(--secondary);
+  font-size: 13px;
+  line-height: 1.55;
+}
+.creatinine-comparisons strong {
+  color: #304950;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: -0.3px;
+}
+.serum-context {
+  margin: 0 26px 12px;
+  min-height: 42px;
+  font-size: 13px;
+}
+.serum-timestamp,
+.outcome-clock {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 26px 12px;
+  color: var(--secondary);
+  font-size: 13px;
+}
+.outcome-clock strong {
+  font-weight: 500;
+  color: #6f6860;
+}
+.serum-panel .chart,
+.mortality-panel .chart {
+  height: 260px;
+}
+.serum-method {
+  padding: 0 23px 20px;
+}
+.serum-method .disclosure {
+  margin-top: 10px;
+  border: 0;
+  border-radius: 8px;
+  background: #f8faf9;
+}
+.serum-method .disclosure summary {
+  min-height: 48px;
+  padding: 13px 16px;
+  font-size: 13px;
+}
+.serum-method .disclosure-content {
+  padding-inline: 16px;
+}
+.serum-method .disclosure-content p {
+  font-size: 13px;
+}
+.creatinine-warning {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 23px;
+  margin-bottom: 24px;
+  border-radius: 12px;
+}
+.creatinine-warning > div {
+  flex: 1;
+}
+.creatinine-warning strong {
+  font-size: 19px;
+  font-weight: 550;
+  letter-spacing: -0.3px;
+}
+.creatinine-warning p {
+  margin-top: 4px;
+  color: inherit;
+  font-size: 14px;
+}
+.creatinine-warning .button {
+  background: #fff9;
+  border-color: currentColor;
+  color: inherit;
+}
+.detail-chart-grid .vitals-panel {
+  grid-column: 1 / -1;
+}
+.outcome-counts {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.outcome-counts strong {
+  color: #687571;
+  font-size: 28px;
+  font-weight: 450;
+  letter-spacing: -0.7px;
+}
+.outcome-counts .outcome-deaths {
+  background: #fcf0e9;
+}
+.outcome-counts .outcome-deaths strong {
+  color: #ad5945;
+}
+.outcome-counts .outcome-alive {
+  background: #eff6f0;
+}
+.outcome-counts .outcome-alive strong {
+  color: #3c765f;
+}
+.mortality-panel .empty {
+  min-height: 260px;
+}
+.mortality-panel .empty p {
+  max-width: 380px;
+  font-size: 13px;
+}
+.available-outcomes {
+  margin-top: 20px;
+}
+.available-outcomes > div {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  padding: 15px 0;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+}
+.available-outcomes strong {
+  font-weight: 500;
+}
+.available-outcomes span,
+.available-outcomes small {
+  font-size: 13px;
+}
+.available-outcomes small {
+  color: var(--secondary);
+  flex-basis: 100%;
+}
+.overview-outcomes {
+  margin: 25px 0;
+}
+.overview-outcomes .outcome-counts {
+  max-width: 700px;
+}
+@media (max-width: 1150px) {
+  .clinical-feature-graphs {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .serum-summary,
+  .mortality-summary {
+    align-items: flex-start;
+    padding-inline: 22px;
+  }
+  .creatinine-comparisons,
+  .outcome-counts {
+    margin-inline: 22px;
+  }
+  .creatinine-comparisons > div,
+  .outcome-counts > div {
+    padding: 13px;
+  }
+  .creatinine-comparisons strong {
+    font-size: 16px;
+  }
+  .serum-context,
+  .serum-timestamp,
+  .outcome-clock {
+    margin-inline: 22px;
+  }
+  .outcome-counts {
+    gap: 7px;
+  }
+  .outcome-counts > div {
+    padding: 12px;
+  }
+  .outcome-counts span {
+    font-size: 13px;
+  }
+  .serum-method {
+    padding-inline: 15px;
+  }
+  .creatinine-warning {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 12px;
+  }
+  .creatinine-warning > div {
+    flex-basis: calc(100% - 38px);
+  }
+  .creatinine-warning .button {
+    margin-left: 35px;
+  }
+}

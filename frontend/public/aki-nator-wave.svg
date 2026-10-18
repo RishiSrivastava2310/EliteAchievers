@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 520" fill="none">
+  <defs>
+    <linearGradient id="base" x1="80" y1="0" x2="1300" y2="520" gradientUnits="userSpaceOnUse"><stop stop-color="#336f89"/><stop offset=".46" stop-color="#55b4bc"/><stop offset="1" stop-color="#133b91"/></linearGradient>
+    <linearGradient id="upper" x1="180" y1="-80" x2="800" y2="420" gradientUnits="userSpaceOnUse"><stop stop-color="#c6d8df"/><stop offset=".46" stop-color="#8cbdbf"/><stop offset=".8" stop-color="#42c1b2"/><stop offset="1" stop-color="#187b9b"/></linearGradient>
+    <linearGradient id="blue" x1="600" y1="110" x2="880" y2="590" gradientUnits="userSpaceOnUse"><stop stop-color="#1276ac"/><stop offset=".38" stop-color="#086ab4"/><stop offset=".8" stop-color="#0049a5"/><stop offset="1" stop-color="#173d89"/></linearGradient>
+    <linearGradient id="edge" x1="500" y1="350" x2="1000" y2="50" gradientUnits="userSpaceOnUse"><stop stop-color="#d5efe8" stop-opacity=".6"/><stop offset=".5" stop-color="#87ded0"/><stop offset="1" stop-color="#eef7ef" stop-opacity=".15"/></linearGradient>
+    <linearGradient id="shadow" x1="0" y1="0" x2="1000" y2="100" gradientUnits="userSpaceOnUse"><stop stop-color="#163b59" stop-opacity=".64"/><stop offset="1" stop-color="#163b59" stop-opacity="0"/></linearGradient>
+    <filter id="soft"><feGaussianBlur stdDeviation="22"/></filter>
+  </defs>
+  <path fill="url(#base)" d="M0 0h1440v520H0z"/>
+  <path fill="url(#upper)" d="M0 0h1440v35c-264-69-416 75-600 189C566 394 299 446 0 402Z"/>
+  <path fill="#93dfcd" fill-opacity=".48" filter="url(#soft)" d="M-50 366C363 496 653 202 897 93c163-73 354-95 593-56v61C1158 61 1046 119 881 225 601 404 336 527-50 448Z"/>
+  <path fill="url(#blue)" d="M0 423c315 49 553-38 826-208C1055 73 1217 5 1440 61v459H0Z"/>
+  <path stroke="url(#edge)" stroke-width="3" d="M-20 421c335 58 577-40 846-207C1055 72 1217 5 1460 65"/>
+  <path fill="#40c1b2" fill-opacity=".26" filter="url(#soft)" d="M936 500c147-188 316-217 554-197v78c-236-12-367 37-455 159Z"/>
+  <path fill="url(#shadow)" d="M0 0h1440v520H0z"/>
+</svg>
